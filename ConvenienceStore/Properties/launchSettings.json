@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ConvenienceStore (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ConvenienceStore (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
