@@ -1,64 +1,62 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using ConvenienceStore.Models;
+﻿using ConvenienceStore.Models;
 using ConvenienceStore.Services;
-using ConvenienceStore.Helpers;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System;
 
 namespace ConvenienceStore.ViewModels
 {
-    public class InventoryViewModel : INotifyPropertyChanged
+    public partial class InventoryViewModel : ObservableObject
     {
-        private readonly DatabaseHelper _databaseHelper;
-        private readonly InventoryService _inventoryService;
-        public ObservableCollection<ProductModel> InventoryList { get; set; } = new ObservableCollection<ProductModel>();
-        public ICommand LoadInventoryCommand { get; }
-        public ICommand OrderProductCommand { get; }
+        private readonly DatabaseService _databaseService;
 
-        public InventoryViewModel()
+        [ObservableProperty]
+        private ObservableCollection<Product> products;
+
+        [ObservableProperty]
+        private ObservableCollection<Category> categories;
+
+        [ObservableProperty]
+        private Product selectedProduct;
+
+        public InventoryViewModel(DatabaseService databaseService)
         {
-            string connectionString = "Data Source=.\\SQL22;Initial Catalog=ConvenienceStoreDB;Integrated Security=True;Trust Server Certificate=True";
-            _databaseHelper = new DatabaseHelper(connectionString);
-            _inventoryService = new InventoryService(_databaseHelper);
-
-            LoadInventoryCommand = new RelayCommand<object>(_ => LoadInventory());
-            OrderProductCommand = new RelayCommand<int>(OrderProduct);
-
-            LoadInventoryCommand.Execute(null); 
+            _databaseService = databaseService;
+            LoadData().ConfigureAwait(false);
         }
 
-        private async Task LoadInventory()
+        // Command to add product
+        [RelayCommand]
+        private async Task AddProduct()
+        {
+            if (SelectedProduct == null) return;
+            await _databaseService.AddProductAsync(SelectedProduct);
+            await LoadData();
+        }
+
+        // Command to update product quantity
+        [RelayCommand]
+        private async Task UpdateQuantity(int newQuantity)
+        {
+            if (SelectedProduct == null) return;
+            await _databaseService.UpdateProductQuantityAsync(SelectedProduct.ProductID, newQuantity);
+            await LoadData();
+        }
+
+        // Load products and categories from database
+        private async Task LoadData()
         {
             try
             {
-                var products = await _inventoryService.GetInventory();
-                InventoryList.Clear();
-                foreach (var product in products)
-                    InventoryList.Add(product);
+                Products = new ObservableCollection<Product>(await _databaseService.GetProductsAsync());
+                Categories = new ObservableCollection<Category>(await _databaseService.GetCategoriesAsync());
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi: có thể là ghi log hoặc hiển thị thông báo
+                Console.WriteLine($"Error loading data: {ex.Message}");
             }
         }
-
-        private void OrderProduct(int productId)
-        {
-            try
-            {
-                _inventoryService.PlaceOrder(productId);
-                LoadInventoryCommand.Execute(null);
-            }
-            catch (Exception ex)
-            {
-                // Xử lý lỗi: hiển thị thông báo hoặc ghi log
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName) =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ConvenienceStore.Models
 {
-    public class ProductModel
+    public class Product
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }
-        public string CategoryName { get; set; }
+        public int CategoryID { get; set; }
         public string Brand { get; set; }
         public int QuantityInStock { get; set; }
+        public int ReorderLevel { get; set; }
         public decimal Price { get; set; }
-        public string FormattedPrice => Price.ToString("C");
-
+        public Category Category { get; set; }
     }
 }

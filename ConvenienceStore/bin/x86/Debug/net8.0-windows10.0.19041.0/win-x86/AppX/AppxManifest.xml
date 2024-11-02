@@ -7,8 +7,8 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="d4f9f73f-cc5b-422c-b4fb-e239c0511059" Publisher="CN=vohun" Version="1.0.0.0" ProcessorArchitecture="x86" />
-  <mp:PhoneIdentity PhoneProductId="d4f9f73f-cc5b-422c-b4fb-e239c0511059" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="9a8894fd-c638-49c2-9096-fd526a99019d" Publisher="CN=vohun" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <mp:PhoneIdentity PhoneProductId="9a8894fd-c638-49c2-9096-fd526a99019d" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>ConvenienceStore</DisplayName>
     <PublisherDisplayName>vohun</PublisherDisplayName>

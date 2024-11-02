@@ -1,71 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Windows\\Project\\ConvenienceStore\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{325422BD-8F30-4FA5-A6AC-2E1BBED6C640}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\viewmodels\\inventoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{325422BD-8F30-4FA5-A6AC-2E1BBED6C640}|ConvenienceStore.csproj|solutionrelative:viewmodels\\inventoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{325422BD-8F30-4FA5-A6AC-2E1BBED6C640}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\services\\inventoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{325422BD-8F30-4FA5-A6AC-2E1BBED6C640}|ConvenienceStore.csproj|solutionrelative:services\\inventoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{325422BD-8F30-4FA5-A6AC-2E1BBED6C640}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{325422BD-8F30-4FA5-A6AC-2E1BBED6C640}|ConvenienceStore.csproj|solutionrelative:models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\Windows\\WindowStore\\ConvenienceStore\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InventoryViewModel.cs",
-              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\ViewModels\\InventoryViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\InventoryViewModel.cs",
-              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\ViewModels\\InventoryViewModel.cs",
-              "RelativeToolTip": "ViewModels\\InventoryViewModel.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAwwC8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:36:29.721Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InventoryService.cs",
-              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\Services\\InventoryService.cs",
-              "RelativeDocumentMoniker": "Services\\InventoryService.cs",
-              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\Services\\InventoryService.cs",
-              "RelativeToolTip": "Services\\InventoryService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAswCMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:35:42.893Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductModel.cs",
-              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\Models\\ProductModel.cs",
-              "RelativeDocumentMoniker": "Models\\ProductModel.cs",
-              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\Models\\ProductModel.cs",
-              "RelativeToolTip": "Models\\ProductModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:35:17.837Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

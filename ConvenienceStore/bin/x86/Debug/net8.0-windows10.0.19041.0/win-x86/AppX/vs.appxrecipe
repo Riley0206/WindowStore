@@ -8,46 +8,46 @@
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
-    <PackageIdentityName>d4f9f73f-cc5b-422c-b4fb-e239c0511059</PackageIdentityName>
+    <PackageIdentityName>9a8894fd-c638-49c2-9096-fd526a99019d</PackageIdentityName>
     <PackageIdentityPublisher>CN=vohun</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\Windows\WindowStore\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\AppX</LayoutDir>
-    <RegisteredManifestChecksum>16BD90CB55040C511A8AE7E669C0605E694284582958DD5BE2376BA96B8BB97C</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>d4f9f73f-cc5b-422c-b4fb-e239c0511059_1.0.0.0_x86__bkhg02gx775sp</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>d4f9f73f-cc5b-422c-b4fb-e239c0511059_bkhg02gx775sp!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>d4f9f73f-cc5b-422c-b4fb-e239c0511059</RegisteredPackageID>
+    <LayoutDir>D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\AppX</LayoutDir>
+    <RegisteredManifestChecksum>5039377F447D631BCF956609F946EDC7F7B514C8C9DE1F0BAF58A782A5CDF032</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>9a8894fd-c638-49c2-9096-fd526a99019d_1.0.0.0_x86__bkhg02gx775sp</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>9a8894fd-c638-49c2-9096-fd526a99019d_bkhg02gx775sp!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>9a8894fd-c638-49c2-9096-fd526a99019d</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=vohun</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\AppxManifest.xml">
+    <AppXManifest Include="D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-11-01T14:31:37.810</Modified>
+      <Modified>2024-11-02T17:40:52.569</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\resources.pri">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-11-01T14:31:37.615</Modified>
+      <Modified>2024-11-02T17:32:59.458</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.runtimeconfig.json">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.runtimeconfig.json">
       <PackagePath>ConvenienceStore.runtimeconfig.json</PackagePath>
-      <Modified>2024-11-01T14:31:37.561</Modified>
+      <Modified>2024-11-02T17:25:46.171</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.dll">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.dll">
       <PackagePath>ConvenienceStore.dll</PackagePath>
-      <Modified>2024-11-01T14:31:37.384</Modified>
+      <Modified>2024-11-02T17:40:52.338</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\apphost.exe">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\apphost.exe">
       <PackagePath>ConvenienceStore.exe</PackagePath>
-      <Modified>2024-11-01T14:31:37.389</Modified>
+      <Modified>2024-11-02T17:40:52.341</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\vohun\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x86\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x86\native\WebView2Loader.dll</PackagePath>
@@ -789,6 +789,14 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2024-09-09T00:48:40.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\vohun\.nuget\packages\communitytoolkit.mvvm\8.3.2\lib\net8.0-windows10.0.17763\CommunityToolkit.Mvvm.dll">
+      <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
+      <Modified>2024-09-18T11:52:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\vohun\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.DataGrid.dll">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.DataGrid.dll</PackagePath>
+      <Modified>2021-11-18T21:56:52.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\vohun\.nuget\packages\microsoft.windowsappsdk\1.6.240923002\lib\net6.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
       <Modified>2024-09-17T04:17:08.000</Modified>
@@ -877,35 +885,39 @@
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
       <Modified>2024-07-20T08:33:44.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.deps.json">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.deps.json">
       <PackagePath>ConvenienceStore.deps.json</PackagePath>
-      <Modified>2024-11-01T14:31:37.559</Modified>
+      <Modified>2024-11-02T17:25:46.028</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\vohun\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.DataGrid.pri">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.DataGrid.pri</PackagePath>
+      <Modified>2021-11-18T21:49:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2024-10-01T13:09:44.876</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <Modified>2024-10-01T13:09:44.877</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <Modified>2024-10-01T13:09:44.877</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <Modified>2024-10-01T13:09:44.878</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <Modified>2024-10-01T13:09:44.878</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <Modified>2024-10-01T13:09:44.878</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <Modified>2024-10-01T13:09:44.879</Modified>
     </AppxPackagedFile>

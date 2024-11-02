@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Windows\\Project\\ConvenienceStore\\ConvenienceStore.csproj": {}
+    "D:\\Windows\\WindowStore\\ConvenienceStore\\ConvenienceStore.csproj": {}
   },
   "projects": {
-    "D:\\Windows\\Project\\ConvenienceStore\\ConvenienceStore.csproj": {
+    "D:\\Windows\\WindowStore\\ConvenienceStore\\ConvenienceStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Windows\\Project\\ConvenienceStore\\ConvenienceStore.csproj",
+        "projectUniqueName": "D:\\Windows\\WindowStore\\ConvenienceStore\\ConvenienceStore.csproj",
         "projectName": "ConvenienceStore",
-        "projectPath": "D:\\Windows\\Project\\ConvenienceStore\\ConvenienceStore.csproj",
+        "projectPath": "D:\\Windows\\WindowStore\\ConvenienceStore\\ConvenienceStore.csproj",
         "packagesPath": "C:\\Users\\vohun\\.nuget\\packages\\",
-        "outputPath": "D:\\Windows\\Project\\ConvenienceStore\\obj\\",
+        "outputPath": "D:\\Windows\\WindowStore\\ConvenienceStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,14 @@
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "dependencies": {
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.3.2, )"
+            },
+            "CommunityToolkit.WinUI.UI.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
             "Microsoft.Windows.SDK.BuildTools": {
               "target": "Package",
               "version": "[10.0.22621.756, )"

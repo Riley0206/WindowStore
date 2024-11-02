@@ -2,6 +2,38 @@
   "version": 3,
   "targets": {
     "net8.0-windows10.0.19041": {
+      "CommunityToolkit.Mvvm/8.3.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "CommunityToolkit.WinUI.UI.Controls.DataGrid/7.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.0.0"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -297,6 +329,38 @@
       }
     },
     "net8.0-windows10.0.19041/win-arm64": {
+      "CommunityToolkit.Mvvm/8.3.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "CommunityToolkit.WinUI.UI.Controls.DataGrid/7.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.0.0"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -519,6 +583,38 @@
       }
     },
     "net8.0-windows10.0.19041/win-x64": {
+      "CommunityToolkit.Mvvm/8.3.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "CommunityToolkit.WinUI.UI.Controls.DataGrid/7.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.0.0"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -741,6 +837,38 @@
       }
     },
     "net8.0-windows10.0.19041/win-x86": {
+      "CommunityToolkit.Mvvm/8.3.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "CommunityToolkit.WinUI.UI.Controls.DataGrid/7.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.0.0"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -964,6 +1092,69 @@
     }
   },
   "libraries": {
+    "CommunityToolkit.Mvvm/8.3.2": {
+      "sha512": "m8EolE1A0Updj68WTsZSGI6VWb6mUqHPh7QFo0kt7+JPhYMNXRS1ch8TS/oITAdcxTLrwMOp3ku1KjeG1/Zdpg==",
+      "type": "package",
+      "path": "communitytoolkit.mvvm/8.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "analyzers/dotnet/roslyn4.0/cs/CommunityToolkit.Mvvm.CodeFixers.dll",
+        "analyzers/dotnet/roslyn4.0/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/roslyn4.3/cs/CommunityToolkit.Mvvm.CodeFixers.dll",
+        "analyzers/dotnet/roslyn4.3/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "build/CommunityToolkit.Mvvm.FeatureSwitches.targets",
+        "build/CommunityToolkit.Mvvm.SourceGenerators.targets",
+        "build/CommunityToolkit.Mvvm.WindowsSdk.targets",
+        "build/CommunityToolkit.Mvvm.targets",
+        "buildTransitive/CommunityToolkit.Mvvm.FeatureSwitches.targets",
+        "buildTransitive/CommunityToolkit.Mvvm.SourceGenerators.targets",
+        "buildTransitive/CommunityToolkit.Mvvm.WindowsSdk.targets",
+        "buildTransitive/CommunityToolkit.Mvvm.targets",
+        "communitytoolkit.mvvm.8.3.2.nupkg.sha512",
+        "communitytoolkit.mvvm.nuspec",
+        "lib/net6.0/CommunityToolkit.Mvvm.dll",
+        "lib/net6.0/CommunityToolkit.Mvvm.pdb",
+        "lib/net6.0/CommunityToolkit.Mvvm.xml",
+        "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll",
+        "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.pdb",
+        "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.xml",
+        "lib/net8.0/CommunityToolkit.Mvvm.dll",
+        "lib/net8.0/CommunityToolkit.Mvvm.pdb",
+        "lib/net8.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.pdb",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.pdb",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.xml"
+      ]
+    },
+    "CommunityToolkit.WinUI.UI.Controls.DataGrid/7.1.2": {
+      "sha512": "F73oYdYza8zhDwGHdXCZJJMeiDJ6nR97WPe180o7jOX3U90ZIqvU/GtYZdN3/x8DOS48t5GQG70LqxfyIGeaxw==",
+      "type": "package",
+      "path": "communitytoolkit.winui.ui.controls.datagrid/7.1.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "communitytoolkit.winui.ui.controls.datagrid.7.1.2.nupkg.sha512",
+        "communitytoolkit.winui.ui.controls.datagrid.nuspec",
+        "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll",
+        "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.pdb",
+        "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.pri",
+        "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.xml",
+        "lib/net5.0-windows10.0.18362/Design/CommunityToolkit.WinUI.UI.Controls.DataGrid.DesignTools.dll",
+        "lib/net5.0-windows10.0.18362/Design/CommunityToolkit.WinUI.UI.Controls.DataGrid.DesignTools.pdb",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -2019,6 +2210,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows10.0.19041": [
+      "CommunityToolkit.Mvvm >= 8.3.2",
+      "CommunityToolkit.WinUI.UI.Controls.DataGrid >= 7.1.2",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22621.756",
       "Microsoft.WindowsAppSDK >= 1.6.240923002",
       "System.Data.SqlClient >= 4.8.6"
@@ -2031,11 +2224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Windows\\Project\\ConvenienceStore\\ConvenienceStore.csproj",
+      "projectUniqueName": "D:\\Windows\\WindowStore\\ConvenienceStore\\ConvenienceStore.csproj",
       "projectName": "ConvenienceStore",
-      "projectPath": "D:\\Windows\\Project\\ConvenienceStore\\ConvenienceStore.csproj",
+      "projectPath": "D:\\Windows\\WindowStore\\ConvenienceStore\\ConvenienceStore.csproj",
       "packagesPath": "C:\\Users\\vohun\\.nuget\\packages\\",
-      "outputPath": "D:\\Windows\\Project\\ConvenienceStore\\obj\\",
+      "outputPath": "D:\\Windows\\WindowStore\\ConvenienceStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2073,6 +2266,14 @@
       "net8.0-windows10.0.19041": {
         "targetAlias": "net8.0-windows10.0.19041.0",
         "dependencies": {
+          "CommunityToolkit.Mvvm": {
+            "target": "Package",
+            "version": "[8.3.2, )"
+          },
+          "CommunityToolkit.WinUI.UI.Controls.DataGrid": {
+            "target": "Package",
+            "version": "[7.1.2, )"
+          },
           "Microsoft.Windows.SDK.BuildTools": {
             "target": "Package",
             "version": "[10.0.22621.756, )"

@@ -20,5 +20,6 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\vohun\.nuget\packages\microsoft.web.webview2\1.0.2651.64</PkgMicrosoft_Web_WebView2>
     <PkgMicrosoft_WindowsAppSDK Condition=" '$(PkgMicrosoft_WindowsAppSDK)' == '' ">C:\Users\vohun\.nuget\packages\microsoft.windowsappsdk\1.6.240923002</PkgMicrosoft_WindowsAppSDK>
+    <PkgCommunityToolkit_WinUI_UI_Controls_DataGrid Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_DataGrid)' == '' ">C:\Users\vohun\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_DataGrid>
   </PropertyGroup>
 </Project>

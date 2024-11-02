@@ -9,6 +9,8 @@
     ".NETCoreApp,Version=v8.0/win-x86": {
       "ConvenienceStore/1.0.0": {
         "dependencies": {
+          "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.UI.Controls.DataGrid": "7.1.2",
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
           "System.Data.SqlClient": "4.8.6",
@@ -752,6 +754,25 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.3.2": {
+        "runtime": {
+          "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
+            "assemblyVersion": "8.3.0.0",
+            "fileVersion": "8.3.2.1"
+          }
+        }
+      },
+      "CommunityToolkit.WinUI.UI.Controls.DataGrid/7.1.2": {
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.6.240923002"
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.2.1"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Web.WebView2/1.0.2651.64": {
         "native": {
@@ -905,6 +926,20 @@
       "type": "runtimepack",
       "serviceable": false,
       "sha512": ""
+    },
+    "CommunityToolkit.Mvvm/8.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m8EolE1A0Updj68WTsZSGI6VWb6mUqHPh7QFo0kt7+JPhYMNXRS1ch8TS/oITAdcxTLrwMOp3ku1KjeG1/Zdpg==",
+      "path": "communitytoolkit.mvvm/8.3.2",
+      "hashPath": "communitytoolkit.mvvm.8.3.2.nupkg.sha512"
+    },
+    "CommunityToolkit.WinUI.UI.Controls.DataGrid/7.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-F73oYdYza8zhDwGHdXCZJJMeiDJ6nR97WPe180o7jOX3U90ZIqvU/GtYZdN3/x8DOS48t5GQG70LqxfyIGeaxw==",
+      "path": "communitytoolkit.winui.ui.controls.datagrid/7.1.2",
+      "hashPath": "communitytoolkit.winui.ui.controls.datagrid.7.1.2.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",

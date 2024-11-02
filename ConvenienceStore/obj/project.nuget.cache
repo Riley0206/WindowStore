@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PlKqdfFS0go=",
+  "dgSpecHash": "M3hH7vlLGCg=",
   "success": true,
-  "projectFilePath": "D:\\Windows\\Project\\ConvenienceStore\\ConvenienceStore.csproj",
+  "projectFilePath": "D:\\Windows\\WindowStore\\ConvenienceStore\\ConvenienceStore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vohun\\.nuget\\packages\\communitytoolkit.mvvm\\8.3.2\\communitytoolkit.mvvm.8.3.2.nupkg.sha512",
+    "C:\\Users\\vohun\\.nuget\\packages\\communitytoolkit.winui.ui.controls.datagrid\\7.1.2\\communitytoolkit.winui.ui.controls.datagrid.7.1.2.nupkg.sha512",
     "C:\\Users\\vohun\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\vohun\\.nuget\\packages\\microsoft.web.webview2\\1.0.2651.64\\microsoft.web.webview2.1.0.2651.64.nupkg.sha512",
     "C:\\Users\\vohun\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
