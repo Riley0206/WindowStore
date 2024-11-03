@@ -43,7 +43,6 @@ namespace ConvenienceStore.Views
                 Debug.WriteLine($"Stack trace: {ex.StackTrace}");
             }
         }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -152,6 +151,40 @@ namespace ConvenienceStore.Views
                     XamlRoot = this.XamlRoot
                 };
                 await errorDialog.ShowAsync();
+            }
+        }
+
+        private async void DeleteProduct_Click(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel.SelectedProduct == null) return;
+
+            ContentDialog dialog = new ContentDialog
+            {
+                Title = "Xác nhận xóa",
+                Content = $"Bạn có chắc chắn muốn xóa sản phẩm '{ViewModel.SelectedProduct.ProductName}'?",
+                PrimaryButtonText = "Xóa",
+                CloseButtonText = "Hủy",
+                DefaultButton = ContentDialogButton.Close,
+                XamlRoot = this.XamlRoot
+            };
+
+            if (await dialog.ShowAsync() == ContentDialogResult.Primary)
+            {
+                try
+                {
+                    await ViewModel.DeleteProduct(); // Gọi trực tiếp phương thức thay vì qua Command
+                }
+                catch (Exception ex)
+                {
+                    ContentDialog errorDialog = new ContentDialog
+                    {
+                        Title = "Lỗi",
+                        Content = $"Không thể xóa sản phẩm: {ex.Message}",
+                        CloseButtonText = "OK",
+                        XamlRoot = this.XamlRoot
+                    };
+                    await errorDialog.ShowAsync();
+                }
             }
         }
 

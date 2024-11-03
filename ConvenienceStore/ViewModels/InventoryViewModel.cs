@@ -57,6 +57,22 @@ namespace ConvenienceStore.ViewModels
             await LoadData();
         }
 
+        [RelayCommand]
+        public async Task DeleteProduct()
+        {
+            if (SelectedProduct == null) return;
+            try
+            {
+                await _databaseService.DeleteProductAsync(SelectedProduct.ProductID);
+                await LoadData();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error deleting product: {ex.Message}");
+                throw;
+            }
+        }
+
         // Load products and categories from database
         public async Task LoadData()
         {
@@ -68,7 +84,7 @@ namespace ConvenienceStore.ViewModels
                 var categoriesData = await _databaseService.GetCategoriesAsync();
 
                 Debug.WriteLine($"Retrieved {productsData.Count} products and {categoriesData.Count} categories from database");
-                
+
                 AllProducts = new ObservableCollection<Product>(productsData);
                 Products = new ObservableCollection<Product>(productsData);
                 Categories = new ObservableCollection<Category>(categoriesData);
@@ -94,11 +110,9 @@ namespace ConvenienceStore.ViewModels
             var filteredProducts = AllProducts.Where(p => p.CategoryID == categoryId).ToList();
             Products = new ObservableCollection<Product>(filteredProducts);
         }
-
         public void LoadAllProducts()
         {
             Products = new ObservableCollection<Product>(AllProducts);
         }
-
     }
 }

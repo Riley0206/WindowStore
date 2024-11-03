@@ -12,12 +12,10 @@ namespace ConvenienceStore.Services
     public class DatabaseService
     {
         private readonly string _connectionString;
-
         public DatabaseService(string connectionString)
         {
             _connectionString = connectionString;
         }
-
         public async Task<List<Product>> GetProductsAsync()
         {
             var products = new List<Product>();
@@ -68,7 +66,6 @@ namespace ConvenienceStore.Services
                 throw;
             }
         }
-
         public async Task<List<Category>> GetCategoriesAsync()
         {
             var categories = new List<Category>();
@@ -92,7 +89,6 @@ namespace ConvenienceStore.Services
             }
             return categories;
         }
-
         public async Task AddProductAsync(Product product)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -112,7 +108,6 @@ namespace ConvenienceStore.Services
                 }
             }
         }
-
         public async Task UpdateProductQuantityAsync(int productId, int newQuantity)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -125,6 +120,28 @@ namespace ConvenienceStore.Services
                     command.Parameters.AddWithValue("@ProductID", productId);
                     await command.ExecuteNonQueryAsync();
                 }
+            }
+        }
+
+        public async Task DeleteProductAsync(int productId)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    using (SqlCommand command = new SqlCommand(
+                        "DELETE FROM Product WHERE ProductID = @ProductID", connection))
+                    {
+                        command.Parameters.AddWithValue("@ProductID", productId);
+                        await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in DeleteProductAsync: {ex.Message}");
+                throw;
             }
         }
     }

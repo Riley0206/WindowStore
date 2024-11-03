@@ -44,7 +44,7 @@
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate                             >
-                        <TextBlock x:ConnectionId='7'                              Padding="5"/>
+                        <TextBlock x:ConnectionId='8'                              Padding="5"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
@@ -54,7 +54,8 @@
                 <!-- Add and Update Buttons -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
                     <Button x:ConnectionId='4' Content="Thêm sản phẩm mới"                          Margin="0,0,10,0"/>
-                    <Button x:ConnectionId='5' Content="Cập nhật số lượng"                             />
+                    <Button x:ConnectionId='5' Content="Cập nhật số lượng"                              Margin="0,0,10,0"/>
+                    <Button x:ConnectionId='6' Content="Xóa sản phẩm"                             Margin="0,0,10,0"/>
                 </StackPanel>
 
                 <!-- Products DataGrid -->

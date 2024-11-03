@@ -54,7 +54,8 @@
                 <!-- Add and Update Buttons -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
                     <Button Content="Thêm sản phẩm mới" Click="AddProduct_Click" Margin="0,0,10,0"/>
-                    <Button Content="Cập nhật số lượng" Click="UpdateQuantity_Click"/>
+                    <Button Content="Cập nhật số lượng" Click="UpdateQuantity_Click" Margin="0,0,10,0"/>
+                    <Button Content="Xóa sản phẩm" Click="DeleteProduct_Click" Margin="0,0,10,0"/>
                 </StackPanel>
 
                 <!-- Products DataGrid -->
