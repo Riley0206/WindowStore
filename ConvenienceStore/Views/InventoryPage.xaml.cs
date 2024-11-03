@@ -5,6 +5,7 @@ using Microsoft.UI.Xaml;
 using System;
 using ConvenienceStore.Models;
 using ConvenienceStore.Services;
+using System.Diagnostics;
 
 namespace ConvenienceStore.Views
 {
@@ -14,8 +15,10 @@ namespace ConvenienceStore.Views
 
         public InventoryPage()
         {
+            Debug.WriteLine("Initializing InventoryPage");
+
             // Khởi tạo ViewModel với DatabaseService
-            string connectionString = "Data Source=.\\SQL22;Initial Catalog=ConvenienceStoreDB;Integrated Security=True;Trust Server Certificate=True";
+            string connectionString = @"Data Source=.\SQL22;Initial Catalog=ConvenienceStoreDB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
             var databaseService = new DatabaseService(connectionString);
             ViewModel = new InventoryViewModel(databaseService);
 
@@ -25,9 +28,20 @@ namespace ConvenienceStore.Views
             this.Loaded += InventoryPage_Loaded;
         }
 
-        private void InventoryPage_Loaded(object sender, RoutedEventArgs e)
+        private async void InventoryPage_Loaded(object sender, RoutedEventArgs e)
         {
-            // Có thể thêm các khởi tạo bổ sung khi page được load
+            Debug.WriteLine("Page Loaded event fired");
+            try
+            {
+                await ViewModel.LoadData();
+                Debug.WriteLine($"Data loaded - Products count: {ViewModel.Products?.Count ?? 0}");
+                Debug.WriteLine($"Categories count: {ViewModel.Categories?.Count ?? 0}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error loading data: {ex.Message}");
+                Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

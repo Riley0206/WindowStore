@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
+using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace ConvenienceStore.ViewModels
 {
@@ -23,9 +25,11 @@ namespace ConvenienceStore.ViewModels
 
         public InventoryViewModel(DatabaseService databaseService)
         {
-            _databaseService = databaseService;
-            LoadData().ConfigureAwait(false);
+            _databaseService = databaseService ?? throw new ArgumentNullException(nameof(databaseService));
+            Products = new ObservableCollection<Product>();
+            Categories = new ObservableCollection<Category>();
         }
+
 
         // Command to add product
         [RelayCommand]
@@ -46,16 +50,33 @@ namespace ConvenienceStore.ViewModels
         }
 
         // Load products and categories from database
-        private async Task LoadData()
+        public async Task LoadData()
         {
             try
             {
-                Products = new ObservableCollection<Product>(await _databaseService.GetProductsAsync());
-                Categories = new ObservableCollection<Category>(await _databaseService.GetCategoriesAsync());
+                Debug.WriteLine("Starting to load data");
+
+                var productsData = await _databaseService.GetProductsAsync();
+                var categoriesData = await _databaseService.GetCategoriesAsync();
+
+                Debug.WriteLine($"Retrieved {productsData.Count} products and {categoriesData.Count} categories from database");
+
+                Products = new ObservableCollection<Product>(productsData);
+                Categories = new ObservableCollection<Category>(categoriesData);
+
+                Debug.WriteLine("Data loaded successfully");
+            }
+            catch (SqlException ex)
+            {
+                Debug.WriteLine($"SQL Error: {ex.Message}");
+                Debug.WriteLine($"Error Number: {ex.Number}");
+                throw;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading data: {ex.Message}");
+                Debug.WriteLine($"Error loading data: {ex.Message}");
+                Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+                throw;
             }
         }
     }

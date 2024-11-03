@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace ConvenienceStore.Services
 {
@@ -20,38 +21,52 @@ namespace ConvenienceStore.Services
         public async Task<List<Product>> GetProductsAsync()
         {
             var products = new List<Product>();
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-                await connection.OpenAsync();
-                using (SqlCommand command = new SqlCommand(
-                    @"SELECT p.*, c.CategoryName 
+                Debug.WriteLine("Attempting to connect to database...");
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    Debug.WriteLine("Database connection successful");
+
+                    using (SqlCommand command = new SqlCommand(
+                        @"SELECT p.*, c.CategoryName 
                   FROM Product p 
                   JOIN Category c ON p.CategoryID = c.CategoryID", connection))
-                {
-                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
                     {
-                        while (await reader.ReadAsync())
+                        Debug.WriteLine("Executing SQL query...");
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
-                            products.Add(new Product
+                            while (await reader.ReadAsync())
                             {
-                                ProductID = reader.GetInt32(reader.GetOrdinal("ProductID")),
-                                ProductName = reader.GetString(reader.GetOrdinal("ProductName")),
-                                CategoryID = reader.GetInt32(reader.GetOrdinal("CategoryID")),
-                                Brand = reader.GetString(reader.GetOrdinal("Brand")),
-                                QuantityInStock = reader.GetInt32(reader.GetOrdinal("QuantityInStock")),
-                                ReorderLevel = reader.GetInt32(reader.GetOrdinal("ReorderLevel")),
-                                Price = reader.GetDecimal(reader.GetOrdinal("Price")),
-                                Category = new Category
+                                products.Add(new Product
                                 {
+                                    ProductID = reader.GetInt32(reader.GetOrdinal("ProductID")),
+                                    ProductName = reader.GetString(reader.GetOrdinal("ProductName")),
                                     CategoryID = reader.GetInt32(reader.GetOrdinal("CategoryID")),
-                                    CategoryName = reader.GetString(reader.GetOrdinal("CategoryName"))
-                                }
-                            });
+                                    Brand = reader.GetString(reader.GetOrdinal("Brand")),
+                                    QuantityInStock = reader.GetInt32(reader.GetOrdinal("QuantityInStock")),
+                                    ReorderLevel = reader.GetInt32(reader.GetOrdinal("ReorderLevel")),
+                                    Price = reader.GetDecimal(reader.GetOrdinal("Price")),
+                                    Category = new Category
+                                    {
+                                        CategoryID = reader.GetInt32(reader.GetOrdinal("CategoryID")),
+                                        CategoryName = reader.GetString(reader.GetOrdinal("CategoryName"))
+                                    }
+                                });
+                            }
                         }
                     }
                 }
+                Debug.WriteLine($"Retrieved {products.Count} products");
+                return products;
             }
-            return products;
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in GetProductsAsync: {ex.Message}");
+                Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+                throw;
+            }
         }
 
         public async Task<List<Category>> GetCategoriesAsync()
