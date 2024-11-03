@@ -10,6 +10,7 @@
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -43,38 +44,39 @@
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate                             >
-                        <TextBlock x:ConnectionId='5'                              Padding="5"/>
+                        <TextBlock x:ConnectionId='7'                              Padding="5"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <!-- Products DataGrid -->
-            <controls:DataGrid x:ConnectionId='3'
-                Grid.Column="1"
-                x:Name="ProductsDataGrid"
-                                                                      
-                                                                              
-                AutoGenerateColumns="False"
-                IsReadOnly="True"
-                GridLinesVisibility="All"
-                AlternatingRowBackground="{ThemeResource SystemControlAltMediumLowAcrylicElementMediumBrush}">
-                <controls:DataGrid.Columns>
-                    <controls:DataGridTextColumn Header="Mã SP" 
-                                               Binding="{Binding ProductID}"/>
-                    <controls:DataGridTextColumn Header="Tên sản phẩm" 
-                                               Binding="{Binding ProductName}"/>
-                    <controls:DataGridTextColumn Header="Thương hiệu" 
-                                               Binding="{Binding Brand}"/>
-                    <controls:DataGridTextColumn Header="Số lượng" 
-                                               Binding="{Binding QuantityInStock}"/>
-                    <controls:DataGridTextColumn Header="Mức tồn tối thiểu" 
-                                               Binding="{Binding ReorderLevel}"/>
-                    <controls:DataGridTextColumn Header="Giá" 
-                                               Binding="{Binding Price}"/>
-                    <controls:DataGridTextColumn Header="Danh mục" 
-                                               Binding="{Binding Category.CategoryName}"/>
-                </controls:DataGrid.Columns>
-            </controls:DataGrid>
+            <!-- Products DataGrid and Buttons -->
+            <StackPanel Grid.Column="1">
+                <!-- Add and Update Buttons -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                    <Button x:ConnectionId='4' Content="Thêm sản phẩm mới"                          Margin="0,0,10,0"/>
+                    <Button x:ConnectionId='5' Content="Cập nhật số lượng"                             />
+                </StackPanel>
+
+                <!-- Products DataGrid -->
+                <controls:DataGrid x:ConnectionId='3'
+                    x:Name="ProductsDataGrid"
+                                                                          
+                                                                                  
+                    AutoGenerateColumns="False"
+                    IsReadOnly="True"
+                    GridLinesVisibility="All"
+                    AlternatingRowBackground="{ThemeResource SystemControlAltMediumLowAcrylicElementMediumBrush}">
+                    <controls:DataGrid.Columns>
+                        <controls:DataGridTextColumn Header="Mã SP" Binding="{Binding ProductID}"/>
+                        <controls:DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding ProductName}"/>
+                        <controls:DataGridTextColumn Header="Thương hiệu" Binding="{Binding Brand}"/>
+                        <controls:DataGridTextColumn Header="Số lượng" Binding="{Binding QuantityInStock}"/>
+                        <controls:DataGridTextColumn Header="Mức tồn tối thiểu" Binding="{Binding ReorderLevel}"/>
+                        <controls:DataGridTextColumn Header="Giá" Binding="{Binding Price}"/>
+                        <controls:DataGridTextColumn Header="Danh mục" Binding="{Binding Category.CategoryName}"/>
+                    </controls:DataGrid.Columns>
+                </controls:DataGrid>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\Windows\\WindowStore\\ConvenienceStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\views\\inventorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:views\\inventorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\views\\inventorypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:views\\inventorypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\viewmodels\\inventoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:viewmodels\\inventoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\views\\inventorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:views\\inventorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InventoryPage.xaml.cs",
-              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\InventoryPage.xaml.cs",
-              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml.cs",
-              "RelativeToolTip": "Views\\InventoryPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAACiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T02:49:31.036Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -49,35 +32,35 @@
               "RelativeDocumentMoniker": "ViewModels\\InventoryViewModel.cs",
               "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\ViewModels\\InventoryViewModel.cs",
               "RelativeToolTip": "ViewModels\\InventoryViewModel.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAADwv1AAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T02:49:23.01Z",
+              "WhenOpened": "2024-11-03T03:41:26.01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DatabaseService.cs",
-              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\Services\\DatabaseService.cs",
-              "RelativeDocumentMoniker": "Services\\DatabaseService.cs",
-              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\Services\\DatabaseService.cs",
-              "RelativeToolTip": "Services\\DatabaseService.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAIwEUAAAAJAAAAAAAAAA==",
+              "Title": "InventoryPage.xaml.cs",
+              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\InventoryPage.xaml.cs",
+              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml.cs",
+              "RelativeToolTip": "Views\\InventoryPage.xaml.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAAAJsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T02:48:58.598Z",
+              "WhenOpened": "2024-11-03T03:40:14.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "InventoryPage.xaml",
               "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml",
               "RelativeDocumentMoniker": "Views\\InventoryPage.xaml",
-              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml",
-              "RelativeToolTip": "Views\\InventoryPage.xaml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml*",
+              "RelativeToolTip": "Views\\InventoryPage.xaml*",
+              "ViewState": "AgIAACYAAAAAAAAAAAAIwFIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-03T02:54:16.188Z",
+              "WhenOpened": "2024-11-03T03:39:59.612Z",
               "EditorCaption": ""
             }
           ]

@@ -9,8 +9,12 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Frame x:ConnectionId='2' x:Name="MainFrame" />
- 
+        <NavigationView x:ConnectionId='2' PaneDisplayMode="Left"                                                    CompactPaneLength="48">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Quản lý kho hàng" Tag="InventoryPage" Icon="Shop"/>
+            </NavigationView.MenuItems>
+            <Frame x:ConnectionId='3' x:Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </NavigationView>
     </Grid>
 </Window>
 

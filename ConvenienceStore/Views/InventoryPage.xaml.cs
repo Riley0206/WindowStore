@@ -59,35 +59,42 @@ namespace ConvenienceStore.Views
         // Event handler cho nút thêm sản phẩm mới
         private async void AddProduct_Click(object sender, RoutedEventArgs e)
         {
-            try
+            var dialog = new ContentDialog
             {
-                // Hiển thị dialog thêm sản phẩm mới
-                var dialog = new ContentDialog()
+                Title = "Thêm sản phẩm mới",
+                PrimaryButtonText = "Thêm",
+                CloseButtonText = "Hủy",
+                DefaultButton = ContentDialogButton.Primary,
+                XamlRoot = this.XamlRoot
+            };
+
+            var stackPanel = new StackPanel();
+            var productNameBox = new TextBox { Header = "Tên sản phẩm" };
+            var brandBox = new TextBox { Header = "Thương hiệu" };
+            var quantityBox = new NumberBox { Header = "Số lượng tồn kho", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
+            var reorderLevelBox = new NumberBox { Header = "Mức tồn kho tối thiểu", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
+            var priceBox = new NumberBox { Header = "Giá", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
+
+            stackPanel.Children.Add(productNameBox);
+            stackPanel.Children.Add(brandBox);
+            stackPanel.Children.Add(quantityBox);
+            stackPanel.Children.Add(reorderLevelBox);
+            stackPanel.Children.Add(priceBox);
+
+            dialog.Content = stackPanel;
+
+            if (await dialog.ShowAsync() == ContentDialogResult.Primary)
+            {
+                var newProduct = new Product
                 {
-                    Title = "Thêm sản phẩm mới",
-                    PrimaryButtonText = "Thêm",
-                    CloseButtonText = "Hủy",
-                    DefaultButton = ContentDialogButton.Primary,
-                    XamlRoot = this.XamlRoot
+                    ProductName = productNameBox.Text,
+                    Brand = brandBox.Text,
+                    QuantityInStock = (int)quantityBox.Value,
+                    ReorderLevel = (int)reorderLevelBox.Value,
+                    Price = (decimal)priceBox.Value
                 };
 
-                var result = await dialog.ShowAsync();
-                if (result == ContentDialogResult.Primary)
-                {
-                    await ViewModel.AddProductCommand.ExecuteAsync(null);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Xử lý lỗi và hiển thị thông báo cho người dùng
-                ContentDialog errorDialog = new ContentDialog()
-                {
-                    Title = "Lỗi",
-                    Content = $"Không thể thêm sản phẩm: {ex.Message}",
-                    CloseButtonText = "OK",
-                    XamlRoot = this.XamlRoot
-                };
-                await errorDialog.ShowAsync();
+                await ViewModel.AddProductCommand.ExecuteAsync(newProduct);
             }
         }
 
@@ -153,8 +160,11 @@ namespace ConvenienceStore.Views
         {
             if (sender is ListView listView && listView.SelectedItem is Category selectedCategory)
             {
-                // Lọc sản phẩm theo danh mục được chọn
-                //ViewModel.FilterProductsByCategory(selectedCategory.CategoryID);
+                ViewModel.FilterProductsByCategory(selectedCategory.CategoryID);
+            }
+            else
+            {
+                ViewModel.LoadAllProducts();
             }
         }
 

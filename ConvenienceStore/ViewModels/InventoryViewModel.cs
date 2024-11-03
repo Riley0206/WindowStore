@@ -7,6 +7,7 @@ using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Linq;
 
 namespace ConvenienceStore.ViewModels
 {
@@ -22,6 +23,13 @@ namespace ConvenienceStore.ViewModels
 
         [ObservableProperty]
         private Product selectedProduct;
+
+        private ObservableCollection<Product> allProducts;
+        public ObservableCollection<Product> AllProducts
+        {
+            get => allProducts;
+            set => SetProperty(ref allProducts, value);
+        }
 
         public InventoryViewModel(DatabaseService databaseService)
         {
@@ -60,7 +68,8 @@ namespace ConvenienceStore.ViewModels
                 var categoriesData = await _databaseService.GetCategoriesAsync();
 
                 Debug.WriteLine($"Retrieved {productsData.Count} products and {categoriesData.Count} categories from database");
-
+                
+                AllProducts = new ObservableCollection<Product>(productsData);
                 Products = new ObservableCollection<Product>(productsData);
                 Categories = new ObservableCollection<Category>(categoriesData);
 
@@ -79,5 +88,17 @@ namespace ConvenienceStore.ViewModels
                 throw;
             }
         }
+
+        public void FilterProductsByCategory(int categoryId)
+        {
+            var filteredProducts = AllProducts.Where(p => p.CategoryID == categoryId).ToList();
+            Products = new ObservableCollection<Product>(filteredProducts);
+        }
+
+        public void LoadAllProducts()
+        {
+            Products = new ObservableCollection<Product>(AllProducts);
+        }
+
     }
 }

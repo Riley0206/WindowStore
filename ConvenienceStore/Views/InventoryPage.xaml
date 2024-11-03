@@ -10,6 +10,7 @@
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -48,33 +49,34 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <!-- Products DataGrid -->
-            <controls:DataGrid
-                Grid.Column="1"
-                x:Name="ProductsDataGrid"
-                ItemsSource="{x:Bind ViewModel.Products, Mode=OneWay}"
-                SelectedItem="{x:Bind ViewModel.SelectedProduct, Mode=TwoWay}"
-                AutoGenerateColumns="False"
-                IsReadOnly="True"
-                GridLinesVisibility="All"
-                AlternatingRowBackground="{ThemeResource SystemControlAltMediumLowAcrylicElementMediumBrush}">
-                <controls:DataGrid.Columns>
-                    <controls:DataGridTextColumn Header="Mã SP" 
-                                               Binding="{Binding ProductID}"/>
-                    <controls:DataGridTextColumn Header="Tên sản phẩm" 
-                                               Binding="{Binding ProductName}"/>
-                    <controls:DataGridTextColumn Header="Thương hiệu" 
-                                               Binding="{Binding Brand}"/>
-                    <controls:DataGridTextColumn Header="Số lượng" 
-                                               Binding="{Binding QuantityInStock}"/>
-                    <controls:DataGridTextColumn Header="Mức tồn tối thiểu" 
-                                               Binding="{Binding ReorderLevel}"/>
-                    <controls:DataGridTextColumn Header="Giá" 
-                                               Binding="{Binding Price}"/>
-                    <controls:DataGridTextColumn Header="Danh mục" 
-                                               Binding="{Binding Category.CategoryName}"/>
-                </controls:DataGrid.Columns>
-            </controls:DataGrid>
+            <!-- Products DataGrid and Buttons -->
+            <StackPanel Grid.Column="1">
+                <!-- Add and Update Buttons -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                    <Button Content="Thêm sản phẩm mới" Click="AddProduct_Click" Margin="0,0,10,0"/>
+                    <Button Content="Cập nhật số lượng" Click="UpdateQuantity_Click"/>
+                </StackPanel>
+
+                <!-- Products DataGrid -->
+                <controls:DataGrid
+                    x:Name="ProductsDataGrid"
+                    ItemsSource="{x:Bind ViewModel.Products, Mode=OneWay}"
+                    SelectedItem="{x:Bind ViewModel.SelectedProduct, Mode=TwoWay}"
+                    AutoGenerateColumns="False"
+                    IsReadOnly="True"
+                    GridLinesVisibility="All"
+                    AlternatingRowBackground="{ThemeResource SystemControlAltMediumLowAcrylicElementMediumBrush}">
+                    <controls:DataGrid.Columns>
+                        <controls:DataGridTextColumn Header="Mã SP" Binding="{Binding ProductID}"/>
+                        <controls:DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding ProductName}"/>
+                        <controls:DataGridTextColumn Header="Thương hiệu" Binding="{Binding Brand}"/>
+                        <controls:DataGridTextColumn Header="Số lượng" Binding="{Binding QuantityInStock}"/>
+                        <controls:DataGridTextColumn Header="Mức tồn tối thiểu" Binding="{Binding ReorderLevel}"/>
+                        <controls:DataGridTextColumn Header="Giá" Binding="{Binding Price}"/>
+                        <controls:DataGridTextColumn Header="Danh mục" Binding="{Binding Category.CategoryName}"/>
+                    </controls:DataGrid.Columns>
+                </controls:DataGrid>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>
