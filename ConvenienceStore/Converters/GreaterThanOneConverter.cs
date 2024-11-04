@@ -11,9 +11,9 @@ namespace ConvenienceStore.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value is int number)
+            if (value is int intValue)
             {
-                return number > 1;
+                return intValue > 1;
             }
             return false;
         }

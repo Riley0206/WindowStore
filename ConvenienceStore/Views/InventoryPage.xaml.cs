@@ -34,8 +34,6 @@ namespace ConvenienceStore.Views
             try
             {
                 await ViewModel.LoadData();
-                Debug.WriteLine($"Data loaded - Products count: {ViewModel.Products?.Count ?? 0}");
-                Debug.WriteLine($"Categories count: {ViewModel.Categories?.Count ?? 0}");
             }
             catch (Exception ex)
             {
@@ -74,28 +72,52 @@ namespace ConvenienceStore.Views
             var reorderLevelBox = new NumberBox { Header = "Mức tồn kho tối thiểu", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
             var priceBox = new NumberBox { Header = "Giá", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
 
+            var categoryComboBox = new ComboBox
+            {
+                Header = "Danh mục sản phẩm",
+                ItemsSource = ViewModel.Categories,
+                DisplayMemberPath = "CategoryName"
+            };
+
             stackPanel.Children.Add(productNameBox);
             stackPanel.Children.Add(brandBox);
             stackPanel.Children.Add(quantityBox);
             stackPanel.Children.Add(reorderLevelBox);
             stackPanel.Children.Add(priceBox);
+            stackPanel.Children.Add(categoryComboBox);
 
             dialog.Content = stackPanel;
 
             if (await dialog.ShowAsync() == ContentDialogResult.Primary)
             {
+                if (categoryComboBox.SelectedItem == null)
+                {
+                    var errorDialog = new ContentDialog
+                    {
+                        Title = "Lỗi",
+                        Content = "Vui lòng chọn danh mục sản phẩm",
+                        CloseButtonText = "OK",
+                        XamlRoot = this.XamlRoot
+                    };
+                    await errorDialog.ShowAsync();
+                    return;
+                }
+
                 var newProduct = new Product
                 {
                     ProductName = productNameBox.Text,
                     Brand = brandBox.Text,
                     QuantityInStock = (int)quantityBox.Value,
                     ReorderLevel = (int)reorderLevelBox.Value,
-                    Price = (decimal)priceBox.Value
+                    Price = (decimal)priceBox.Value,
+                    CategoryID = ((Category)categoryComboBox.SelectedItem).CategoryID
                 };
 
+                // Gọi trực tiếp command với tham số là newProduct
                 await ViewModel.AddProductCommand.ExecuteAsync(newProduct);
             }
         }
+
 
         // Event handler cho việc cập nhật số lượng
         private async void UpdateQuantity_Click(object sender, RoutedEventArgs e)
@@ -242,5 +264,16 @@ namespace ConvenienceStore.Views
                 }
             }
         }
+
+        private void PreviousPage_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.PreviousPage();
+        }
+
+        private void NextPage_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.NextPage();
+        }
+
     }
 }
