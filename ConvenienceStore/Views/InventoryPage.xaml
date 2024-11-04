@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ConvenienceStore.Views.InventoryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConvenienceStore.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:ConvenienceStore.Models"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0" 
+                   Text="Quản lý kho hàng" 
+                   Style="{StaticResource HeaderTextBlockStyle}"
+                   Margin="0,0,0,20"/>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Categories List -->
+            <ListView x:Name="CategoryList"
+                ItemsSource="{x:Bind ViewModel.Categories, Mode=OneWay}"
+                SelectionChanged="CategoryList_SelectionChanged"
+                BorderThickness="1"
+                BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
+                Margin="0,0,20,0">
+                <ListView.Header>
+                    <TextBlock Text="Danh mục sản phẩm" 
+                             Style="{StaticResource SubtitleTextBlockStyle}"
+                             Margin="10"/>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Category">
+                        <TextBlock Text="{x:Bind CategoryName}" Padding="5"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Products DataGrid and Buttons -->
+            <StackPanel Grid.Column="1">
+                <!-- Add and Update Buttons -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                    <Button Content="Thêm sản phẩm mới" Click="AddProduct_Click" Margin="0,0,10,0"/>
+                    <Button Content="Cập nhật số lượng" Click="UpdateQuantity_Click" Margin="0,0,10,0"/>
+                    <Button Content="Xóa sản phẩm" Click="DeleteProduct_Click" Margin="0,0,10,0"/>
+                </StackPanel>
+
+                <!-- Products DataGrid -->
+                <controls:DataGrid
+                    x:Name="ProductsDataGrid"
+                    ItemsSource="{x:Bind ViewModel.DisplayedProducts, Mode=OneWay}"
+                    SelectedItem="{x:Bind ViewModel.SelectedProduct, Mode=TwoWay}"
+                    AutoGenerateColumns="False"
+                    IsReadOnly="True"
+                    GridLinesVisibility="All"
+                    AlternatingRowBackground="{ThemeResource SystemControlAltMediumLowAcrylicElementMediumBrush}">
+                    <controls:DataGrid.Columns>
+                        <controls:DataGridTextColumn Header="Mã SP" Binding="{Binding ProductID}"/>
+                        <controls:DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding ProductName}"/>
+                        <controls:DataGridTextColumn Header="Thương hiệu" Binding="{Binding Brand}"/>
+                        <controls:DataGridTextColumn Header="Số lượng" Binding="{Binding QuantityInStock}"/>
+                        <controls:DataGridTextColumn Header="Mức tồn tối thiểu" Binding="{Binding ReorderLevel}"/>
+                        <controls:DataGridTextColumn Header="Giá" Binding="{Binding Price}"/>
+                        <controls:DataGridTextColumn Header="Danh mục" Binding="{Binding Category.CategoryName}"/>
+                    </controls:DataGrid.Columns>
+                </controls:DataGrid>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Button Content="Trang trước" Click="PreviousPage_Click" 
+                            IsEnabled="{x:Bind ViewModel.CurrentPage, Mode=OneWay, Converter={StaticResource GreaterThanOneConverter}}" />
+                    <TextBlock Text="{x:Bind ViewModel.CurrentPage, Mode=OneWay}" 
+                               Margin="10,0" VerticalAlignment="Center" />
+                    <Button Content="Trang sau" Click="NextPage_Click" 
+                            IsEnabled="{x:Bind ViewModel.HasNextPage, Mode=OneWay}" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

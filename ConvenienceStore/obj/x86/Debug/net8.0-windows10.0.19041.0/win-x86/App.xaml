@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+    x:Class="ConvenienceStore.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConvenienceStore.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <!-- Other merged dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Register converters -->
+            <local:NullToBoolConverter x:Key="NullToBoolConverter"/>
+            <local:GreaterThanOneConverter x:Key="GreaterThanOneConverter"/>
+            <local:LessThanTotalPagesConverter x:Key="LessThanTotalPagesConverter"/>
+
+            <!-- Other app resources here -->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+
