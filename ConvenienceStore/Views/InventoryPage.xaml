@@ -57,6 +57,11 @@
 
             <!-- Products DataGrid and Buttons -->
             <StackPanel Grid.Column="1">
+                <!-- Search Box -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                    <TextBox x:Name="SearchBox" Width="200" PlaceholderText="Tìm kiếm sản phẩm..." TextChanged="SearchButton_Click"/>
+                </StackPanel>
+
                 <!-- Add and Update Buttons -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
                     <Button Content="Thêm sản phẩm mới" Click="AddProduct_Click" Margin="0,0,10,0"/>

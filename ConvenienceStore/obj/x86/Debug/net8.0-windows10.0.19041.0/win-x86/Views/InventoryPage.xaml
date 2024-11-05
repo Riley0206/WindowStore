@@ -50,13 +50,18 @@
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate                             >
-                        <TextBlock x:ConnectionId='11'                              Padding="5"/>
+                        <TextBlock x:ConnectionId='12'                              Padding="5"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
             <!-- Products DataGrid and Buttons -->
             <StackPanel Grid.Column="1">
+                <!-- Search Box -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                    <TextBox x:ConnectionId='10' x:Name="SearchBox" Width="200" PlaceholderText="Tìm kiếm sản phẩm..."                                 />
+                </StackPanel>
+
                 <!-- Add and Update Buttons -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
                     <Button x:ConnectionId='7' Content="Thêm sản phẩm mới"                          Margin="0,0,10,0"/>

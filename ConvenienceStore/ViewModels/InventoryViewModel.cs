@@ -186,6 +186,27 @@ namespace ConvenienceStore.ViewModels
             CurrentPage = 1;
             UpdateDisplayedProducts();
         }
+
+        public void SearchProductsByName(string productName)
+        {
+            if (string.IsNullOrWhiteSpace(productName))
+            {
+                LoadAllProducts();
+            }
+            else
+            {
+                var filteredProducts = AllProducts
+                    .Where(p => p.ProductName.Contains(productName, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+                DisplayedProducts = new ObservableCollection<Product>(filteredProducts);
+
+                // Cập nhật số trang và hiển thị trang đầu tiên của kết quả tìm kiếm
+                CalculateTotalPages();
+                CurrentPage = 1;
+                UpdateDisplayedProducts();
+            }
+        }
         #endregion
 
         #region Pagination Methods

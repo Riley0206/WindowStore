@@ -211,6 +211,13 @@ namespace ConvenienceStore.Views
             }
         }
 
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            string searchQuery = SearchBox.Text;
+            ViewModel.SearchProductsByName(searchQuery);
+        }
+
+
         // Event handler cho việc lọc sản phẩm theo danh mục
         private void CategoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
