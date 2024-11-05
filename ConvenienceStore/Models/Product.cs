@@ -13,8 +13,9 @@ namespace ConvenienceStore.Models
         public int CategoryID { get; set; }
         public string Brand { get; set; }
         public int QuantityInStock { get; set; }
-        public int ReorderLevel { get; set; }
         public decimal Price { get; set; }
+        public decimal CostPrice { get; set; }
+        public string Unit { get; set; }    
         public Category Category { get; set; }
     }
 }

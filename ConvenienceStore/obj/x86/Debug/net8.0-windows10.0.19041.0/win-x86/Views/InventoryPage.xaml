@@ -8,8 +8,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="using:ConvenienceStore.Models"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:converters="using:ConvenienceStore.Converters"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <!-- Định nghĩa converter -->
+    <Page.Resources>
+        <converters:CurrencyConverter x:Key="CurrencyConverter"/>
+    </Page.Resources>
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
@@ -71,10 +77,23 @@
                         <controls:DataGridTextColumn Header="Mã SP" Binding="{Binding ProductID}"/>
                         <controls:DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding ProductName}"/>
                         <controls:DataGridTextColumn Header="Thương hiệu" Binding="{Binding Brand}"/>
-                        <controls:DataGridTextColumn Header="Số lượng" Binding="{Binding QuantityInStock}"/>
-                        <controls:DataGridTextColumn Header="Mức tồn tối thiểu" Binding="{Binding ReorderLevel}"/>
-                        <controls:DataGridTextColumn Header="Giá" Binding="{Binding Price}"/>
                         <controls:DataGridTextColumn Header="Danh mục" Binding="{Binding Category.CategoryName}"/>
+                        <controls:DataGridTextColumn Header="Số lượng tồn" Binding="{Binding QuantityInStock}"/>
+                        <controls:DataGridTextColumn Header="Đơn vị" Binding="{Binding Unit}"/>
+
+                        <!-- Cột Giá bán với CurrencyConverter -->
+                        <controls:DataGridTextColumn Header="Giá bán">
+                            <controls:DataGridTextColumn.Binding>
+                                <Binding Path="Price" Converter="{StaticResource CurrencyConverter}"/>
+                            </controls:DataGridTextColumn.Binding>
+                        </controls:DataGridTextColumn>
+
+                        <!-- Cột Giá vốn với CurrencyConverter -->
+                        <controls:DataGridTextColumn Header="Giá vốn">
+                            <controls:DataGridTextColumn.Binding>
+                                <Binding Path="CostPrice" Converter="{StaticResource CurrencyConverter}"/>
+                            </controls:DataGridTextColumn.Binding>
+                        </controls:DataGridTextColumn>
                     </controls:DataGrid.Columns>
                 </controls:DataGrid>
 

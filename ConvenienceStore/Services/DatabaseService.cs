@@ -29,8 +29,8 @@ namespace ConvenienceStore.Services
 
                     using (SqlCommand command = new SqlCommand(
                         @"SELECT p.*, c.CategoryName 
-                  FROM Product p 
-                  JOIN Category c ON p.CategoryID = c.CategoryID", connection))
+                FROM Product p 
+                JOIN Category c ON p.CategoryID = c.CategoryID", connection))
                     {
                         Debug.WriteLine("Executing SQL query...");
                         using (SqlDataReader reader = await command.ExecuteReaderAsync())
@@ -44,8 +44,9 @@ namespace ConvenienceStore.Services
                                     CategoryID = reader.GetInt32(reader.GetOrdinal("CategoryID")),
                                     Brand = reader.GetString(reader.GetOrdinal("Brand")),
                                     QuantityInStock = reader.GetInt32(reader.GetOrdinal("QuantityInStock")),
-                                    ReorderLevel = reader.GetInt32(reader.GetOrdinal("ReorderLevel")),
                                     Price = reader.GetDecimal(reader.GetOrdinal("Price")),
+                                    CostPrice = reader.GetDecimal(reader.GetOrdinal("CostPrice")),
+                                    Unit = reader.GetString(reader.GetOrdinal("Unit")),
                                     Category = new Category
                                     {
                                         CategoryID = reader.GetInt32(reader.GetOrdinal("CategoryID")),
@@ -95,15 +96,16 @@ namespace ConvenienceStore.Services
             {
                 await connection.OpenAsync();
                 using (SqlCommand command = new SqlCommand(
-                    @"INSERT INTO Product (ProductName, CategoryID, Brand, QuantityInStock, ReorderLevel, Price) 
-                  VALUES (@ProductName, @CategoryID, @Brand, @QuantityInStock, @ReorderLevel, @Price)", connection))
+                    @"INSERT INTO Product (ProductName, CategoryID, Brand, QuantityInStock, Price, CostPrice, Unit) 
+            VALUES (@ProductName, @CategoryID, @Brand, @QuantityInStock, @Price, @CostPrice, @Unit)", connection))
                 {
                     command.Parameters.AddWithValue("@ProductName", product.ProductName);
                     command.Parameters.AddWithValue("@CategoryID", product.CategoryID);
                     command.Parameters.AddWithValue("@Brand", product.Brand);
                     command.Parameters.AddWithValue("@QuantityInStock", product.QuantityInStock);
-                    command.Parameters.AddWithValue("@ReorderLevel", product.ReorderLevel);
                     command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@CostPrice", product.CostPrice);
+                    command.Parameters.AddWithValue("@Unit", product.Unit);
                     await command.ExecuteNonQueryAsync();
                 }
             }

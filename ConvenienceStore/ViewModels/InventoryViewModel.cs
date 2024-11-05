@@ -94,6 +94,8 @@ namespace ConvenienceStore.ViewModels
             _allProducts = new ObservableCollection<Product>();
             _displayedProducts = new ObservableCollection<Product>();
             _categories = new ObservableCollection<Category>();
+
+            _ = LoadData();
         }
         #endregion
 
@@ -142,8 +144,7 @@ namespace ConvenienceStore.ViewModels
                 AllProducts = new ObservableCollection<Product>(productsData);
                 Categories = new ObservableCollection<Category>(categoriesData);
 
-                CalculateTotalPages();
-                UpdateDisplayedProducts();
+                LoadAllProducts();
             }
             catch (Exception ex)
             {
@@ -151,6 +152,7 @@ namespace ConvenienceStore.ViewModels
                 throw;
             }
         }
+
 
         public async Task LoadCategoriesAsync()
         {
@@ -166,15 +168,24 @@ namespace ConvenienceStore.ViewModels
         #region Filtering Methods
         public void FilterProductsByCategory(int categoryId)
         {
+            // Sử dụng AllProducts làm nguồn gốc và chỉ lọc DisplayedProducts
             var filteredProducts = AllProducts.Where(p => p.CategoryID == categoryId).ToList();
-            AllProducts = new ObservableCollection<Product>(filteredProducts);
+            DisplayedProducts = new ObservableCollection<Product>(filteredProducts);
+
+            // Cập nhật số trang và hiển thị trang đầu tiên
             CalculateTotalPages();
+            CurrentPage = 1;
             UpdateDisplayedProducts();
         }
 
         public void LoadAllProducts()
         {
-            LoadData().ConfigureAwait(false);
+            DisplayedProducts = new ObservableCollection<Product>(AllProducts);
+
+            // Cập nhật số trang và hiển thị trang đầu tiên
+            CalculateTotalPages();
+            CurrentPage = 1;
+            UpdateDisplayedProducts();
         }
         #endregion
 
@@ -194,7 +205,7 @@ namespace ConvenienceStore.ViewModels
                 return;
             }
 
-            var items = AllProducts
+            var items = DisplayedProducts
                 .Skip((CurrentPage - 1) * PageSize)
                 .Take(PageSize)
                 .ToList();

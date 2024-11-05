@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-11-04T05:41:34.999</Modified>
+      <Modified>2024-11-05T08:22:03.466</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-11-04T05:41:34.749</Modified>
+      <Modified>2024-11-05T08:09:34.952</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.runtimeconfig.json">
       <PackagePath>ConvenienceStore.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.dll">
       <PackagePath>ConvenienceStore.dll</PackagePath>
-      <Modified>2024-11-04T05:41:34.466</Modified>
+      <Modified>2024-11-05T08:22:03.134</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows\WindowStore\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\apphost.exe">
       <PackagePath>ConvenienceStore.exe</PackagePath>
-      <Modified>2024-11-04T05:41:34.513</Modified>
+      <Modified>2024-11-05T08:22:03.143</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\vohun\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x86\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x86\native\WebView2Loader.dll</PackagePath>

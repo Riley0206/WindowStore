@@ -54,6 +54,7 @@ namespace ConvenienceStore.Views
         }
 
         // Event handler cho nút thêm sản phẩm mới
+        // Event handler cho nút thêm sản phẩm mới
         private async void AddProduct_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new ContentDialog
@@ -62,31 +63,45 @@ namespace ConvenienceStore.Views
                 PrimaryButtonText = "Thêm",
                 CloseButtonText = "Hủy",
                 DefaultButton = ContentDialogButton.Primary,
-                XamlRoot = this.XamlRoot
+                XamlRoot = this.XamlRoot,
+                MinWidth = 400 // Đặt chiều rộng tối thiểu cho dialog
             };
 
             var stackPanel = new StackPanel();
+
+            // Tạo các TextBox và ComboBox
             var productNameBox = new TextBox { Header = "Tên sản phẩm" };
             var brandBox = new TextBox { Header = "Thương hiệu" };
-            var quantityBox = new NumberBox { Header = "Số lượng tồn kho", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
-            var reorderLevelBox = new NumberBox { Header = "Mức tồn kho tối thiểu", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
-            var priceBox = new NumberBox { Header = "Giá", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
+            var quantityBox = new NumberBox { Header = "Số lượng", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
+            var priceBox = new NumberBox { Header = "Giá bán", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
+            var costPriceBox = new NumberBox { Header = "Giá vốn", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
+            var unitBox = new TextBox { Header = "Đơn vị tính" };
 
             var categoryComboBox = new ComboBox
             {
                 Header = "Danh mục sản phẩm",
                 ItemsSource = ViewModel.Categories,
-                DisplayMemberPath = "CategoryName"
+                DisplayMemberPath = "CategoryName",
+                Width = 300 // Chiều rộng của ComboBox
             };
 
+            // Thêm các thành phần vào StackPanel
             stackPanel.Children.Add(productNameBox);
             stackPanel.Children.Add(brandBox);
             stackPanel.Children.Add(quantityBox);
-            stackPanel.Children.Add(reorderLevelBox);
             stackPanel.Children.Add(priceBox);
+            stackPanel.Children.Add(costPriceBox);
+            stackPanel.Children.Add(unitBox);
             stackPanel.Children.Add(categoryComboBox);
 
-            dialog.Content = stackPanel;
+            // Đặt StackPanel vào ScrollViewer
+            var scrollViewer = new ScrollViewer
+            {
+                Content = stackPanel,
+                VerticalScrollBarVisibility = ScrollBarVisibility.Auto // Hiện thanh cuộn khi cần thiết
+            };
+
+            dialog.Content = scrollViewer; // Đặt ScrollViewer làm nội dung của dialog
 
             if (await dialog.ShowAsync() == ContentDialogResult.Primary)
             {
@@ -108,16 +123,15 @@ namespace ConvenienceStore.Views
                     ProductName = productNameBox.Text,
                     Brand = brandBox.Text,
                     QuantityInStock = (int)quantityBox.Value,
-                    ReorderLevel = (int)reorderLevelBox.Value,
                     Price = (decimal)priceBox.Value,
+                    CostPrice = (decimal)costPriceBox.Value,
+                    Unit = unitBox.Text,
                     CategoryID = ((Category)categoryComboBox.SelectedItem).CategoryID
                 };
 
-                // Gọi trực tiếp command với tham số là newProduct
                 await ViewModel.AddProductCommand.ExecuteAsync(newProduct);
             }
         }
-
 
         // Event handler cho việc cập nhật số lượng
         private async void UpdateQuantity_Click(object sender, RoutedEventArgs e)
@@ -230,7 +244,6 @@ namespace ConvenienceStore.Views
             {
                 try
                 {
-                    // Hiển thị dialog chi tiết sản phẩm
                     var detailsDialog = new ContentDialog()
                     {
                         Title = "Chi tiết sản phẩm",
@@ -244,8 +257,9 @@ namespace ConvenienceStore.Views
                     content.Children.Add(new TextBlock() { Text = $"Tên sản phẩm: {product.ProductName}" });
                     content.Children.Add(new TextBlock() { Text = $"Thương hiệu: {product.Brand}" });
                     content.Children.Add(new TextBlock() { Text = $"Số lượng tồn: {product.QuantityInStock}" });
-                    content.Children.Add(new TextBlock() { Text = $"Mức tồn kho tối thiểu: {product.ReorderLevel}" });
-                    content.Children.Add(new TextBlock() { Text = $"Giá: {product.Price:C}" });
+                    content.Children.Add(new TextBlock() { Text = $"Đơn vị tính: {product.Unit}" });
+                    content.Children.Add(new TextBlock() { Text = $"Giá bán: {product.Price:C}" });
+                    content.Children.Add(new TextBlock() { Text = $"Giá vốn: {product.CostPrice:C}" });
                     content.Children.Add(new TextBlock() { Text = $"Danh mục: {product.Category.CategoryName}" });
 
                     detailsDialog.Content = content;

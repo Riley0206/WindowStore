@@ -226,7 +226,7 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[69];
+            _typeNameTable = new string[70];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -262,42 +262,43 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             _typeNameTable[32] = "Microsoft.UI.Xaml.Controls.Control";
             _typeNameTable[33] = "ConvenienceStore.MainWindow";
             _typeNameTable[34] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[35] = "CommunityToolkit.WinUI.UI.Controls.DataGrid";
-            _typeNameTable[36] = "System.Collections.IEnumerable";
-            _typeNameTable[37] = "CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility";
-            _typeNameTable[38] = "Microsoft.UI.Xaml.Media.Brush";
-            _typeNameTable[39] = "System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
-            _typeNameTable[40] = "System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
-            _typeNameTable[41] = "CommunityToolkit.WinUI.UI.Controls.DataGridColumn";
-            _typeNameTable[42] = "Microsoft.UI.Xaml.Data.Binding";
-            _typeNameTable[43] = "Int32";
-            _typeNameTable[44] = "System.Nullable`1<CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>";
-            _typeNameTable[45] = "CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection";
-            _typeNameTable[46] = "Microsoft.UI.Xaml.Visibility";
-            _typeNameTable[47] = "CommunityToolkit.WinUI.UI.Controls.DataGridLength";
-            _typeNameTable[48] = "CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode";
-            _typeNameTable[49] = "CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility";
-            _typeNameTable[50] = "Microsoft.UI.Xaml.Controls.ScrollBarVisibility";
-            _typeNameTable[51] = "Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger";
-            _typeNameTable[52] = "CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode";
-            _typeNameTable[53] = "CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode";
-            _typeNameTable[54] = "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>";
-            _typeNameTable[55] = "System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>";
-            _typeNameTable[56] = "System.Collections.IList";
-            _typeNameTable[57] = "CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn";
-            _typeNameTable[58] = "CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn";
-            _typeNameTable[59] = "Microsoft.UI.Xaml.Media.FontFamily";
-            _typeNameTable[60] = "Windows.UI.Text.FontStyle";
-            _typeNameTable[61] = "Windows.UI.Text.FontWeight";
-            _typeNameTable[62] = "ConvenienceStore.Views.InventoryPage";
-            _typeNameTable[63] = "Microsoft.UI.Xaml.Controls.Page";
-            _typeNameTable[64] = "Microsoft.UI.Xaml.Controls.UserControl";
-            _typeNameTable[65] = "ConvenienceStore.ViewModels.InventoryViewModel";
-            _typeNameTable[66] = "CommunityToolkit.Mvvm.ComponentModel.ObservableObject";
-            _typeNameTable[67] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[68] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[35] = "ConvenienceStore.Converters.CurrencyConverter";
+            _typeNameTable[36] = "CommunityToolkit.WinUI.UI.Controls.DataGrid";
+            _typeNameTable[37] = "System.Collections.IEnumerable";
+            _typeNameTable[38] = "CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility";
+            _typeNameTable[39] = "Microsoft.UI.Xaml.Media.Brush";
+            _typeNameTable[40] = "System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
+            _typeNameTable[41] = "System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
+            _typeNameTable[42] = "CommunityToolkit.WinUI.UI.Controls.DataGridColumn";
+            _typeNameTable[43] = "Microsoft.UI.Xaml.Data.Binding";
+            _typeNameTable[44] = "Int32";
+            _typeNameTable[45] = "System.Nullable`1<CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>";
+            _typeNameTable[46] = "CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection";
+            _typeNameTable[47] = "Microsoft.UI.Xaml.Visibility";
+            _typeNameTable[48] = "CommunityToolkit.WinUI.UI.Controls.DataGridLength";
+            _typeNameTable[49] = "CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode";
+            _typeNameTable[50] = "CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility";
+            _typeNameTable[51] = "Microsoft.UI.Xaml.Controls.ScrollBarVisibility";
+            _typeNameTable[52] = "Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger";
+            _typeNameTable[53] = "CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode";
+            _typeNameTable[54] = "CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode";
+            _typeNameTable[55] = "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>";
+            _typeNameTable[56] = "System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>";
+            _typeNameTable[57] = "System.Collections.IList";
+            _typeNameTable[58] = "CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn";
+            _typeNameTable[59] = "CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn";
+            _typeNameTable[60] = "Microsoft.UI.Xaml.Media.FontFamily";
+            _typeNameTable[61] = "Windows.UI.Text.FontStyle";
+            _typeNameTable[62] = "Windows.UI.Text.FontWeight";
+            _typeNameTable[63] = "ConvenienceStore.Views.InventoryPage";
+            _typeNameTable[64] = "Microsoft.UI.Xaml.Controls.Page";
+            _typeNameTable[65] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[66] = "ConvenienceStore.ViewModels.InventoryViewModel";
+            _typeNameTable[67] = "CommunityToolkit.Mvvm.ComponentModel.ObservableObject";
+            _typeNameTable[68] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[69] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[69];
+            _typeTable = new global::System.Type[70];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -333,40 +334,41 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             _typeTable[32] = typeof(global::Microsoft.UI.Xaml.Controls.Control);
             _typeTable[33] = typeof(global::ConvenienceStore.MainWindow);
             _typeTable[34] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[35] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid);
-            _typeTable[36] = typeof(global::System.Collections.IEnumerable);
-            _typeTable[37] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility);
-            _typeTable[38] = typeof(global::Microsoft.UI.Xaml.Media.Brush);
-            _typeTable[39] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
-            _typeTable[40] = typeof(global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
-            _typeTable[41] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn);
-            _typeTable[42] = typeof(global::Microsoft.UI.Xaml.Data.Binding);
-            _typeTable[43] = typeof(global::System.Int32);
-            _typeTable[44] = typeof(global::System.Nullable<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>);
-            _typeTable[45] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection);
-            _typeTable[46] = typeof(global::Microsoft.UI.Xaml.Visibility);
-            _typeTable[47] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridLength);
-            _typeTable[48] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode);
-            _typeTable[49] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility);
-            _typeTable[50] = typeof(global::Microsoft.UI.Xaml.Controls.ScrollBarVisibility);
-            _typeTable[51] = typeof(global::Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger);
-            _typeTable[52] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode);
-            _typeTable[53] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode);
-            _typeTable[54] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>);
-            _typeTable[55] = typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>);
-            _typeTable[56] = typeof(global::System.Collections.IList);
-            _typeTable[57] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn);
-            _typeTable[58] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn);
-            _typeTable[59] = typeof(global::Microsoft.UI.Xaml.Media.FontFamily);
-            _typeTable[60] = typeof(global::Windows.UI.Text.FontStyle);
-            _typeTable[61] = typeof(global::Windows.UI.Text.FontWeight);
-            _typeTable[62] = typeof(global::ConvenienceStore.Views.InventoryPage);
-            _typeTable[63] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
-            _typeTable[64] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
-            _typeTable[65] = typeof(global::ConvenienceStore.ViewModels.InventoryViewModel);
-            _typeTable[66] = typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject);
-            _typeTable[67] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[68] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[35] = typeof(global::ConvenienceStore.Converters.CurrencyConverter);
+            _typeTable[36] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid);
+            _typeTable[37] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[38] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility);
+            _typeTable[39] = typeof(global::Microsoft.UI.Xaml.Media.Brush);
+            _typeTable[40] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
+            _typeTable[41] = typeof(global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
+            _typeTable[42] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn);
+            _typeTable[43] = typeof(global::Microsoft.UI.Xaml.Data.Binding);
+            _typeTable[44] = typeof(global::System.Int32);
+            _typeTable[45] = typeof(global::System.Nullable<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>);
+            _typeTable[46] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection);
+            _typeTable[47] = typeof(global::Microsoft.UI.Xaml.Visibility);
+            _typeTable[48] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridLength);
+            _typeTable[49] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode);
+            _typeTable[50] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility);
+            _typeTable[51] = typeof(global::Microsoft.UI.Xaml.Controls.ScrollBarVisibility);
+            _typeTable[52] = typeof(global::Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger);
+            _typeTable[53] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode);
+            _typeTable[54] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode);
+            _typeTable[55] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>);
+            _typeTable[56] = typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>);
+            _typeTable[57] = typeof(global::System.Collections.IList);
+            _typeTable[58] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn);
+            _typeTable[59] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn);
+            _typeTable[60] = typeof(global::Microsoft.UI.Xaml.Media.FontFamily);
+            _typeTable[61] = typeof(global::Windows.UI.Text.FontStyle);
+            _typeTable[62] = typeof(global::Windows.UI.Text.FontWeight);
+            _typeTable[63] = typeof(global::ConvenienceStore.Views.InventoryPage);
+            _typeTable[64] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
+            _typeTable[65] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[66] = typeof(global::ConvenienceStore.ViewModels.InventoryViewModel);
+            _typeTable[67] = typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject);
+            _typeTable[68] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[69] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -410,14 +412,15 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
         private object Activate_28_NavigationViewItem() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewItem(); }
         private object Activate_31_InfoBadge() { return new global::Microsoft.UI.Xaml.Controls.InfoBadge(); }
         private object Activate_33_MainWindow() { return new global::ConvenienceStore.MainWindow(); }
-        private object Activate_35_DataGrid() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGrid(); }
-        private object Activate_39_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
-        private object Activate_40_Collection() { return new global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
-        private object Activate_54_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>(); }
-        private object Activate_55_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>(); }
-        private object Activate_57_DataGridTextColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn(); }
-        private object Activate_62_InventoryPage() { return new global::ConvenienceStore.Views.InventoryPage(); }
-        private object Activate_67_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_35_CurrencyConverter() { return new global::ConvenienceStore.Converters.CurrencyConverter(); }
+        private object Activate_36_DataGrid() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGrid(); }
+        private object Activate_40_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
+        private object Activate_41_Collection() { return new global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
+        private object Activate_55_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>(); }
+        private object Activate_56_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>(); }
+        private object Activate_58_DataGridTextColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn(); }
+        private object Activate_63_InventoryPage() { return new global::ConvenienceStore.Views.InventoryPage(); }
+        private object Activate_68_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_NullToBoolConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.NullToBoolConverter).TypeHandle);
         private void StaticInitializer_5_GreaterThanOneConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.GreaterThanOneConverter).TypeHandle);
@@ -437,31 +440,32 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
         private void StaticInitializer_29_NavigationViewItemBase() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase).TypeHandle);
         private void StaticInitializer_31_InfoBadge() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge).TypeHandle);
         private void StaticInitializer_33_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.MainWindow).TypeHandle);
-        private void StaticInitializer_35_DataGrid() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid).TypeHandle);
-        private void StaticInitializer_36_IEnumerable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IEnumerable).TypeHandle);
-        private void StaticInitializer_37_DataGridGridLinesVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility).TypeHandle);
-        private void StaticInitializer_39_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>).TypeHandle);
-        private void StaticInitializer_40_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>).TypeHandle);
-        private void StaticInitializer_41_DataGridColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn).TypeHandle);
-        private void StaticInitializer_44_Nullable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Nullable<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>).TypeHandle);
-        private void StaticInitializer_45_DataGridSortDirection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection).TypeHandle);
-        private void StaticInitializer_47_DataGridLength() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridLength).TypeHandle);
-        private void StaticInitializer_48_DataGridClipboardCopyMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode).TypeHandle);
-        private void StaticInitializer_49_DataGridHeadersVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility).TypeHandle);
-        private void StaticInitializer_52_DataGridRowDetailsVisibilityMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode).TypeHandle);
-        private void StaticInitializer_53_DataGridSelectionMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode).TypeHandle);
-        private void StaticInitializer_54_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>).TypeHandle);
-        private void StaticInitializer_55_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>).TypeHandle);
-        private void StaticInitializer_56_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IList).TypeHandle);
-        private void StaticInitializer_57_DataGridTextColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn).TypeHandle);
-        private void StaticInitializer_58_DataGridBoundColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn).TypeHandle);
-        private void StaticInitializer_60_FontStyle() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Text.FontStyle).TypeHandle);
-        private void StaticInitializer_61_FontWeight() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Text.FontWeight).TypeHandle);
-        private void StaticInitializer_62_InventoryPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Views.InventoryPage).TypeHandle);
-        private void StaticInitializer_65_InventoryViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.ViewModels.InventoryViewModel).TypeHandle);
-        private void StaticInitializer_66_ObservableObject() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject).TypeHandle);
-        private void StaticInitializer_67_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_68_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_35_CurrencyConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.CurrencyConverter).TypeHandle);
+        private void StaticInitializer_36_DataGrid() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid).TypeHandle);
+        private void StaticInitializer_37_IEnumerable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IEnumerable).TypeHandle);
+        private void StaticInitializer_38_DataGridGridLinesVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility).TypeHandle);
+        private void StaticInitializer_40_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>).TypeHandle);
+        private void StaticInitializer_41_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>).TypeHandle);
+        private void StaticInitializer_42_DataGridColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn).TypeHandle);
+        private void StaticInitializer_45_Nullable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Nullable<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>).TypeHandle);
+        private void StaticInitializer_46_DataGridSortDirection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection).TypeHandle);
+        private void StaticInitializer_48_DataGridLength() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridLength).TypeHandle);
+        private void StaticInitializer_49_DataGridClipboardCopyMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode).TypeHandle);
+        private void StaticInitializer_50_DataGridHeadersVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility).TypeHandle);
+        private void StaticInitializer_53_DataGridRowDetailsVisibilityMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode).TypeHandle);
+        private void StaticInitializer_54_DataGridSelectionMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode).TypeHandle);
+        private void StaticInitializer_55_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>).TypeHandle);
+        private void StaticInitializer_56_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>).TypeHandle);
+        private void StaticInitializer_57_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IList).TypeHandle);
+        private void StaticInitializer_58_DataGridTextColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn).TypeHandle);
+        private void StaticInitializer_59_DataGridBoundColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn).TypeHandle);
+        private void StaticInitializer_61_FontStyle() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Text.FontStyle).TypeHandle);
+        private void StaticInitializer_62_FontWeight() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Text.FontWeight).TypeHandle);
+        private void StaticInitializer_63_InventoryPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Views.InventoryPage).TypeHandle);
+        private void StaticInitializer_66_InventoryViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.ViewModels.InventoryViewModel).TypeHandle);
+        private void StaticInitializer_67_ObservableObject() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject).TypeHandle);
+        private void StaticInitializer_68_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_69_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -475,31 +479,31 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_39_ObservableCollection(object instance, object item)
+        private void VectorAdd_40_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>)instance;
             var newItem = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_40_Collection(object instance, object item)
+        private void VectorAdd_41_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>)instance;
             var newItem = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_54_ObservableCollection(object instance, object item)
+        private void VectorAdd_55_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Style>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Style)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_55_Collection(object instance, object item)
+        private void VectorAdd_56_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Style>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Style)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_68_IList(object instance, object item)
+        private void VectorAdd_69_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -776,10 +780,18 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 35:   //  CommunityToolkit.WinUI.UI.Controls.DataGrid
+            case 35:   //  ConvenienceStore.Converters.CurrencyConverter
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_35_CurrencyConverter;
+                userType.StaticInitializer = StaticInitializer_35_CurrencyConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 36:   //  CommunityToolkit.WinUI.UI.Controls.DataGrid
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_35_DataGrid;
-                userType.StaticInitializer = StaticInitializer_35_DataGrid;
+                userType.Activator = Activate_36_DataGrid;
+                userType.StaticInitializer = StaticInitializer_36_DataGrid;
                 userType.AddMemberName("ItemsSource");
                 userType.AddMemberName("SelectedItem");
                 userType.AddMemberName("AutoGenerateColumns");
@@ -829,16 +841,16 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 36:   //  System.Collections.IEnumerable
+            case 37:   //  System.Collections.IEnumerable
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_36_IEnumerable;
+                userType.StaticInitializer = StaticInitializer_37_IEnumerable;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 37:   //  CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility
+            case 38:   //  CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_37_DataGridGridLinesVisibility;
+                userType.StaticInitializer = StaticInitializer_38_DataGridGridLinesVisibility;
                 userType.AddEnumValue("None", global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility.None);
                 userType.AddEnumValue("Horizontal", global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility.Horizontal);
                 userType.AddEnumValue("Vertical", global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility.Vertical);
@@ -846,29 +858,29 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 38:   //  Microsoft.UI.Xaml.Media.Brush
+            case 39:   //  Microsoft.UI.Xaml.Media.Brush
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 39:   //  System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>
+            case 40:   //  System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>"));
-                userType.StaticInitializer = StaticInitializer_39_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_39_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_40_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_40_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 40:   //  System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>
+            case 41:   //  System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_40_Collection;
-                userType.StaticInitializer = StaticInitializer_40_Collection;
-                userType.CollectionAdd = VectorAdd_40_Collection;
+                userType.Activator = Activate_41_Collection;
+                userType.StaticInitializer = StaticInitializer_41_Collection;
+                userType.CollectionAdd = VectorAdd_41_Collection;
                 xamlType = userType;
                 break;
 
-            case 41:   //  CommunityToolkit.WinUI.UI.Controls.DataGridColumn
+            case 42:   //  CommunityToolkit.WinUI.UI.Controls.DataGridColumn
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_41_DataGridColumn;
+                userType.StaticInitializer = StaticInitializer_42_DataGridColumn;
                 userType.AddMemberName("ActualWidth");
                 userType.AddMemberName("CanUserReorder");
                 userType.AddMemberName("CanUserResize");
@@ -891,55 +903,55 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 42:   //  Microsoft.UI.Xaml.Data.Binding
+            case 43:   //  Microsoft.UI.Xaml.Data.Binding
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 43:   //  Int32
+            case 44:   //  Int32
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 44:   //  System.Nullable`1<CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>
+            case 45:   //  System.Nullable`1<CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetBoxedType(GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection"));
                 userType.BoxInstance = userType.BoxType<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>;
-                userType.StaticInitializer = StaticInitializer_44_Nullable;
+                userType.StaticInitializer = StaticInitializer_45_Nullable;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 45:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection
+            case 46:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_45_DataGridSortDirection;
+                userType.StaticInitializer = StaticInitializer_46_DataGridSortDirection;
                 userType.AddEnumValue("Ascending", global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection.Ascending);
                 userType.AddEnumValue("Descending", global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection.Descending);
                 xamlType = userType;
                 break;
 
-            case 46:   //  Microsoft.UI.Xaml.Visibility
+            case 47:   //  Microsoft.UI.Xaml.Visibility
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 47:   //  CommunityToolkit.WinUI.UI.Controls.DataGridLength
+            case 48:   //  CommunityToolkit.WinUI.UI.Controls.DataGridLength
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_47_DataGridLength;
+                userType.StaticInitializer = StaticInitializer_48_DataGridLength;
                 userType.CreateFromStringMethod = x => (global::System.Object)global::CommunityToolkit.WinUI.UI.Controls.DataGridLength.ConvertFromString(x);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 48:   //  CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode
+            case 49:   //  CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_48_DataGridClipboardCopyMode;
+                userType.StaticInitializer = StaticInitializer_49_DataGridClipboardCopyMode;
                 userType.AddEnumValue("None", global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode.None);
                 userType.AddEnumValue("ExcludeHeader", global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode.ExcludeHeader);
                 userType.AddEnumValue("IncludeHeader", global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode.IncludeHeader);
                 xamlType = userType;
                 break;
 
-            case 49:   //  CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility
+            case 50:   //  CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_49_DataGridHeadersVisibility;
+                userType.StaticInitializer = StaticInitializer_50_DataGridHeadersVisibility;
                 userType.AddEnumValue("None", global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility.None);
                 userType.AddEnumValue("Column", global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility.Column);
                 userType.AddEnumValue("Row", global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility.Row);
@@ -947,58 +959,58 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 50:   //  Microsoft.UI.Xaml.Controls.ScrollBarVisibility
+            case 51:   //  Microsoft.UI.Xaml.Controls.ScrollBarVisibility
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 51:   //  Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger
+            case 52:   //  Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 52:   //  CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode
+            case 53:   //  CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_52_DataGridRowDetailsVisibilityMode;
+                userType.StaticInitializer = StaticInitializer_53_DataGridRowDetailsVisibilityMode;
                 userType.AddEnumValue("VisibleWhenSelected", global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected);
                 userType.AddEnumValue("Visible", global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode.Visible);
                 userType.AddEnumValue("Collapsed", global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode.Collapsed);
                 xamlType = userType;
                 break;
 
-            case 53:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode
+            case 54:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_53_DataGridSelectionMode;
+                userType.StaticInitializer = StaticInitializer_54_DataGridSelectionMode;
                 userType.AddEnumValue("Extended", global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode.Extended);
                 userType.AddEnumValue("Single", global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode.Single);
                 xamlType = userType;
                 break;
 
-            case 54:   //  System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>
+            case 55:   //  System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>"));
-                userType.StaticInitializer = StaticInitializer_54_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_54_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_55_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_55_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 55:   //  System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>
+            case 56:   //  System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_55_Collection;
-                userType.StaticInitializer = StaticInitializer_55_Collection;
-                userType.CollectionAdd = VectorAdd_55_Collection;
+                userType.Activator = Activate_56_Collection;
+                userType.StaticInitializer = StaticInitializer_56_Collection;
+                userType.CollectionAdd = VectorAdd_56_Collection;
                 xamlType = userType;
                 break;
 
-            case 56:   //  System.Collections.IList
+            case 57:   //  System.Collections.IList
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_56_IList;
+                userType.StaticInitializer = StaticInitializer_57_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 57:   //  CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn
+            case 58:   //  CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn"));
-                userType.Activator = Activate_57_DataGridTextColumn;
-                userType.StaticInitializer = StaticInitializer_57_DataGridTextColumn;
+                userType.Activator = Activate_58_DataGridTextColumn;
+                userType.StaticInitializer = StaticInitializer_58_DataGridTextColumn;
                 userType.AddMemberName("FontFamily");
                 userType.AddMemberName("FontSize");
                 userType.AddMemberName("FontStyle");
@@ -1007,9 +1019,9 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 58:   //  CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn
+            case 59:   //  CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn"));
-                userType.StaticInitializer = StaticInitializer_58_DataGridBoundColumn;
+                userType.StaticInitializer = StaticInitializer_59_DataGridBoundColumn;
                 userType.AddMemberName("Binding");
                 userType.AddMemberName("ClipboardContentBinding");
                 userType.AddMemberName("EditingElementStyle");
@@ -1017,61 +1029,61 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 59:   //  Microsoft.UI.Xaml.Media.FontFamily
+            case 60:   //  Microsoft.UI.Xaml.Media.FontFamily
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 60:   //  Windows.UI.Text.FontStyle
+            case 61:   //  Windows.UI.Text.FontStyle
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_60_FontStyle;
+                userType.StaticInitializer = StaticInitializer_61_FontStyle;
                 userType.AddEnumValue("Normal", global::Windows.UI.Text.FontStyle.Normal);
                 userType.AddEnumValue("Oblique", global::Windows.UI.Text.FontStyle.Oblique);
                 userType.AddEnumValue("Italic", global::Windows.UI.Text.FontStyle.Italic);
                 xamlType = userType;
                 break;
 
-            case 61:   //  Windows.UI.Text.FontWeight
+            case 62:   //  Windows.UI.Text.FontWeight
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_61_FontWeight;
+                userType.StaticInitializer = StaticInitializer_62_FontWeight;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 62:   //  ConvenienceStore.Views.InventoryPage
+            case 63:   //  ConvenienceStore.Views.InventoryPage
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_62_InventoryPage;
-                userType.StaticInitializer = StaticInitializer_62_InventoryPage;
+                userType.Activator = Activate_63_InventoryPage;
+                userType.StaticInitializer = StaticInitializer_63_InventoryPage;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 63:   //  Microsoft.UI.Xaml.Controls.Page
+            case 64:   //  Microsoft.UI.Xaml.Controls.Page
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 64:   //  Microsoft.UI.Xaml.Controls.UserControl
+            case 65:   //  Microsoft.UI.Xaml.Controls.UserControl
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 65:   //  ConvenienceStore.ViewModels.InventoryViewModel
+            case 66:   //  ConvenienceStore.ViewModels.InventoryViewModel
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.Mvvm.ComponentModel.ObservableObject"));
-                userType.StaticInitializer = StaticInitializer_65_InventoryViewModel;
+                userType.StaticInitializer = StaticInitializer_66_InventoryViewModel;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 66:   //  CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+            case 67:   //  CommunityToolkit.Mvvm.ComponentModel.ObservableObject
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_66_ObservableObject;
+                userType.StaticInitializer = StaticInitializer_67_ObservableObject;
                 xamlType = userType;
                 break;
 
-            case 67:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 68:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_67_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_67_TreeViewNode;
+                userType.Activator = Activate_68_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_68_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -1083,10 +1095,10 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 68:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 69:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_68_IList;
-                userType.CollectionAdd = VectorAdd_68_IList;
+                userType.StaticInitializer = StaticInitializer_69_IList;
+                userType.CollectionAdd = VectorAdd_69_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
