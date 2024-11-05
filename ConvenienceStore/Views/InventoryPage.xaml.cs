@@ -15,22 +15,16 @@ namespace ConvenienceStore.Views
 
         public InventoryPage()
         {
-            Debug.WriteLine("Initializing InventoryPage");
-
-            // Khởi tạo ViewModel với DatabaseService
             string connectionString = @"Data Source=.\SQL22;Initial Catalog=ConvenienceStoreDB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
             var databaseService = new DatabaseService(connectionString);
             ViewModel = new InventoryViewModel(databaseService);
 
             this.InitializeComponent();
-
-            // Đăng ký các event handlers
             this.Loaded += InventoryPage_Loaded;
         }
 
         private async void InventoryPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("Page Loaded event fired");
             try
             {
                 await ViewModel.LoadData();
@@ -41,19 +35,7 @@ namespace ConvenienceStore.Views
                 Debug.WriteLine($"Stack trace: {ex.StackTrace}");
             }
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-            // Xử lý khi navigate đến page này
-        }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            base.OnNavigatedFrom(e);
-            // Cleanup khi rời khỏi page
-        }
-
-        // Event handler cho nút thêm sản phẩm mới
         // Event handler cho nút thêm sản phẩm mới
         private async void AddProduct_Click(object sender, RoutedEventArgs e)
         {
@@ -64,7 +46,7 @@ namespace ConvenienceStore.Views
                 CloseButtonText = "Hủy",
                 DefaultButton = ContentDialogButton.Primary,
                 XamlRoot = this.XamlRoot,
-                MinWidth = 400 // Đặt chiều rộng tối thiểu cho dialog
+                MinWidth = 400
             };
 
             var stackPanel = new StackPanel();
@@ -75,14 +57,19 @@ namespace ConvenienceStore.Views
             var quantityBox = new NumberBox { Header = "Số lượng", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
             var priceBox = new NumberBox { Header = "Giá bán", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
             var costPriceBox = new NumberBox { Header = "Giá vốn", Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact };
-            var unitBox = new TextBox { Header = "Đơn vị tính" };
+            var unitBox = new TextBox
+            {
+                Header = "Đơn vị tính",
+                Text = "VND",
+                IsReadOnly = true
+            };
 
             var categoryComboBox = new ComboBox
             {
                 Header = "Danh mục sản phẩm",
                 ItemsSource = ViewModel.Categories,
                 DisplayMemberPath = "CategoryName",
-                Width = 300 // Chiều rộng của ComboBox
+                Width = 300
             };
 
             // Thêm các thành phần vào StackPanel
@@ -98,7 +85,7 @@ namespace ConvenienceStore.Views
             var scrollViewer = new ScrollViewer
             {
                 Content = stackPanel,
-                VerticalScrollBarVisibility = ScrollBarVisibility.Auto // Hiện thanh cuộn khi cần thiết
+                VerticalScrollBarVisibility = ScrollBarVisibility.Auto
             };
 
             dialog.Content = scrollViewer; // Đặt ScrollViewer làm nội dung của dialog
@@ -160,7 +147,7 @@ namespace ConvenienceStore.Views
                     XamlRoot = this.XamlRoot
                 };
 
-                // Thêm TextBox cho người dùng nhập số lượng mới
+                //TextBox cho người dùng nhập số lượng mới
                 var quantityBox = new NumberBox()
                 {
                     Header = "Số lượng mới:",
@@ -208,7 +195,7 @@ namespace ConvenienceStore.Views
             {
                 try
                 {
-                    await ViewModel.DeleteProduct(); // Gọi trực tiếp phương thức thay vì qua Command
+                    await ViewModel.DeleteProduct();
                 }
                 catch (Exception ex)
                 {
@@ -288,6 +275,5 @@ namespace ConvenienceStore.Views
         {
             ViewModel.NextPage();
         }
-
     }
 }

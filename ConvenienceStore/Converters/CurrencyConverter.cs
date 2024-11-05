@@ -13,9 +13,9 @@ namespace ConvenienceStore.Converters
         {
             if (value is decimal amount)
             {
-                return string.Format("{0:N0} đ", amount);
+                return string.Format("{0:N0} VND", amount);
             }
-            return "0 đ";
+            return "0 VND";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

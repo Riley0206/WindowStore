@@ -153,7 +153,6 @@ namespace ConvenienceStore.ViewModels
             }
         }
 
-
         public async Task LoadCategoriesAsync()
         {
             if (!_categoriesLoaded)

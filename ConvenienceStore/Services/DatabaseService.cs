@@ -21,18 +21,15 @@ namespace ConvenienceStore.Services
             var products = new List<Product>();
             try
             {
-                Debug.WriteLine("Attempting to connect to database...");
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     await connection.OpenAsync();
-                    Debug.WriteLine("Database connection successful");
 
                     using (SqlCommand command = new SqlCommand(
                         @"SELECT p.*, c.CategoryName 
-                FROM Product p 
-                JOIN Category c ON p.CategoryID = c.CategoryID", connection))
+                        FROM Product p 
+                        JOIN Category c ON p.CategoryID = c.CategoryID", connection))
                     {
-                        Debug.WriteLine("Executing SQL query...");
                         using (SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
                             while (await reader.ReadAsync())
@@ -57,7 +54,6 @@ namespace ConvenienceStore.Services
                         }
                     }
                 }
-                Debug.WriteLine($"Retrieved {products.Count} products");
                 return products;
             }
             catch (Exception ex)
@@ -97,7 +93,7 @@ namespace ConvenienceStore.Services
                 await connection.OpenAsync();
                 using (SqlCommand command = new SqlCommand(
                     @"INSERT INTO Product (ProductName, CategoryID, Brand, QuantityInStock, Price, CostPrice, Unit) 
-            VALUES (@ProductName, @CategoryID, @Brand, @QuantityInStock, @Price, @CostPrice, @Unit)", connection))
+                    VALUES (@ProductName, @CategoryID, @Brand, @QuantityInStock, @Price, @CostPrice, @Unit)", connection))
                 {
                     command.Parameters.AddWithValue("@ProductName", product.ProductName);
                     command.Parameters.AddWithValue("@CategoryID", product.CategoryID);
