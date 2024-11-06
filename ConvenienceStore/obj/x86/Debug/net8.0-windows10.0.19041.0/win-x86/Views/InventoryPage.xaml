@@ -50,7 +50,7 @@
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate                             >
-                        <TextBlock x:ConnectionId='12'                              Padding="5"/>
+                        <TextBlock x:ConnectionId='14'                              Padding="5"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
@@ -59,14 +59,15 @@
             <StackPanel Grid.Column="1">
                 <!-- Search Box -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox x:ConnectionId='10' x:Name="SearchBox" Width="200" PlaceholderText="Tìm kiếm sản phẩm..."                                 />
+                    <TextBox x:ConnectionId='11' x:Name="SearchBox" Width="200" PlaceholderText="Tìm kiếm sản phẩm..."/>
+                    <Button x:ConnectionId='12' Content="Tìm kiếm"                            Margin="5,0,0,0"/>
                 </StackPanel>
 
                 <!-- Add and Update Buttons -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <Button x:ConnectionId='7' Content="Thêm sản phẩm mới"                          Margin="0,0,10,0"/>
-                    <Button x:ConnectionId='8' Content="Cập nhật số lượng"                              Margin="0,0,10,0"/>
-                    <Button x:ConnectionId='9' Content="Xóa sản phẩm"                             Margin="0,0,10,0"/>
+                    <Button x:ConnectionId='8' Content="Thêm sản phẩm mới"                          Margin="0,0,10,0"/>
+                    <Button x:ConnectionId='9' Content="Cập nhật số lượng"                              Margin="0,0,10,0"/>
+                    <Button x:ConnectionId='10' Content="Xóa sản phẩm"                             Margin="0,0,10,0"/>
                 </StackPanel>
 
                 <!-- Products DataGrid -->
@@ -85,15 +86,11 @@
                         <controls:DataGridTextColumn Header="Danh mục" Binding="{Binding Category.CategoryName}"/>
                         <controls:DataGridTextColumn Header="Số lượng tồn" Binding="{Binding QuantityInStock}"/>
                         <controls:DataGridTextColumn Header="Đơn vị" Binding="{Binding Unit}"/>
-
-                        <!-- Cột Giá bán với CurrencyConverter -->
                         <controls:DataGridTextColumn Header="Giá bán">
                             <controls:DataGridTextColumn.Binding>
                                 <Binding Path="Price" Converter="{StaticResource CurrencyConverter}"/>
                             </controls:DataGridTextColumn.Binding>
                         </controls:DataGridTextColumn>
-
-                        <!-- Cột Giá vốn với CurrencyConverter -->
                         <controls:DataGridTextColumn Header="Giá vốn">
                             <controls:DataGridTextColumn.Binding>
                                 <Binding Path="CostPrice" Converter="{StaticResource CurrencyConverter}"/>
@@ -102,13 +99,22 @@
                     </controls:DataGrid.Columns>
                 </controls:DataGrid>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                    <Button x:ConnectionId='4' Content="Trang trước"                            
-                                                                                                                                        />
-                    <TextBlock x:ConnectionId='5'                                                    
-                               Margin="10,0" VerticalAlignment="Center" />
-                    <Button x:ConnectionId='6' Content="Trang sau"                        
-                                                                                    />
+                <!-- Pagination Controls -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" Spacing="10">
+                    <Button x:ConnectionId='4' Content="Trang trước"
+                                                                        
+                                                                                   />
+
+                    <TextBlock VerticalAlignment="Center">
+                        <Run Text="Trang "/>
+                        <Run x:ConnectionId='6'                                                   />
+                        <Run Text=" / "/>
+                        <Run x:ConnectionId='7'                                                  />
+                    </TextBlock>
+
+                    <Button x:ConnectionId='5' Content="Trang sau"
+                                                                    
+                                                                               />
                 </StackPanel>
             </StackPanel>
         </Grid>

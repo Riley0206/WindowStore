@@ -88,7 +88,7 @@ namespace ConvenienceStore.Views
                 VerticalScrollBarVisibility = ScrollBarVisibility.Auto
             };
 
-            dialog.Content = scrollViewer; // Đặt ScrollViewer làm nội dung của dialog
+            dialog.Content = scrollViewer;
 
             if (await dialog.ShowAsync() == ContentDialogResult.Primary)
             {
@@ -213,6 +213,7 @@ namespace ConvenienceStore.Views
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
+            // Chỉ thực hiện tìm kiếm khi người dùng nhấn nút tìm kiếm
             string searchQuery = SearchBox.Text;
             ViewModel.SearchProductsByName(searchQuery);
         }

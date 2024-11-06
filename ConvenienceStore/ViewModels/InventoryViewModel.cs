@@ -20,6 +20,7 @@ namespace ConvenienceStore.ViewModels
         private int _currentPage = 1;
         private int _totalPages;
         private ObservableCollection<Product> _allProducts;
+        private ObservableCollection<Product> _filteredProducts;
         private ObservableCollection<Product> _displayedProducts;
         private ObservableCollection<Category> _categories;
         private Product _selectedProduct;
@@ -30,6 +31,12 @@ namespace ConvenienceStore.ViewModels
         {
             get => _allProducts;
             set => SetProperty(ref _allProducts, value);
+        }
+
+        public ObservableCollection<Product> FilteredProducts
+        {
+            get => _filteredProducts;
+            set => SetProperty(ref _filteredProducts, value);
         }
 
         public ObservableCollection<Product> DisplayedProducts
@@ -57,6 +64,7 @@ namespace ConvenienceStore.ViewModels
             {
                 if (SetProperty(ref _pageSize, value))
                 {
+                    CurrentPage = 1;
                     CalculateTotalPages();
                     UpdateDisplayedProducts();
                 }
@@ -73,9 +81,12 @@ namespace ConvenienceStore.ViewModels
                 if (SetProperty(ref _currentPage, value))
                 {
                     UpdateDisplayedProducts();
+                    OnPropertyChanged(nameof(HasPreviousPage));
+                    OnPropertyChanged(nameof(HasNextPage));
                 }
             }
         }
+
 
         public int TotalPages
         {
@@ -92,8 +103,13 @@ namespace ConvenienceStore.ViewModels
         {
             _databaseService = databaseService ?? throw new ArgumentNullException(nameof(databaseService));
             _allProducts = new ObservableCollection<Product>();
+            _filteredProducts = new ObservableCollection<Product>();
             _displayedProducts = new ObservableCollection<Product>();
             _categories = new ObservableCollection<Category>();
+
+            // Khởi tạo giá trị mặc định
+            _pageSize = 10;
+            _currentPage = 1;
 
             _ = LoadData();
         }
@@ -144,7 +160,13 @@ namespace ConvenienceStore.ViewModels
                 AllProducts = new ObservableCollection<Product>(productsData);
                 Categories = new ObservableCollection<Category>(categoriesData);
 
-                LoadAllProducts();
+                // Khởi tạo FilteredProducts với tất cả sản phẩm
+                FilteredProducts = new ObservableCollection<Product>(AllProducts);
+
+                // Cập nhật phân trang
+                CalculateTotalPages();
+                CurrentPage = 1;
+                UpdateDisplayedProducts();
             }
             catch (Exception ex)
             {
@@ -167,11 +189,9 @@ namespace ConvenienceStore.ViewModels
         #region Filtering Methods
         public void FilterProductsByCategory(int categoryId)
         {
-            // Sử dụng AllProducts làm nguồn gốc và chỉ lọc DisplayedProducts
             var filteredProducts = AllProducts.Where(p => p.CategoryID == categoryId).ToList();
-            DisplayedProducts = new ObservableCollection<Product>(filteredProducts);
+            FilteredProducts = new ObservableCollection<Product>(filteredProducts);
 
-            // Cập nhật số trang và hiển thị trang đầu tiên
             CalculateTotalPages();
             CurrentPage = 1;
             UpdateDisplayedProducts();
@@ -179,9 +199,8 @@ namespace ConvenienceStore.ViewModels
 
         public void LoadAllProducts()
         {
-            DisplayedProducts = new ObservableCollection<Product>(AllProducts);
+            FilteredProducts = new ObservableCollection<Product>(AllProducts);
 
-            // Cập nhật số trang và hiển thị trang đầu tiên
             CalculateTotalPages();
             CurrentPage = 1;
             UpdateDisplayedProducts();
@@ -199,9 +218,8 @@ namespace ConvenienceStore.ViewModels
                     .Where(p => p.ProductName.Contains(productName, StringComparison.OrdinalIgnoreCase))
                     .ToList();
 
-                DisplayedProducts = new ObservableCollection<Product>(filteredProducts);
+                FilteredProducts = new ObservableCollection<Product>(filteredProducts);
 
-                // Cập nhật số trang và hiển thị trang đầu tiên của kết quả tìm kiếm
                 CalculateTotalPages();
                 CurrentPage = 1;
                 UpdateDisplayedProducts();
@@ -212,23 +230,20 @@ namespace ConvenienceStore.ViewModels
         #region Pagination Methods
         private void CalculateTotalPages()
         {
-            TotalPages = (AllProducts?.Count ?? 0) == 0 ? 1 : (int)Math.Ceiling(AllProducts.Count / (double)PageSize);
-            OnPropertyChanged(nameof(HasPreviousPage));
-            OnPropertyChanged(nameof(HasNextPage));
+            var itemCount = FilteredProducts?.Count ?? 0;
+            TotalPages = itemCount == 0 ? 1 : (int)Math.Ceiling(itemCount / (double)PageSize);
         }
 
         private void UpdateDisplayedProducts()
         {
-            if (AllProducts == null || !AllProducts.Any())
+            if (FilteredProducts == null || !FilteredProducts.Any())
             {
                 DisplayedProducts = new ObservableCollection<Product>();
                 return;
             }
 
-            var items = DisplayedProducts
-                .Skip((CurrentPage - 1) * PageSize)
-                .Take(PageSize)
-                .ToList();
+            var skip = (CurrentPage - 1) * PageSize;
+            var items = FilteredProducts.Skip(skip).Take(PageSize).ToList();
 
             DisplayedProducts = new ObservableCollection<Product>(items);
         }

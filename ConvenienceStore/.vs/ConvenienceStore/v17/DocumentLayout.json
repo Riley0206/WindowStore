@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\Windows\\WindowStore\\ConvenienceStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\viewmodels\\inventoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:viewmodels\\inventoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\views\\inventorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:views\\inventorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\viewmodels\\inventoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:viewmodels\\inventoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\views\\inventorypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:views\\inventorypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\windowstore\\conveniencestore\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InventoryPage.xaml",
-              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml",
-              "RelativeDocumentMoniker": "Views\\InventoryPage.xaml",
-              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml",
-              "RelativeToolTip": "Views\\InventoryPage.xaml",
-              "ViewState": "AgIAABEAAAAAAAAAAAAkwEAAAAAvAAAAAAAAAA==",
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-05T18:46:41.627Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DatabaseService.cs",
-              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\Services\\DatabaseService.cs",
-              "RelativeDocumentMoniker": "Services\\DatabaseService.cs",
-              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\Services\\DatabaseService.cs",
-              "RelativeToolTip": "Services\\DatabaseService.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAADwv4YAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T18:46:20.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InventoryViewModel.cs",
-              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\ViewModels\\InventoryViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\InventoryViewModel.cs",
-              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\ViewModels\\InventoryViewModel.cs",
-              "RelativeToolTip": "ViewModels\\InventoryViewModel.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAAAywMUAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T18:44:31.315Z",
+              "WhenOpened": "2024-11-06T04:33:15.837Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "InventoryViewModel.cs",
+              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\ViewModels\\InventoryViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\InventoryViewModel.cs",
+              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\ViewModels\\InventoryViewModel.cs",
+              "RelativeToolTip": "ViewModels\\InventoryViewModel.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAgwAoBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T04:00:11.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "InventoryPage.xaml.cs",
               "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml.cs",
               "RelativeDocumentMoniker": "Views\\InventoryPage.xaml.cs",
               "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml.cs",
               "RelativeToolTip": "Views\\InventoryPage.xaml.cs",
-              "ViewState": "AgIAAMgAAAAAAAAAAIAwwNUAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwFoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T18:44:14.637Z",
+              "WhenOpened": "2024-11-06T04:00:09.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InventoryPage.xaml",
+              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml",
+              "RelativeDocumentMoniker": "Views\\InventoryPage.xaml",
+              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\Views\\InventoryPage.xaml",
+              "RelativeToolTip": "Views\\InventoryPage.xaml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAIwE8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-06T03:59:44.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Windows\\WindowStore\\ConvenienceStore\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\Windows\\WindowStore\\ConvenienceStore\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T04:19:23.926Z",
               "EditorCaption": ""
             }
           ]
