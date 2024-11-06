@@ -177,6 +177,7 @@ namespace ConvenienceStore.Views
             }
         }
 
+        // Event handler cho việc xóa 1 dòng sản phẩm
         private async void DeleteProduct_Click(object sender, RoutedEventArgs e)
         {
             if (ViewModel.SelectedProduct == null) return;
@@ -211,13 +212,13 @@ namespace ConvenienceStore.Views
             }
         }
 
+        // Event handler cho nút Search
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             // Chỉ thực hiện tìm kiếm khi người dùng nhấn nút tìm kiếm
             string searchQuery = SearchBox.Text;
             ViewModel.SearchProductsByName(searchQuery);
         }
-
 
         // Event handler cho việc lọc sản phẩm theo danh mục
         private void CategoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -232,53 +233,13 @@ namespace ConvenienceStore.Views
             }
         }
 
-        // Event handler cho DataGrid row double click
-        private async void ProductsDataGrid_DoubleTapped(object sender, Microsoft.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
-        {
-            if (ViewModel.SelectedProduct != null)
-            {
-                try
-                {
-                    var detailsDialog = new ContentDialog()
-                    {
-                        Title = "Chi tiết sản phẩm",
-                        PrimaryButtonText = "Đóng",
-                        XamlRoot = this.XamlRoot
-                    };
-
-                    var product = ViewModel.SelectedProduct;
-                    var content = new StackPanel() { Spacing = 10 };
-                    content.Children.Add(new TextBlock() { Text = $"Mã sản phẩm: {product.ProductID}" });
-                    content.Children.Add(new TextBlock() { Text = $"Tên sản phẩm: {product.ProductName}" });
-                    content.Children.Add(new TextBlock() { Text = $"Thương hiệu: {product.Brand}" });
-                    content.Children.Add(new TextBlock() { Text = $"Số lượng tồn: {product.QuantityInStock}" });
-                    content.Children.Add(new TextBlock() { Text = $"Đơn vị tính: {product.Unit}" });
-                    content.Children.Add(new TextBlock() { Text = $"Giá bán: {product.Price:C}" });
-                    content.Children.Add(new TextBlock() { Text = $"Giá vốn: {product.CostPrice:C}" });
-                    content.Children.Add(new TextBlock() { Text = $"Danh mục: {product.Category.CategoryName}" });
-
-                    detailsDialog.Content = content;
-                    await detailsDialog.ShowAsync();
-                }
-                catch (Exception ex)
-                {
-                    ContentDialog errorDialog = new ContentDialog()
-                    {
-                        Title = "Lỗi",
-                        Content = $"Không thể hiển thị chi tiết sản phẩm: {ex.Message}",
-                        CloseButtonText = "OK",
-                        XamlRoot = this.XamlRoot
-                    };
-                    await errorDialog.ShowAsync();
-                }
-            }
-        }
-
+        // Event handler cho nút Trang trước
         private void PreviousPage_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.PreviousPage();
         }
 
+        // Event handler cho nút Trang sau
         private void NextPage_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.NextPage();

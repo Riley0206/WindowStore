@@ -82,12 +82,11 @@ namespace ConvenienceStore.ViewModels
                 if (SetProperty(ref _currentPage, value))
                 {
                     UpdateDisplayedProducts();
-                    OnPropertyChanged(nameof(HasPreviousPage)); 
-                    OnPropertyChanged(nameof(HasNextPage)); 
+                    OnPropertyChanged(nameof(HasPreviousPage));  
+                    OnPropertyChanged(nameof(HasNextPage));
                 }
             }
         }
-
 
         public int TotalPages
         {

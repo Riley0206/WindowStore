@@ -101,9 +101,9 @@
 
                 <!-- Pagination Controls -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" Spacing="10">
-                    <Button Content="Trang trước"
-                        Click="PreviousPage_Click"
-                        IsEnabled="{x:Bind ViewModel.HasPreviousPage, Mode=OneWay}"/>
+                    <Button Content="Trang trước" 
+                        Click="PreviousPage_Click" 
+                        IsEnabled="{Binding HasPreviousPage}" />
 
                     <TextBlock VerticalAlignment="Center">
                         <Run Text="Trang "/>
@@ -112,9 +112,9 @@
                         <Run Text="{x:Bind ViewModel.TotalPages, Mode=OneWay}"/>
                     </TextBlock>
 
-                    <Button Content="Trang sau"
-                        Click="NextPage_Click"
-                        IsEnabled="{x:Bind ViewModel.HasNextPage, Mode=OneWay}"/>
+                    <Button Content="Trang sau" 
+                        Click="NextPage_Click" 
+                        IsEnabled="{Binding HasNextPage}" />
                 </StackPanel>
             </StackPanel>
         </Grid>
