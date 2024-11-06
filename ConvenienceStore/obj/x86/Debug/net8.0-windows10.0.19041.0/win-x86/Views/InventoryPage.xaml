@@ -102,7 +102,7 @@
                 <!-- Pagination Controls -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" Spacing="10">
                     <Button x:ConnectionId='4' Content="Trang trước"
-                                                                        
+                                                  
                                                                                    />
 
                     <TextBlock VerticalAlignment="Center">
@@ -113,7 +113,7 @@
                     </TextBlock>
 
                     <Button x:ConnectionId='5' Content="Trang sau"
-                                                                    
+                                              
                                                                                />
                 </StackPanel>
             </StackPanel>

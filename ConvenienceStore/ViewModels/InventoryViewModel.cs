@@ -78,11 +78,12 @@ namespace ConvenienceStore.ViewModels
             {
                 if (value < 1) value = 1;
                 if (value > TotalPages) value = TotalPages;
+
                 if (SetProperty(ref _currentPage, value))
                 {
                     UpdateDisplayedProducts();
-                    OnPropertyChanged(nameof(HasPreviousPage));
-                    OnPropertyChanged(nameof(HasNextPage));
+                    OnPropertyChanged(nameof(HasPreviousPage)); 
+                    OnPropertyChanged(nameof(HasNextPage)); 
                 }
             }
         }
@@ -96,6 +97,7 @@ namespace ConvenienceStore.ViewModels
 
         public bool HasPreviousPage => CurrentPage > 1;
         public bool HasNextPage => CurrentPage < TotalPages;
+
         #endregion
 
         #region Constructor
@@ -231,12 +233,17 @@ namespace ConvenienceStore.ViewModels
         private void CalculateTotalPages()
         {
             var itemCount = FilteredProducts?.Count ?? 0;
-            TotalPages = itemCount == 0 ? 1 : (int)Math.Ceiling(itemCount / (double)PageSize);
+            TotalPages = (itemCount + PageSize - 1) / PageSize;
+
+            if (CurrentPage > TotalPages)
+            {
+                CurrentPage = TotalPages;
+            }
         }
 
         private void UpdateDisplayedProducts()
         {
-            if (FilteredProducts == null || !FilteredProducts.Any())
+            if (FilteredProducts == null || FilteredProducts.Count == 0)
             {
                 DisplayedProducts = new ObservableCollection<Product>();
                 return;
