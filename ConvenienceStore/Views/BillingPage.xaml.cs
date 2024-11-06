@@ -18,21 +18,21 @@ namespace ConvenienceStore.Views
     /// </summary>
     public sealed partial class BillingPage : Page
     {
-        public InventoryViewModel ViewModel { get; }
+        public BillingViewModel ViewModel { get; }
 
         public BillingPage()
         {
             string connectionString = @"Data Source=DESKTOP-LD18TI4;Initial Catalog=ConvenienceStoreDB;Integrated Security=True;TrustServerCertificate=True";
             var databaseService = new DatabaseService(connectionString);
-            ViewModel = new InventoryViewModel(databaseService);
+            ViewModel = new BillingViewModel(databaseService);
 
             this.InitializeComponent();
 
             // Đăng ký các event handlers
-            this.Loaded += InventoryPage_Loaded;
+            this.Loaded += BillingPage_Loaded;
         }
 
-        private async void InventoryPage_Loaded(object sender, RoutedEventArgs e)
+        private async void BillingPage_Loaded(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("Page Loaded event fired");
             try

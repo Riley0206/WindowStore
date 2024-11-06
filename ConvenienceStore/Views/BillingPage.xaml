@@ -39,15 +39,15 @@
 
                 <!-- Products DataGrid -->
                 <controls:DataGrid
-                    x:Name="ProductsDataGrid"
-                    ItemsSource="{x:Bind ViewModel.DisplayedProducts, Mode=OneWay}"
-                    SelectedItem="{x:Bind ViewModel.SelectedProduct, Mode=TwoWay}"
+                    x:Name="BillingDataGrid"
+                    ItemsSource="{x:Bind ViewModel.DisplayedBills, Mode=OneWay}"
+                    SelectedItem="{x:Bind ViewModel.SelectedBill, Mode=TwoWay}"
                     AutoGenerateColumns="False"
                     IsReadOnly="True"
                     GridLinesVisibility="All"
                     AlternatingRowBackground="{ThemeResource SystemControlAltMediumLowAcrylicElementMediumBrush}">
                     <controls:DataGrid.Columns>
-                        <controls:DataGridTextColumn Header="Mã sản phẩm" Binding="{Binding PurchaseOrderId}" />
+                        <controls:DataGridTextColumn Header="Mã đơn hàng" Binding="{Binding PurchaseOrderId}" />
                         <controls:DataGridTextColumn Header="Nơi cung cấp" Binding="{Binding SupplierName}" />
                         <controls:DataGridTextColumn Header="Ngày mua" Binding="{Binding OrderDate}" />
                         <controls:DataGridTextColumn Header="Số lượng" Binding="{Binding Quantity}" />

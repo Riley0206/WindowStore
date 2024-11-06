@@ -144,5 +144,124 @@ namespace ConvenienceStore.Services
                 throw;
             }
         }
+
+        public async Task<List<DetailedBill>> GetDetailedBillAsync(int purchaseOrderID)
+        {
+            var detailedBill = new List<DetailedBill>();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                using (SqlCommand command = new SqlCommand(
+                    @"SELECT * FROM PurchaseOrderDetail 
+              WHERE PurchaseOrderID = @PurchaseOrderID", connection))
+                {
+                    command.Parameters.AddWithValue("@PurchaseOrderID", purchaseOrderID);
+                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            detailedBill.Add(new DetailedBill
+                            {
+                                PurchaseOrderID = reader.GetInt32(reader.GetOrdinal("PurchaseOrderID")),
+                                PurchaseOrderDetailID = reader.GetInt32(reader.GetOrdinal("PurchaseOrderDetailID")),
+                                ProductID = reader.GetInt32(reader.GetOrdinal("ProductID")),
+                                UnitPrice = reader.GetDecimal(reader.GetOrdinal("UnitPrice")),
+                                Quantity = reader.GetInt32(reader.GetOrdinal("Quantity"))
+                            });
+                        }
+                    }
+                }
+            }
+            return detailedBill;
+        }
+
+        public async Task AddPurchaseOrderAsync(List<DetailedBill> detailedBill)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                using (SqlCommand command = new SqlCommand(
+                    @"INSERT INTO PurchaseOrder (PurchaseOrderDate) 
+              VALUES (@PurchaseOrderDate); 
+              SELECT SCOPE_IDENTITY()", connection))
+                {
+                    command.Parameters.AddWithValue("@PurchaseOrderDate", DateTime.Now);
+                    int purchaseOrderID = Convert.ToInt32(await command.ExecuteScalarAsync());
+
+                    foreach (var item in detailedBill)
+                    {
+                        using (SqlCommand detailCommand = new SqlCommand(
+                            @"INSERT INTO PurchaseOrderDetail (PurchaseOrderID, ProductID, UnitPrice, Quantity) 
+                    VALUES (@PurchaseOrderID, @ProductID, @UnitPrice, @Quantity)", connection))
+                        {
+                            detailCommand.Parameters.AddWithValue("@PurchaseOrderID", purchaseOrderID);
+                            detailCommand.Parameters.AddWithValue("@ProductID", item.ProductID);
+                            detailCommand.Parameters.AddWithValue("@UnitPrice", item.UnitPrice);
+                            detailCommand.Parameters.AddWithValue("@Quantity", item.Quantity);
+                            await detailCommand.ExecuteNonQueryAsync();
+                        }
+                    }
+                }
+            }
+        }
+
+        public async Task<List<Bill>> GetBillsAsync()
+        {
+            var bills = new List<Bill>();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                using (SqlCommand command = new SqlCommand("SELECT * FROM PurchaseOrder", connection))
+                {
+                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            bills.Add(new Bill
+                            {
+                                PurchaseOrderID = reader.GetInt32(reader.GetOrdinal("PurchaseOrderID")),
+                                SupplierID = reader.GetInt32(reader.GetOrdinal("SupplierID")),
+                                OrderDate = reader.GetDateTime(reader.GetOrdinal("PurchaseOrderDate")),
+                                TotalAmount = reader.GetInt32(reader.GetOrdinal("TotalAmount"))
+                            });
+                        }
+                    }
+                }
+            }
+            return bills;
+        }
+
+        public async Task DeleteBillAsync(int purchaseOrderID)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                using (SqlCommand command = new SqlCommand(
+                    "DELETE FROM PurchaseOrder WHERE PurchaseOrderID = @PurchaseOrderID", connection))
+                {
+                    command.Parameters.AddWithValue("@PurchaseOrderID", purchaseOrderID);
+                    await command.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+        public async Task UpdateBillAsync(Bill bill)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                using (SqlCommand command = new SqlCommand(
+                    @"UPDATE PurchaseOrder 
+              SET SupplierID = @SupplierID, PurchaseOrderDate = @OrderDate, TotalAmount = @TotalAmount 
+              WHERE PurchaseOrderID = @PurchaseOrderID", connection))
+                {
+                    command.Parameters.AddWithValue("@SupplierID", bill.SupplierID);
+                    command.Parameters.AddWithValue("@OrderDate", bill.OrderDate);
+                    command.Parameters.AddWithValue("@TotalAmount", bill.TotalAmount);
+                    command.Parameters.AddWithValue("@PurchaseOrderID", bill.PurchaseOrderID);
+                    await command.ExecuteNonQueryAsync();
+                }
+            }
+        }
     }
 }

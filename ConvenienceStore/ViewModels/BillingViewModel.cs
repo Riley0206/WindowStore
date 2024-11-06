@@ -14,7 +14,6 @@ namespace ConvenienceStore.ViewModels
     {
         #region Private Fields
         private readonly DatabaseService _databaseService;
-        private bool _categoriesLoaded;
         private int _pageSize = 10;
         private int _currentPage = 1;
         private int _totalPages;
@@ -92,10 +91,10 @@ namespace ConvenienceStore.ViewModels
         }
         #endregion
 
-        //#region Commands
-        //public IRelayCommand PreviousPageCommand { get; }
-        //public IRelayCommand NextPageCommand { get; }
-        //#endregion
+        #region Commands
+        public IRelayCommand PreviousPageCommand { get; }
+        public IRelayCommand NextPageCommand { get; }
+        #endregion
 
         #region Methods
         public async Task LoadData()
