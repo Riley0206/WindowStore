@@ -20,6 +20,11 @@ namespace ConvenienceStore
                     MainFrame.Navigate(typeof(InventoryPage));
                     sender.IsPaneOpen = false; // Tự động đóng NavigationView để tăng không gian hiển thị
                 }
+                else if (selectedTag == "BillingPage")
+                {
+                    MainFrame.Navigate(typeof(BillingPage));
+                    sender.IsPaneOpen = false; // Tự động đóng NavigationView để tăng không gian hiển thị
+                }
             }
         }
     }

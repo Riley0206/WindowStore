@@ -92,37 +92,43 @@ namespace ConvenienceStore.ViewModels
         #endregion
 
         #region Commands
-        public IRelayCommand PreviousPageCommand { get; }
-        public IRelayCommand NextPageCommand { get; }
+        [RelayCommand]
+        private async Task AddBill(DetailedBill newBill)
+        {
+            await _databaseService.AddPurchaseOrderAsync(newBill);
+            DetailedBills.Add(newBill);
+            CalculateTotalPages();
+            UpdateDisplayedBills();
+        }
+
+        [RelayCommand]
+        private async Task DeleteBill(DetailedBill bill)
+        {
+            await _databaseService.DeleteBillAsync(bill.PurchaseOrderID);
+            DetailedBills.Remove(bill);
+            CalculateTotalPages();
+            UpdateDisplayedBills();
+        }
+
+        [RelayCommand]
+        private async Task UpdateBill(Bill updatedBill)
+        {
+            await _databaseService.UpdateBillAsync(updatedBill);
+            CalculateTotalPages();
+            UpdateDisplayedBills();
+        }
         #endregion
 
         #region Methods
         public async Task LoadData()
         {
-            //if (!_categoriesLoaded)
-            //{
-            //    await LoadCategories();
-            //    _categoriesLoaded = true;
-            //}
             await LoadBills();
         }
-
-        //private async Task LoadCategories()
-        //{
-        //    var categories = await _databaseService.GetCategoriesAsync();
-        //    foreach (var category in categories)
-        //    {
-        //        Categories.Add(category);
-        //    }
-        //}
 
         private async Task LoadBills()
         {
             var bills = await _databaseService.GetBillsAsync();
-            foreach (var bill in bills)
-            {
-                AllBills.Add(bill);
-            }
+            AllBills = new ObservableCollection<Bill>(bills);
             CalculateTotalPages();
             UpdateDisplayedBills();
         }

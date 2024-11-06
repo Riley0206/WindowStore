@@ -175,7 +175,7 @@ namespace ConvenienceStore.Services
             return detailedBill;
         }
 
-        public async Task AddPurchaseOrderAsync(List<DetailedBill> detailedBill)
+        public async Task AddPurchaseOrderAsync(DetailedBill detailedBill)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -188,18 +188,15 @@ namespace ConvenienceStore.Services
                     command.Parameters.AddWithValue("@PurchaseOrderDate", DateTime.Now);
                     int purchaseOrderID = Convert.ToInt32(await command.ExecuteScalarAsync());
 
-                    foreach (var item in detailedBill)
-                    {
-                        using (SqlCommand detailCommand = new SqlCommand(
-                            @"INSERT INTO PurchaseOrderDetail (PurchaseOrderID, ProductID, UnitPrice, Quantity) 
+                    using (SqlCommand detailCommand = new SqlCommand(
+                        @"INSERT INTO PurchaseOrderDetail (PurchaseOrderID, ProductID, UnitPrice, Quantity) 
                     VALUES (@PurchaseOrderID, @ProductID, @UnitPrice, @Quantity)", connection))
-                        {
-                            detailCommand.Parameters.AddWithValue("@PurchaseOrderID", purchaseOrderID);
-                            detailCommand.Parameters.AddWithValue("@ProductID", item.ProductID);
-                            detailCommand.Parameters.AddWithValue("@UnitPrice", item.UnitPrice);
-                            detailCommand.Parameters.AddWithValue("@Quantity", item.Quantity);
-                            await detailCommand.ExecuteNonQueryAsync();
-                        }
+                    {
+                        detailCommand.Parameters.AddWithValue("@PurchaseOrderID", purchaseOrderID);
+                        detailCommand.Parameters.AddWithValue("@ProductID", detailedBill.ProductID);
+                        detailCommand.Parameters.AddWithValue("@UnitPrice", detailedBill.UnitPrice);
+                        detailCommand.Parameters.AddWithValue("@Quantity", detailedBill.Quantity);
+                        await detailCommand.ExecuteNonQueryAsync();
                     }
                 }
             }

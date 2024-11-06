@@ -26,7 +26,7 @@
         <!-- Main Content -->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="0"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="1">
@@ -41,6 +41,7 @@
                 <controls:DataGrid x:ConnectionId='2'
                     x:Name="BillingDataGrid"
                                                                           
+                                                                               
                     AutoGenerateColumns="False"
                     IsReadOnly="True"
                     GridLinesVisibility="All"
@@ -53,7 +54,6 @@
                         <controls:DataGridTextColumn Header="Đơn giá" Binding="{Binding UnitPrice}" />
                         <controls:DataGridTextColumn Header="Thành tiền" Binding="{Binding TotalAmount}" />
                     </controls:DataGrid.Columns>
-
                 </controls:DataGrid>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">

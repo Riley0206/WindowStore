@@ -3,7 +3,6 @@ using ConvenienceStore.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using ConvenienceStore.Models;
-using ConvenienceStore.Services;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Diagnostics;
@@ -156,14 +155,14 @@ namespace ConvenienceStore.Views
             }
         }
 
-        private async void PreviousPage_Click(object sender, RoutedEventArgs e)
+        private void PreviousPage_Click(object sender, RoutedEventArgs e)
         {
-           
+            ViewModel.PreviousPage();  
         }
 
-        private async void NextPage_Click(object sender, RoutedEventArgs e)
+        private void NextPage_Click(object sender, RoutedEventArgs e)
         {
-            
+            ViewModel.NextPage();
         }
     }
 }
