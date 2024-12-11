@@ -121,7 +121,7 @@ namespace ConvenienceStore.ViewModels
         }
 
         [RelayCommand]
-        public async Task UpdateOrder(PurchaseOrder updatedPurchaseOrder)
+        public async Task UpdatePurchaseOrder(PurchaseOrder updatedPurchaseOrder)
         {
             await _databaseService.UpdatePurchaseOrderAsync(updatedPurchaseOrder);
             CalculateTotalPages();
