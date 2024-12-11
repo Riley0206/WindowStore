@@ -12,6 +12,7 @@
         <NavigationView PaneDisplayMode="Left" SelectionChanged="NavigationView_SelectionChanged" CompactPaneLength="48">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Quản lý kho hàng" Tag="InventoryPage" Icon="Shop"/>
+                <NavigationViewItem Content="Quản lý nhân viên" Tag="EmployeePage" Icon="People"/>
             </NavigationView.MenuItems>
             <Frame x:Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </NavigationView>

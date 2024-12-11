@@ -226,7 +226,7 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[70];
+            _typeNameTable = new string[74];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -234,39 +234,39 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             _typeNameTable[4] = "ConvenienceStore.Converters.NullToBoolConverter";
             _typeNameTable[5] = "ConvenienceStore.Converters.GreaterThanOneConverter";
             _typeNameTable[6] = "ConvenienceStore.Converters.LessThanTotalPagesConverter";
-            _typeNameTable[7] = "Microsoft.UI.Xaml.Controls.NavigationView";
-            _typeNameTable[8] = "Microsoft.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[9] = "Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode";
-            _typeNameTable[10] = "System.Enum";
-            _typeNameTable[11] = "System.ValueType";
-            _typeNameTable[12] = "Double";
-            _typeNameTable[13] = "System.Collections.Generic.IList`1<Object>";
-            _typeNameTable[14] = "Microsoft.UI.Xaml.Controls.AutoSuggestBox";
-            _typeNameTable[15] = "Microsoft.UI.Xaml.UIElement";
-            _typeNameTable[16] = "Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode";
-            _typeNameTable[17] = "Microsoft.UI.Xaml.DataTemplate";
-            _typeNameTable[18] = "Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible";
-            _typeNameTable[19] = "Microsoft.UI.Xaml.Style";
-            _typeNameTable[20] = "Microsoft.UI.Xaml.Controls.StyleSelector";
-            _typeNameTable[21] = "Microsoft.UI.Xaml.Controls.DataTemplateSelector";
-            _typeNameTable[22] = "Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode";
-            _typeNameTable[23] = "String";
-            _typeNameTable[24] = "Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus";
-            _typeNameTable[25] = "Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled";
-            _typeNameTable[26] = "Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings";
-            _typeNameTable[27] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[28] = "Microsoft.UI.Xaml.Controls.NavigationViewItem";
-            _typeNameTable[29] = "Microsoft.UI.Xaml.Controls.NavigationViewItemBase";
-            _typeNameTable[30] = "Microsoft.UI.Xaml.Controls.IconElement";
-            _typeNameTable[31] = "Microsoft.UI.Xaml.Controls.InfoBadge";
-            _typeNameTable[32] = "Microsoft.UI.Xaml.Controls.Control";
-            _typeNameTable[33] = "ConvenienceStore.MainWindow";
-            _typeNameTable[34] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[35] = "ConvenienceStore.Converters.CurrencyConverter";
-            _typeNameTable[36] = "CommunityToolkit.WinUI.UI.Controls.DataGrid";
-            _typeNameTable[37] = "System.Collections.IEnumerable";
-            _typeNameTable[38] = "CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility";
-            _typeNameTable[39] = "Microsoft.UI.Xaml.Media.Brush";
+            _typeNameTable[7] = "ConvenienceStore.Converters.NullToGreyConverter";
+            _typeNameTable[8] = "ConvenienceStore.Converters.DateConverter";
+            _typeNameTable[9] = "Microsoft.UI.Xaml.Controls.NavigationView";
+            _typeNameTable[10] = "Microsoft.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[11] = "Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode";
+            _typeNameTable[12] = "System.Enum";
+            _typeNameTable[13] = "System.ValueType";
+            _typeNameTable[14] = "Double";
+            _typeNameTable[15] = "System.Collections.Generic.IList`1<Object>";
+            _typeNameTable[16] = "Microsoft.UI.Xaml.Controls.AutoSuggestBox";
+            _typeNameTable[17] = "Microsoft.UI.Xaml.UIElement";
+            _typeNameTable[18] = "Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode";
+            _typeNameTable[19] = "Microsoft.UI.Xaml.DataTemplate";
+            _typeNameTable[20] = "Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible";
+            _typeNameTable[21] = "Microsoft.UI.Xaml.Style";
+            _typeNameTable[22] = "Microsoft.UI.Xaml.Controls.StyleSelector";
+            _typeNameTable[23] = "Microsoft.UI.Xaml.Controls.DataTemplateSelector";
+            _typeNameTable[24] = "Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode";
+            _typeNameTable[25] = "String";
+            _typeNameTable[26] = "Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus";
+            _typeNameTable[27] = "Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled";
+            _typeNameTable[28] = "Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings";
+            _typeNameTable[29] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[30] = "Microsoft.UI.Xaml.Controls.NavigationViewItem";
+            _typeNameTable[31] = "Microsoft.UI.Xaml.Controls.NavigationViewItemBase";
+            _typeNameTable[32] = "Microsoft.UI.Xaml.Controls.IconElement";
+            _typeNameTable[33] = "Microsoft.UI.Xaml.Controls.InfoBadge";
+            _typeNameTable[34] = "Microsoft.UI.Xaml.Controls.Control";
+            _typeNameTable[35] = "ConvenienceStore.MainWindow";
+            _typeNameTable[36] = "Microsoft.UI.Xaml.Window";
+            _typeNameTable[37] = "CommunityToolkit.WinUI.UI.Controls.DataGrid";
+            _typeNameTable[38] = "System.Collections.IEnumerable";
+            _typeNameTable[39] = "CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility";
             _typeNameTable[40] = "System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
             _typeNameTable[41] = "System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
             _typeNameTable[42] = "CommunityToolkit.WinUI.UI.Controls.DataGridColumn";
@@ -276,29 +276,33 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             _typeNameTable[46] = "CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection";
             _typeNameTable[47] = "Microsoft.UI.Xaml.Visibility";
             _typeNameTable[48] = "CommunityToolkit.WinUI.UI.Controls.DataGridLength";
-            _typeNameTable[49] = "CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode";
-            _typeNameTable[50] = "CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility";
-            _typeNameTable[51] = "Microsoft.UI.Xaml.Controls.ScrollBarVisibility";
-            _typeNameTable[52] = "Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger";
-            _typeNameTable[53] = "CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode";
-            _typeNameTable[54] = "CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode";
-            _typeNameTable[55] = "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>";
-            _typeNameTable[56] = "System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>";
-            _typeNameTable[57] = "System.Collections.IList";
-            _typeNameTable[58] = "CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn";
-            _typeNameTable[59] = "CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn";
-            _typeNameTable[60] = "Microsoft.UI.Xaml.Media.FontFamily";
-            _typeNameTable[61] = "Windows.UI.Text.FontStyle";
-            _typeNameTable[62] = "Windows.UI.Text.FontWeight";
-            _typeNameTable[63] = "ConvenienceStore.Views.InventoryPage";
-            _typeNameTable[64] = "Microsoft.UI.Xaml.Controls.Page";
-            _typeNameTable[65] = "Microsoft.UI.Xaml.Controls.UserControl";
-            _typeNameTable[66] = "ConvenienceStore.ViewModels.InventoryViewModel";
-            _typeNameTable[67] = "CommunityToolkit.Mvvm.ComponentModel.ObservableObject";
-            _typeNameTable[68] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[69] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[49] = "Microsoft.UI.Xaml.Media.Brush";
+            _typeNameTable[50] = "CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode";
+            _typeNameTable[51] = "CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility";
+            _typeNameTable[52] = "Microsoft.UI.Xaml.Controls.ScrollBarVisibility";
+            _typeNameTable[53] = "Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger";
+            _typeNameTable[54] = "CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode";
+            _typeNameTable[55] = "CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode";
+            _typeNameTable[56] = "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>";
+            _typeNameTable[57] = "System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>";
+            _typeNameTable[58] = "System.Collections.IList";
+            _typeNameTable[59] = "CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn";
+            _typeNameTable[60] = "CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn";
+            _typeNameTable[61] = "Microsoft.UI.Xaml.Media.FontFamily";
+            _typeNameTable[62] = "Windows.UI.Text.FontStyle";
+            _typeNameTable[63] = "Windows.UI.Text.FontWeight";
+            _typeNameTable[64] = "ConvenienceStore.Views.EmployeePage";
+            _typeNameTable[65] = "Microsoft.UI.Xaml.Controls.Page";
+            _typeNameTable[66] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[67] = "ConvenienceStore.ViewModels.EmployeeViewModel";
+            _typeNameTable[68] = "CommunityToolkit.Mvvm.ComponentModel.ObservableObject";
+            _typeNameTable[69] = "ConvenienceStore.Converters.CurrencyConverter";
+            _typeNameTable[70] = "ConvenienceStore.Views.InventoryPage";
+            _typeNameTable[71] = "ConvenienceStore.ViewModels.InventoryViewModel";
+            _typeNameTable[72] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[73] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[70];
+            _typeTable = new global::System.Type[74];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -306,39 +310,39 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             _typeTable[4] = typeof(global::ConvenienceStore.Converters.NullToBoolConverter);
             _typeTable[5] = typeof(global::ConvenienceStore.Converters.GreaterThanOneConverter);
             _typeTable[6] = typeof(global::ConvenienceStore.Converters.LessThanTotalPagesConverter);
-            _typeTable[7] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationView);
-            _typeTable[8] = typeof(global::Microsoft.UI.Xaml.Controls.ContentControl);
-            _typeTable[9] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode);
-            _typeTable[10] = typeof(global::System.Enum);
-            _typeTable[11] = typeof(global::System.ValueType);
-            _typeTable[12] = typeof(global::System.Double);
-            _typeTable[13] = typeof(global::System.Collections.Generic.IList<global::System.Object>);
-            _typeTable[14] = typeof(global::Microsoft.UI.Xaml.Controls.AutoSuggestBox);
-            _typeTable[15] = typeof(global::Microsoft.UI.Xaml.UIElement);
-            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode);
-            _typeTable[17] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
-            _typeTable[18] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible);
-            _typeTable[19] = typeof(global::Microsoft.UI.Xaml.Style);
-            _typeTable[20] = typeof(global::Microsoft.UI.Xaml.Controls.StyleSelector);
-            _typeTable[21] = typeof(global::Microsoft.UI.Xaml.Controls.DataTemplateSelector);
-            _typeTable[22] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode);
-            _typeTable[23] = typeof(global::System.String);
-            _typeTable[24] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus);
-            _typeTable[25] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled);
-            _typeTable[26] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings);
-            _typeTable[27] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[28] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem);
-            _typeTable[29] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase);
-            _typeTable[30] = typeof(global::Microsoft.UI.Xaml.Controls.IconElement);
-            _typeTable[31] = typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge);
-            _typeTable[32] = typeof(global::Microsoft.UI.Xaml.Controls.Control);
-            _typeTable[33] = typeof(global::ConvenienceStore.MainWindow);
-            _typeTable[34] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[35] = typeof(global::ConvenienceStore.Converters.CurrencyConverter);
-            _typeTable[36] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid);
-            _typeTable[37] = typeof(global::System.Collections.IEnumerable);
-            _typeTable[38] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility);
-            _typeTable[39] = typeof(global::Microsoft.UI.Xaml.Media.Brush);
+            _typeTable[7] = typeof(global::ConvenienceStore.Converters.NullToGreyConverter);
+            _typeTable[8] = typeof(global::ConvenienceStore.Converters.DateConverter);
+            _typeTable[9] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationView);
+            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Controls.ContentControl);
+            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode);
+            _typeTable[12] = typeof(global::System.Enum);
+            _typeTable[13] = typeof(global::System.ValueType);
+            _typeTable[14] = typeof(global::System.Double);
+            _typeTable[15] = typeof(global::System.Collections.Generic.IList<global::System.Object>);
+            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.Controls.AutoSuggestBox);
+            _typeTable[17] = typeof(global::Microsoft.UI.Xaml.UIElement);
+            _typeTable[18] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode);
+            _typeTable[19] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
+            _typeTable[20] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible);
+            _typeTable[21] = typeof(global::Microsoft.UI.Xaml.Style);
+            _typeTable[22] = typeof(global::Microsoft.UI.Xaml.Controls.StyleSelector);
+            _typeTable[23] = typeof(global::Microsoft.UI.Xaml.Controls.DataTemplateSelector);
+            _typeTable[24] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode);
+            _typeTable[25] = typeof(global::System.String);
+            _typeTable[26] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus);
+            _typeTable[27] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled);
+            _typeTable[28] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings);
+            _typeTable[29] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[30] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem);
+            _typeTable[31] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase);
+            _typeTable[32] = typeof(global::Microsoft.UI.Xaml.Controls.IconElement);
+            _typeTable[33] = typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge);
+            _typeTable[34] = typeof(global::Microsoft.UI.Xaml.Controls.Control);
+            _typeTable[35] = typeof(global::ConvenienceStore.MainWindow);
+            _typeTable[36] = typeof(global::Microsoft.UI.Xaml.Window);
+            _typeTable[37] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid);
+            _typeTable[38] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[39] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility);
             _typeTable[40] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
             _typeTable[41] = typeof(global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
             _typeTable[42] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn);
@@ -348,27 +352,31 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             _typeTable[46] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection);
             _typeTable[47] = typeof(global::Microsoft.UI.Xaml.Visibility);
             _typeTable[48] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridLength);
-            _typeTable[49] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode);
-            _typeTable[50] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility);
-            _typeTable[51] = typeof(global::Microsoft.UI.Xaml.Controls.ScrollBarVisibility);
-            _typeTable[52] = typeof(global::Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger);
-            _typeTable[53] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode);
-            _typeTable[54] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode);
-            _typeTable[55] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>);
-            _typeTable[56] = typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>);
-            _typeTable[57] = typeof(global::System.Collections.IList);
-            _typeTable[58] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn);
-            _typeTable[59] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn);
-            _typeTable[60] = typeof(global::Microsoft.UI.Xaml.Media.FontFamily);
-            _typeTable[61] = typeof(global::Windows.UI.Text.FontStyle);
-            _typeTable[62] = typeof(global::Windows.UI.Text.FontWeight);
-            _typeTable[63] = typeof(global::ConvenienceStore.Views.InventoryPage);
-            _typeTable[64] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
-            _typeTable[65] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
-            _typeTable[66] = typeof(global::ConvenienceStore.ViewModels.InventoryViewModel);
-            _typeTable[67] = typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject);
-            _typeTable[68] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[69] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[49] = typeof(global::Microsoft.UI.Xaml.Media.Brush);
+            _typeTable[50] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode);
+            _typeTable[51] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility);
+            _typeTable[52] = typeof(global::Microsoft.UI.Xaml.Controls.ScrollBarVisibility);
+            _typeTable[53] = typeof(global::Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger);
+            _typeTable[54] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode);
+            _typeTable[55] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode);
+            _typeTable[56] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>);
+            _typeTable[57] = typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>);
+            _typeTable[58] = typeof(global::System.Collections.IList);
+            _typeTable[59] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn);
+            _typeTable[60] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn);
+            _typeTable[61] = typeof(global::Microsoft.UI.Xaml.Media.FontFamily);
+            _typeTable[62] = typeof(global::Windows.UI.Text.FontStyle);
+            _typeTable[63] = typeof(global::Windows.UI.Text.FontWeight);
+            _typeTable[64] = typeof(global::ConvenienceStore.Views.EmployeePage);
+            _typeTable[65] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
+            _typeTable[66] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[67] = typeof(global::ConvenienceStore.ViewModels.EmployeeViewModel);
+            _typeTable[68] = typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject);
+            _typeTable[69] = typeof(global::ConvenienceStore.Converters.CurrencyConverter);
+            _typeTable[70] = typeof(global::ConvenienceStore.Views.InventoryPage);
+            _typeTable[71] = typeof(global::ConvenienceStore.ViewModels.InventoryViewModel);
+            _typeTable[72] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[73] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -407,65 +415,73 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
         private object Activate_4_NullToBoolConverter() { return new global::ConvenienceStore.Converters.NullToBoolConverter(); }
         private object Activate_5_GreaterThanOneConverter() { return new global::ConvenienceStore.Converters.GreaterThanOneConverter(); }
         private object Activate_6_LessThanTotalPagesConverter() { return new global::ConvenienceStore.Converters.LessThanTotalPagesConverter(); }
-        private object Activate_7_NavigationView() { return new global::Microsoft.UI.Xaml.Controls.NavigationView(); }
-        private object Activate_26_NavigationViewTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings(); }
-        private object Activate_28_NavigationViewItem() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewItem(); }
-        private object Activate_31_InfoBadge() { return new global::Microsoft.UI.Xaml.Controls.InfoBadge(); }
-        private object Activate_33_MainWindow() { return new global::ConvenienceStore.MainWindow(); }
-        private object Activate_35_CurrencyConverter() { return new global::ConvenienceStore.Converters.CurrencyConverter(); }
-        private object Activate_36_DataGrid() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGrid(); }
+        private object Activate_7_NullToGreyConverter() { return new global::ConvenienceStore.Converters.NullToGreyConverter(); }
+        private object Activate_8_DateConverter() { return new global::ConvenienceStore.Converters.DateConverter(); }
+        private object Activate_9_NavigationView() { return new global::Microsoft.UI.Xaml.Controls.NavigationView(); }
+        private object Activate_28_NavigationViewTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings(); }
+        private object Activate_30_NavigationViewItem() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewItem(); }
+        private object Activate_33_InfoBadge() { return new global::Microsoft.UI.Xaml.Controls.InfoBadge(); }
+        private object Activate_35_MainWindow() { return new global::ConvenienceStore.MainWindow(); }
+        private object Activate_37_DataGrid() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGrid(); }
         private object Activate_40_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
         private object Activate_41_Collection() { return new global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
-        private object Activate_55_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>(); }
-        private object Activate_56_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>(); }
-        private object Activate_58_DataGridTextColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn(); }
-        private object Activate_63_InventoryPage() { return new global::ConvenienceStore.Views.InventoryPage(); }
-        private object Activate_68_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_56_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>(); }
+        private object Activate_57_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>(); }
+        private object Activate_59_DataGridTextColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn(); }
+        private object Activate_64_EmployeePage() { return new global::ConvenienceStore.Views.EmployeePage(); }
+        private object Activate_67_EmployeeViewModel() { return new global::ConvenienceStore.ViewModels.EmployeeViewModel(); }
+        private object Activate_69_CurrencyConverter() { return new global::ConvenienceStore.Converters.CurrencyConverter(); }
+        private object Activate_70_InventoryPage() { return new global::ConvenienceStore.Views.InventoryPage(); }
+        private object Activate_72_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_NullToBoolConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.NullToBoolConverter).TypeHandle);
         private void StaticInitializer_5_GreaterThanOneConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.GreaterThanOneConverter).TypeHandle);
         private void StaticInitializer_6_LessThanTotalPagesConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.LessThanTotalPagesConverter).TypeHandle);
-        private void StaticInitializer_7_NavigationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationView).TypeHandle);
-        private void StaticInitializer_9_NavigationViewPaneDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode).TypeHandle);
-        private void StaticInitializer_10_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
-        private void StaticInitializer_11_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
-        private void StaticInitializer_13_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::System.Object>).TypeHandle);
-        private void StaticInitializer_16_NavigationViewDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode).TypeHandle);
-        private void StaticInitializer_18_NavigationViewBackButtonVisible() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible).TypeHandle);
-        private void StaticInitializer_22_NavigationViewOverflowLabelMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode).TypeHandle);
-        private void StaticInitializer_24_NavigationViewSelectionFollowsFocus() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus).TypeHandle);
-        private void StaticInitializer_25_NavigationViewShoulderNavigationEnabled() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled).TypeHandle);
-        private void StaticInitializer_26_NavigationViewTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings).TypeHandle);
-        private void StaticInitializer_28_NavigationViewItem() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem).TypeHandle);
-        private void StaticInitializer_29_NavigationViewItemBase() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase).TypeHandle);
-        private void StaticInitializer_31_InfoBadge() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge).TypeHandle);
-        private void StaticInitializer_33_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.MainWindow).TypeHandle);
-        private void StaticInitializer_35_CurrencyConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.CurrencyConverter).TypeHandle);
-        private void StaticInitializer_36_DataGrid() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid).TypeHandle);
-        private void StaticInitializer_37_IEnumerable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IEnumerable).TypeHandle);
-        private void StaticInitializer_38_DataGridGridLinesVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility).TypeHandle);
+        private void StaticInitializer_7_NullToGreyConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.NullToGreyConverter).TypeHandle);
+        private void StaticInitializer_8_DateConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.DateConverter).TypeHandle);
+        private void StaticInitializer_9_NavigationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationView).TypeHandle);
+        private void StaticInitializer_11_NavigationViewPaneDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode).TypeHandle);
+        private void StaticInitializer_12_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
+        private void StaticInitializer_13_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
+        private void StaticInitializer_15_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::System.Object>).TypeHandle);
+        private void StaticInitializer_18_NavigationViewDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode).TypeHandle);
+        private void StaticInitializer_20_NavigationViewBackButtonVisible() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible).TypeHandle);
+        private void StaticInitializer_24_NavigationViewOverflowLabelMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode).TypeHandle);
+        private void StaticInitializer_26_NavigationViewSelectionFollowsFocus() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus).TypeHandle);
+        private void StaticInitializer_27_NavigationViewShoulderNavigationEnabled() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled).TypeHandle);
+        private void StaticInitializer_28_NavigationViewTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings).TypeHandle);
+        private void StaticInitializer_30_NavigationViewItem() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem).TypeHandle);
+        private void StaticInitializer_31_NavigationViewItemBase() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase).TypeHandle);
+        private void StaticInitializer_33_InfoBadge() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge).TypeHandle);
+        private void StaticInitializer_35_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.MainWindow).TypeHandle);
+        private void StaticInitializer_37_DataGrid() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid).TypeHandle);
+        private void StaticInitializer_38_IEnumerable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IEnumerable).TypeHandle);
+        private void StaticInitializer_39_DataGridGridLinesVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility).TypeHandle);
         private void StaticInitializer_40_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>).TypeHandle);
         private void StaticInitializer_41_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>).TypeHandle);
         private void StaticInitializer_42_DataGridColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn).TypeHandle);
         private void StaticInitializer_45_Nullable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Nullable<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>).TypeHandle);
         private void StaticInitializer_46_DataGridSortDirection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection).TypeHandle);
         private void StaticInitializer_48_DataGridLength() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridLength).TypeHandle);
-        private void StaticInitializer_49_DataGridClipboardCopyMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode).TypeHandle);
-        private void StaticInitializer_50_DataGridHeadersVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility).TypeHandle);
-        private void StaticInitializer_53_DataGridRowDetailsVisibilityMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode).TypeHandle);
-        private void StaticInitializer_54_DataGridSelectionMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode).TypeHandle);
-        private void StaticInitializer_55_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>).TypeHandle);
-        private void StaticInitializer_56_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>).TypeHandle);
-        private void StaticInitializer_57_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IList).TypeHandle);
-        private void StaticInitializer_58_DataGridTextColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn).TypeHandle);
-        private void StaticInitializer_59_DataGridBoundColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn).TypeHandle);
-        private void StaticInitializer_61_FontStyle() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Text.FontStyle).TypeHandle);
-        private void StaticInitializer_62_FontWeight() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Text.FontWeight).TypeHandle);
-        private void StaticInitializer_63_InventoryPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Views.InventoryPage).TypeHandle);
-        private void StaticInitializer_66_InventoryViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.ViewModels.InventoryViewModel).TypeHandle);
-        private void StaticInitializer_67_ObservableObject() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject).TypeHandle);
-        private void StaticInitializer_68_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_69_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_50_DataGridClipboardCopyMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode).TypeHandle);
+        private void StaticInitializer_51_DataGridHeadersVisibility() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility).TypeHandle);
+        private void StaticInitializer_54_DataGridRowDetailsVisibilityMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode).TypeHandle);
+        private void StaticInitializer_55_DataGridSelectionMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode).TypeHandle);
+        private void StaticInitializer_56_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>).TypeHandle);
+        private void StaticInitializer_57_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>).TypeHandle);
+        private void StaticInitializer_58_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.IList).TypeHandle);
+        private void StaticInitializer_59_DataGridTextColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn).TypeHandle);
+        private void StaticInitializer_60_DataGridBoundColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn).TypeHandle);
+        private void StaticInitializer_62_FontStyle() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Text.FontStyle).TypeHandle);
+        private void StaticInitializer_63_FontWeight() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Text.FontWeight).TypeHandle);
+        private void StaticInitializer_64_EmployeePage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Views.EmployeePage).TypeHandle);
+        private void StaticInitializer_67_EmployeeViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.ViewModels.EmployeeViewModel).TypeHandle);
+        private void StaticInitializer_68_ObservableObject() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject).TypeHandle);
+        private void StaticInitializer_69_CurrencyConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.CurrencyConverter).TypeHandle);
+        private void StaticInitializer_70_InventoryPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Views.InventoryPage).TypeHandle);
+        private void StaticInitializer_71_InventoryViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.ViewModels.InventoryViewModel).TypeHandle);
+        private void StaticInitializer_72_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_73_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -473,7 +489,7 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_13_IList(object instance, object item)
+        private void VectorAdd_15_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Object>)instance;
             var newItem = (global::System.Object)item;
@@ -491,19 +507,19 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             var newItem = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_55_ObservableCollection(object instance, object item)
+        private void VectorAdd_56_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Style>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Style)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_56_Collection(object instance, object item)
+        private void VectorAdd_57_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Style>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Style)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_69_IList(object instance, object item)
+        private void VectorAdd_73_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -565,10 +581,26 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 7:   //  Microsoft.UI.Xaml.Controls.NavigationView
+            case 7:   //  ConvenienceStore.Converters.NullToGreyConverter
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_7_NullToGreyConverter;
+                userType.StaticInitializer = StaticInitializer_7_NullToGreyConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  ConvenienceStore.Converters.DateConverter
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_8_DateConverter;
+                userType.StaticInitializer = StaticInitializer_8_DateConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Microsoft.UI.Xaml.Controls.NavigationView
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
-                userType.Activator = Activate_7_NavigationView;
-                userType.StaticInitializer = StaticInitializer_7_NavigationView;
+                userType.Activator = Activate_9_NavigationView;
+                userType.StaticInitializer = StaticInitializer_9_NavigationView;
                 userType.AddMemberName("PaneDisplayMode");
                 userType.AddMemberName("CompactPaneLength");
                 userType.AddMemberName("MenuItems");
@@ -609,13 +641,13 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 8:   //  Microsoft.UI.Xaml.Controls.ContentControl
+            case 10:   //  Microsoft.UI.Xaml.Controls.ContentControl
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode
+            case 11:   //  Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_9_NavigationViewPaneDisplayMode;
+                userType.StaticInitializer = StaticInitializer_11_NavigationViewPaneDisplayMode;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Auto);
                 userType.AddEnumValue("Left", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Left);
                 userType.AddEnumValue("Top", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Top);
@@ -624,116 +656,116 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 10:   //  System.Enum
+            case 12:   //  System.Enum
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_10_Enum;
+                userType.StaticInitializer = StaticInitializer_12_Enum;
                 xamlType = userType;
                 break;
 
-            case 11:   //  System.ValueType
+            case 13:   //  System.ValueType
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_11_ValueType;
+                userType.StaticInitializer = StaticInitializer_13_ValueType;
                 xamlType = userType;
                 break;
 
-            case 12:   //  Double
+            case 14:   //  Double
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  System.Collections.Generic.IList`1<Object>
+            case 15:   //  System.Collections.Generic.IList`1<Object>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_13_IList;
-                userType.CollectionAdd = VectorAdd_13_IList;
+                userType.StaticInitializer = StaticInitializer_15_IList;
+                userType.CollectionAdd = VectorAdd_15_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 14:   //  Microsoft.UI.Xaml.Controls.AutoSuggestBox
+            case 16:   //  Microsoft.UI.Xaml.Controls.AutoSuggestBox
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 15:   //  Microsoft.UI.Xaml.UIElement
+            case 17:   //  Microsoft.UI.Xaml.UIElement
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode
+            case 18:   //  Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_16_NavigationViewDisplayMode;
+                userType.StaticInitializer = StaticInitializer_18_NavigationViewDisplayMode;
                 userType.AddEnumValue("Minimal", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Minimal);
                 userType.AddEnumValue("Compact", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Compact);
                 userType.AddEnumValue("Expanded", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Expanded);
                 xamlType = userType;
                 break;
 
-            case 17:   //  Microsoft.UI.Xaml.DataTemplate
+            case 19:   //  Microsoft.UI.Xaml.DataTemplate
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible
+            case 20:   //  Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_18_NavigationViewBackButtonVisible;
+                userType.StaticInitializer = StaticInitializer_20_NavigationViewBackButtonVisible;
                 userType.AddEnumValue("Collapsed", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Collapsed);
                 userType.AddEnumValue("Visible", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Visible);
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Auto);
                 xamlType = userType;
                 break;
 
-            case 19:   //  Microsoft.UI.Xaml.Style
+            case 21:   //  Microsoft.UI.Xaml.Style
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 20:   //  Microsoft.UI.Xaml.Controls.StyleSelector
+            case 22:   //  Microsoft.UI.Xaml.Controls.StyleSelector
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 21:   //  Microsoft.UI.Xaml.Controls.DataTemplateSelector
+            case 23:   //  Microsoft.UI.Xaml.Controls.DataTemplateSelector
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 22:   //  Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode
+            case 24:   //  Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_22_NavigationViewOverflowLabelMode;
+                userType.StaticInitializer = StaticInitializer_24_NavigationViewOverflowLabelMode;
                 userType.AddEnumValue("MoreLabel", global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel);
                 userType.AddEnumValue("NoLabel", global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel);
                 xamlType = userType;
                 break;
 
-            case 23:   //  String
+            case 25:   //  String
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 24:   //  Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus
+            case 26:   //  Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_24_NavigationViewSelectionFollowsFocus;
+                userType.StaticInitializer = StaticInitializer_26_NavigationViewSelectionFollowsFocus;
                 userType.AddEnumValue("Disabled", global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus.Disabled);
                 userType.AddEnumValue("Enabled", global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled);
                 xamlType = userType;
                 break;
 
-            case 25:   //  Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled
+            case 27:   //  Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_25_NavigationViewShoulderNavigationEnabled;
+                userType.StaticInitializer = StaticInitializer_27_NavigationViewShoulderNavigationEnabled;
                 userType.AddEnumValue("WhenSelectionFollowsFocus", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus);
                 userType.AddEnumValue("Always", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always);
                 userType.AddEnumValue("Never", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never);
                 xamlType = userType;
                 break;
 
-            case 26:   //  Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings
+            case 28:   //  Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_26_NavigationViewTemplateSettings;
+                userType.StaticInitializer = StaticInitializer_28_NavigationViewTemplateSettings;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 27:   //  Microsoft.UI.Xaml.DependencyObject
+            case 29:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 28:   //  Microsoft.UI.Xaml.Controls.NavigationViewItem
+            case 30:   //  Microsoft.UI.Xaml.Controls.NavigationViewItem
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NavigationViewItemBase"));
-                userType.Activator = Activate_28_NavigationViewItem;
-                userType.StaticInitializer = StaticInitializer_28_NavigationViewItem;
+                userType.Activator = Activate_30_NavigationViewItem;
+                userType.StaticInitializer = StaticInitializer_30_NavigationViewItem;
                 userType.AddMemberName("Icon");
                 userType.AddMemberName("CompactPaneLength");
                 userType.AddMemberName("HasUnrealizedChildren");
@@ -746,59 +778,49 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 29:   //  Microsoft.UI.Xaml.Controls.NavigationViewItemBase
+            case 31:   //  Microsoft.UI.Xaml.Controls.NavigationViewItemBase
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
-                userType.StaticInitializer = StaticInitializer_29_NavigationViewItemBase;
+                userType.StaticInitializer = StaticInitializer_31_NavigationViewItemBase;
                 userType.AddMemberName("IsSelected");
                 xamlType = userType;
                 break;
 
-            case 30:   //  Microsoft.UI.Xaml.Controls.IconElement
+            case 32:   //  Microsoft.UI.Xaml.Controls.IconElement
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 31:   //  Microsoft.UI.Xaml.Controls.InfoBadge
+            case 33:   //  Microsoft.UI.Xaml.Controls.InfoBadge
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.StaticInitializer = StaticInitializer_31_InfoBadge;
+                userType.StaticInitializer = StaticInitializer_33_InfoBadge;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 32:   //  Microsoft.UI.Xaml.Controls.Control
+            case 34:   //  Microsoft.UI.Xaml.Controls.Control
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 33:   //  ConvenienceStore.MainWindow
+            case 35:   //  ConvenienceStore.MainWindow
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_33_MainWindow;
-                userType.StaticInitializer = StaticInitializer_33_MainWindow;
+                userType.Activator = Activate_35_MainWindow;
+                userType.StaticInitializer = StaticInitializer_35_MainWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 34:   //  Microsoft.UI.Xaml.Window
+            case 36:   //  Microsoft.UI.Xaml.Window
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 35:   //  ConvenienceStore.Converters.CurrencyConverter
-                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_35_CurrencyConverter;
-                userType.StaticInitializer = StaticInitializer_35_CurrencyConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 36:   //  CommunityToolkit.WinUI.UI.Controls.DataGrid
+            case 37:   //  CommunityToolkit.WinUI.UI.Controls.DataGrid
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_36_DataGrid;
-                userType.StaticInitializer = StaticInitializer_36_DataGrid;
+                userType.Activator = Activate_37_DataGrid;
+                userType.StaticInitializer = StaticInitializer_37_DataGrid;
                 userType.AddMemberName("ItemsSource");
-                userType.AddMemberName("SelectedItem");
                 userType.AddMemberName("AutoGenerateColumns");
-                userType.AddMemberName("IsReadOnly");
                 userType.AddMemberName("GridLinesVisibility");
-                userType.AddMemberName("AlternatingRowBackground");
                 userType.AddMemberName("Columns");
+                userType.AddMemberName("AlternatingRowBackground");
                 userType.AddMemberName("AlternatingRowForeground");
                 userType.AddMemberName("AreRowDetailsFrozen");
                 userType.AddMemberName("AreRowGroupHeadersFrozen");
@@ -817,6 +839,7 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 userType.AddMemberName("HeadersVisibility");
                 userType.AddMemberName("HorizontalGridLinesBrush");
                 userType.AddMemberName("HorizontalScrollBarVisibility");
+                userType.AddMemberName("IsReadOnly");
                 userType.AddMemberName("IsValid");
                 userType.AddMemberName("IncrementalLoadingThreshold");
                 userType.AddMemberName("IncrementalLoadingTrigger");
@@ -832,6 +855,7 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 userType.AddMemberName("RowStyle");
                 userType.AddMemberName("SelectionMode");
                 userType.AddMemberName("SelectedIndex");
+                userType.AddMemberName("SelectedItem");
                 userType.AddMemberName("VerticalGridLinesBrush");
                 userType.AddMemberName("VerticalScrollBarVisibility");
                 userType.AddMemberName("CurrentColumn");
@@ -841,25 +865,21 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 37:   //  System.Collections.IEnumerable
+            case 38:   //  System.Collections.IEnumerable
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_37_IEnumerable;
+                userType.StaticInitializer = StaticInitializer_38_IEnumerable;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 38:   //  CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility
+            case 39:   //  CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_38_DataGridGridLinesVisibility;
+                userType.StaticInitializer = StaticInitializer_39_DataGridGridLinesVisibility;
                 userType.AddEnumValue("None", global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility.None);
                 userType.AddEnumValue("Horizontal", global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility.Horizontal);
                 userType.AddEnumValue("Vertical", global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility.Vertical);
                 userType.AddEnumValue("All", global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility.All);
                 xamlType = userType;
-                break;
-
-            case 39:   //  Microsoft.UI.Xaml.Media.Brush
-                xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 40:   //  System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>
@@ -940,18 +960,22 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 49:   //  CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode
+            case 49:   //  Microsoft.UI.Xaml.Media.Brush
+                xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 50:   //  CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_49_DataGridClipboardCopyMode;
+                userType.StaticInitializer = StaticInitializer_50_DataGridClipboardCopyMode;
                 userType.AddEnumValue("None", global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode.None);
                 userType.AddEnumValue("ExcludeHeader", global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode.ExcludeHeader);
                 userType.AddEnumValue("IncludeHeader", global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode.IncludeHeader);
                 xamlType = userType;
                 break;
 
-            case 50:   //  CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility
+            case 51:   //  CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_50_DataGridHeadersVisibility;
+                userType.StaticInitializer = StaticInitializer_51_DataGridHeadersVisibility;
                 userType.AddEnumValue("None", global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility.None);
                 userType.AddEnumValue("Column", global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility.Column);
                 userType.AddEnumValue("Row", global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility.Row);
@@ -959,58 +983,58 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 51:   //  Microsoft.UI.Xaml.Controls.ScrollBarVisibility
+            case 52:   //  Microsoft.UI.Xaml.Controls.ScrollBarVisibility
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 52:   //  Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger
+            case 53:   //  Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 53:   //  CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode
+            case 54:   //  CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_53_DataGridRowDetailsVisibilityMode;
+                userType.StaticInitializer = StaticInitializer_54_DataGridRowDetailsVisibilityMode;
                 userType.AddEnumValue("VisibleWhenSelected", global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected);
                 userType.AddEnumValue("Visible", global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode.Visible);
                 userType.AddEnumValue("Collapsed", global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode.Collapsed);
                 xamlType = userType;
                 break;
 
-            case 54:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode
+            case 55:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_54_DataGridSelectionMode;
+                userType.StaticInitializer = StaticInitializer_55_DataGridSelectionMode;
                 userType.AddEnumValue("Extended", global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode.Extended);
                 userType.AddEnumValue("Single", global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode.Single);
                 xamlType = userType;
                 break;
 
-            case 55:   //  System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>
+            case 56:   //  System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>"));
-                userType.StaticInitializer = StaticInitializer_55_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_55_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_56_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_56_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 56:   //  System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>
+            case 57:   //  System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_56_Collection;
-                userType.StaticInitializer = StaticInitializer_56_Collection;
-                userType.CollectionAdd = VectorAdd_56_Collection;
+                userType.Activator = Activate_57_Collection;
+                userType.StaticInitializer = StaticInitializer_57_Collection;
+                userType.CollectionAdd = VectorAdd_57_Collection;
                 xamlType = userType;
                 break;
 
-            case 57:   //  System.Collections.IList
+            case 58:   //  System.Collections.IList
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_57_IList;
+                userType.StaticInitializer = StaticInitializer_58_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 58:   //  CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn
+            case 59:   //  CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn"));
-                userType.Activator = Activate_58_DataGridTextColumn;
-                userType.StaticInitializer = StaticInitializer_58_DataGridTextColumn;
+                userType.Activator = Activate_59_DataGridTextColumn;
+                userType.StaticInitializer = StaticInitializer_59_DataGridTextColumn;
                 userType.AddMemberName("FontFamily");
                 userType.AddMemberName("FontSize");
                 userType.AddMemberName("FontStyle");
@@ -1019,9 +1043,9 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 59:   //  CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn
+            case 60:   //  CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn"));
-                userType.StaticInitializer = StaticInitializer_59_DataGridBoundColumn;
+                userType.StaticInitializer = StaticInitializer_60_DataGridBoundColumn;
                 userType.AddMemberName("Binding");
                 userType.AddMemberName("ClipboardContentBinding");
                 userType.AddMemberName("EditingElementStyle");
@@ -1029,61 +1053,86 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 60:   //  Microsoft.UI.Xaml.Media.FontFamily
+            case 61:   //  Microsoft.UI.Xaml.Media.FontFamily
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 61:   //  Windows.UI.Text.FontStyle
+            case 62:   //  Windows.UI.Text.FontStyle
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_61_FontStyle;
+                userType.StaticInitializer = StaticInitializer_62_FontStyle;
                 userType.AddEnumValue("Normal", global::Windows.UI.Text.FontStyle.Normal);
                 userType.AddEnumValue("Oblique", global::Windows.UI.Text.FontStyle.Oblique);
                 userType.AddEnumValue("Italic", global::Windows.UI.Text.FontStyle.Italic);
                 xamlType = userType;
                 break;
 
-            case 62:   //  Windows.UI.Text.FontWeight
+            case 63:   //  Windows.UI.Text.FontWeight
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_62_FontWeight;
+                userType.StaticInitializer = StaticInitializer_63_FontWeight;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 63:   //  ConvenienceStore.Views.InventoryPage
+            case 64:   //  ConvenienceStore.Views.EmployeePage
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_63_InventoryPage;
-                userType.StaticInitializer = StaticInitializer_63_InventoryPage;
+                userType.Activator = Activate_64_EmployeePage;
+                userType.StaticInitializer = StaticInitializer_64_EmployeePage;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 64:   //  Microsoft.UI.Xaml.Controls.Page
+            case 65:   //  Microsoft.UI.Xaml.Controls.Page
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 65:   //  Microsoft.UI.Xaml.Controls.UserControl
+            case 66:   //  Microsoft.UI.Xaml.Controls.UserControl
                 xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 66:   //  ConvenienceStore.ViewModels.InventoryViewModel
+            case 67:   //  ConvenienceStore.ViewModels.EmployeeViewModel
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.Mvvm.ComponentModel.ObservableObject"));
-                userType.StaticInitializer = StaticInitializer_66_InventoryViewModel;
+                userType.StaticInitializer = StaticInitializer_67_EmployeeViewModel;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 67:   //  CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+            case 68:   //  CommunityToolkit.Mvvm.ComponentModel.ObservableObject
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_67_ObservableObject;
+                userType.StaticInitializer = StaticInitializer_68_ObservableObject;
                 xamlType = userType;
                 break;
 
-            case 68:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 69:   //  ConvenienceStore.Converters.CurrencyConverter
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_69_CurrencyConverter;
+                userType.StaticInitializer = StaticInitializer_69_CurrencyConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 70:   //  ConvenienceStore.Views.InventoryPage
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_70_InventoryPage;
+                userType.StaticInitializer = StaticInitializer_70_InventoryPage;
+                userType.AddMemberName("ViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 71:   //  ConvenienceStore.ViewModels.InventoryViewModel
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.Mvvm.ComponentModel.ObservableObject"));
+                userType.StaticInitializer = StaticInitializer_71_InventoryViewModel;
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 72:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_68_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_68_TreeViewNode;
+                userType.Activator = Activate_72_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_72_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -1095,10 +1144,10 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 69:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 73:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_69_IList;
-                userType.CollectionAdd = VectorAdd_69_IList;
+                userType.StaticInitializer = StaticInitializer_73_IList;
+                userType.CollectionAdd = VectorAdd_73_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -1618,560 +1667,560 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.ItemsSource = (global::System.Collections.IEnumerable)Value;
         }
-        private object get_49_DataGrid_SelectedItem(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
-            return that.SelectedItem;
-        }
-        private void set_49_DataGrid_SelectedItem(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
-            that.SelectedItem = (global::System.Object)Value;
-        }
-        private object get_50_DataGrid_AutoGenerateColumns(object instance)
+        private object get_49_DataGrid_AutoGenerateColumns(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.AutoGenerateColumns;
         }
-        private void set_50_DataGrid_AutoGenerateColumns(object instance, object Value)
+        private void set_49_DataGrid_AutoGenerateColumns(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.AutoGenerateColumns = (global::System.Boolean)Value;
         }
-        private object get_51_DataGrid_IsReadOnly(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
-            return that.IsReadOnly;
-        }
-        private void set_51_DataGrid_IsReadOnly(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
-            that.IsReadOnly = (global::System.Boolean)Value;
-        }
-        private object get_52_DataGrid_GridLinesVisibility(object instance)
+        private object get_50_DataGrid_GridLinesVisibility(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.GridLinesVisibility;
         }
-        private void set_52_DataGrid_GridLinesVisibility(object instance, object Value)
+        private void set_50_DataGrid_GridLinesVisibility(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.GridLinesVisibility = (global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility)Value;
         }
-        private object get_53_DataGrid_AlternatingRowBackground(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
-            return that.AlternatingRowBackground;
-        }
-        private void set_53_DataGrid_AlternatingRowBackground(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
-            that.AlternatingRowBackground = (global::Microsoft.UI.Xaml.Media.Brush)Value;
-        }
-        private object get_54_DataGrid_Columns(object instance)
+        private object get_51_DataGrid_Columns(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.Columns;
         }
-        private object get_55_DataGridColumn_ActualWidth(object instance)
+        private object get_52_DataGridColumn_ActualWidth(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.ActualWidth;
         }
-        private object get_56_DataGridColumn_CanUserReorder(object instance)
+        private object get_53_DataGridColumn_CanUserReorder(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.CanUserReorder;
         }
-        private void set_56_DataGridColumn_CanUserReorder(object instance, object Value)
+        private void set_53_DataGridColumn_CanUserReorder(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.CanUserReorder = (global::System.Boolean)Value;
         }
-        private object get_57_DataGridColumn_CanUserResize(object instance)
+        private object get_54_DataGridColumn_CanUserResize(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.CanUserResize;
         }
-        private void set_57_DataGridColumn_CanUserResize(object instance, object Value)
+        private void set_54_DataGridColumn_CanUserResize(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.CanUserResize = (global::System.Boolean)Value;
         }
-        private object get_58_DataGridColumn_CanUserSort(object instance)
+        private object get_55_DataGridColumn_CanUserSort(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.CanUserSort;
         }
-        private void set_58_DataGridColumn_CanUserSort(object instance, object Value)
+        private void set_55_DataGridColumn_CanUserSort(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.CanUserSort = (global::System.Boolean)Value;
         }
-        private object get_59_DataGridColumn_CellStyle(object instance)
+        private object get_56_DataGridColumn_CellStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.CellStyle;
         }
-        private void set_59_DataGridColumn_CellStyle(object instance, object Value)
+        private void set_56_DataGridColumn_CellStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.CellStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_60_DataGridColumn_ClipboardContentBinding(object instance)
+        private object get_57_DataGridColumn_ClipboardContentBinding(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.ClipboardContentBinding;
         }
-        private void set_60_DataGridColumn_ClipboardContentBinding(object instance, object Value)
+        private void set_57_DataGridColumn_ClipboardContentBinding(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.ClipboardContentBinding = (global::Microsoft.UI.Xaml.Data.Binding)Value;
         }
-        private object get_61_DataGridColumn_DisplayIndex(object instance)
+        private object get_58_DataGridColumn_DisplayIndex(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.DisplayIndex;
         }
-        private void set_61_DataGridColumn_DisplayIndex(object instance, object Value)
+        private void set_58_DataGridColumn_DisplayIndex(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.DisplayIndex = (global::System.Int32)Value;
         }
-        private object get_62_DataGridColumn_DragIndicatorStyle(object instance)
+        private object get_59_DataGridColumn_DragIndicatorStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.DragIndicatorStyle;
         }
-        private void set_62_DataGridColumn_DragIndicatorStyle(object instance, object Value)
+        private void set_59_DataGridColumn_DragIndicatorStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.DragIndicatorStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_63_DataGridColumn_HeaderStyle(object instance)
+        private object get_60_DataGridColumn_HeaderStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.HeaderStyle;
         }
-        private void set_63_DataGridColumn_HeaderStyle(object instance, object Value)
+        private void set_60_DataGridColumn_HeaderStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.HeaderStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_64_DataGridColumn_Header(object instance)
+        private object get_61_DataGridColumn_Header(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.Header;
         }
-        private void set_64_DataGridColumn_Header(object instance, object Value)
+        private void set_61_DataGridColumn_Header(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.Header = (global::System.Object)Value;
         }
-        private object get_65_DataGridColumn_IsAutoGenerated(object instance)
+        private object get_62_DataGridColumn_IsAutoGenerated(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.IsAutoGenerated;
         }
-        private object get_66_DataGridColumn_IsFrozen(object instance)
+        private object get_63_DataGridColumn_IsFrozen(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.IsFrozen;
         }
-        private object get_67_DataGridColumn_IsReadOnly(object instance)
+        private object get_64_DataGridColumn_IsReadOnly(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.IsReadOnly;
         }
-        private void set_67_DataGridColumn_IsReadOnly(object instance, object Value)
+        private void set_64_DataGridColumn_IsReadOnly(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.IsReadOnly = (global::System.Boolean)Value;
         }
-        private object get_68_DataGridColumn_MaxWidth(object instance)
+        private object get_65_DataGridColumn_MaxWidth(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.MaxWidth;
         }
-        private void set_68_DataGridColumn_MaxWidth(object instance, object Value)
+        private void set_65_DataGridColumn_MaxWidth(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.MaxWidth = (global::System.Double)Value;
         }
-        private object get_69_DataGridColumn_MinWidth(object instance)
+        private object get_66_DataGridColumn_MinWidth(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.MinWidth;
         }
-        private void set_69_DataGridColumn_MinWidth(object instance, object Value)
+        private void set_66_DataGridColumn_MinWidth(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.MinWidth = (global::System.Double)Value;
         }
-        private object get_70_DataGridColumn_SortDirection(object instance)
+        private object get_67_DataGridColumn_SortDirection(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.SortDirection;
         }
-        private void set_70_DataGridColumn_SortDirection(object instance, object Value)
+        private void set_67_DataGridColumn_SortDirection(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.SortDirection = (global::System.Nullable<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>)Value;
         }
-        private object get_71_DataGridColumn_Tag(object instance)
+        private object get_68_DataGridColumn_Tag(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.Tag;
         }
-        private void set_71_DataGridColumn_Tag(object instance, object Value)
+        private void set_68_DataGridColumn_Tag(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.Tag = (global::System.Object)Value;
         }
-        private object get_72_DataGridColumn_Visibility(object instance)
+        private object get_69_DataGridColumn_Visibility(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.Visibility;
         }
-        private void set_72_DataGridColumn_Visibility(object instance, object Value)
+        private void set_69_DataGridColumn_Visibility(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.Visibility = (global::Microsoft.UI.Xaml.Visibility)Value;
         }
-        private object get_73_DataGridColumn_Width(object instance)
+        private object get_70_DataGridColumn_Width(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             return that.Width;
         }
-        private void set_73_DataGridColumn_Width(object instance, object Value)
+        private void set_70_DataGridColumn_Width(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)instance;
             that.Width = (global::CommunityToolkit.WinUI.UI.Controls.DataGridLength)Value;
         }
-        private object get_74_DataGrid_AlternatingRowForeground(object instance)
+        private object get_71_DataGrid_AlternatingRowBackground(object instance)
+        {
+            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
+            return that.AlternatingRowBackground;
+        }
+        private void set_71_DataGrid_AlternatingRowBackground(object instance, object Value)
+        {
+            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
+            that.AlternatingRowBackground = (global::Microsoft.UI.Xaml.Media.Brush)Value;
+        }
+        private object get_72_DataGrid_AlternatingRowForeground(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.AlternatingRowForeground;
         }
-        private void set_74_DataGrid_AlternatingRowForeground(object instance, object Value)
+        private void set_72_DataGrid_AlternatingRowForeground(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.AlternatingRowForeground = (global::Microsoft.UI.Xaml.Media.Brush)Value;
         }
-        private object get_75_DataGrid_AreRowDetailsFrozen(object instance)
+        private object get_73_DataGrid_AreRowDetailsFrozen(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.AreRowDetailsFrozen;
         }
-        private void set_75_DataGrid_AreRowDetailsFrozen(object instance, object Value)
+        private void set_73_DataGrid_AreRowDetailsFrozen(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.AreRowDetailsFrozen = (global::System.Boolean)Value;
         }
-        private object get_76_DataGrid_AreRowGroupHeadersFrozen(object instance)
+        private object get_74_DataGrid_AreRowGroupHeadersFrozen(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.AreRowGroupHeadersFrozen;
         }
-        private void set_76_DataGrid_AreRowGroupHeadersFrozen(object instance, object Value)
+        private void set_74_DataGrid_AreRowGroupHeadersFrozen(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.AreRowGroupHeadersFrozen = (global::System.Boolean)Value;
         }
-        private object get_77_DataGrid_CanUserReorderColumns(object instance)
+        private object get_75_DataGrid_CanUserReorderColumns(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.CanUserReorderColumns;
         }
-        private void set_77_DataGrid_CanUserReorderColumns(object instance, object Value)
+        private void set_75_DataGrid_CanUserReorderColumns(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.CanUserReorderColumns = (global::System.Boolean)Value;
         }
-        private object get_78_DataGrid_CanUserResizeColumns(object instance)
+        private object get_76_DataGrid_CanUserResizeColumns(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.CanUserResizeColumns;
         }
-        private void set_78_DataGrid_CanUserResizeColumns(object instance, object Value)
+        private void set_76_DataGrid_CanUserResizeColumns(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.CanUserResizeColumns = (global::System.Boolean)Value;
         }
-        private object get_79_DataGrid_CanUserSortColumns(object instance)
+        private object get_77_DataGrid_CanUserSortColumns(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.CanUserSortColumns;
         }
-        private void set_79_DataGrid_CanUserSortColumns(object instance, object Value)
+        private void set_77_DataGrid_CanUserSortColumns(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.CanUserSortColumns = (global::System.Boolean)Value;
         }
-        private object get_80_DataGrid_CellStyle(object instance)
+        private object get_78_DataGrid_CellStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.CellStyle;
         }
-        private void set_80_DataGrid_CellStyle(object instance, object Value)
+        private void set_78_DataGrid_CellStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.CellStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_81_DataGrid_ClipboardCopyMode(object instance)
+        private object get_79_DataGrid_ClipboardCopyMode(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.ClipboardCopyMode;
         }
-        private void set_81_DataGrid_ClipboardCopyMode(object instance, object Value)
+        private void set_79_DataGrid_ClipboardCopyMode(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.ClipboardCopyMode = (global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode)Value;
         }
-        private object get_82_DataGrid_ColumnHeaderHeight(object instance)
+        private object get_80_DataGrid_ColumnHeaderHeight(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.ColumnHeaderHeight;
         }
-        private void set_82_DataGrid_ColumnHeaderHeight(object instance, object Value)
+        private void set_80_DataGrid_ColumnHeaderHeight(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.ColumnHeaderHeight = (global::System.Double)Value;
         }
-        private object get_83_DataGrid_ColumnHeaderStyle(object instance)
+        private object get_81_DataGrid_ColumnHeaderStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.ColumnHeaderStyle;
         }
-        private void set_83_DataGrid_ColumnHeaderStyle(object instance, object Value)
+        private void set_81_DataGrid_ColumnHeaderStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.ColumnHeaderStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_84_DataGrid_ColumnWidth(object instance)
+        private object get_82_DataGrid_ColumnWidth(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.ColumnWidth;
         }
-        private void set_84_DataGrid_ColumnWidth(object instance, object Value)
+        private void set_82_DataGrid_ColumnWidth(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.ColumnWidth = (global::CommunityToolkit.WinUI.UI.Controls.DataGridLength)Value;
         }
-        private object get_85_DataGrid_DataFetchSize(object instance)
+        private object get_83_DataGrid_DataFetchSize(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.DataFetchSize;
         }
-        private void set_85_DataGrid_DataFetchSize(object instance, object Value)
+        private void set_83_DataGrid_DataFetchSize(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.DataFetchSize = (global::System.Double)Value;
         }
-        private object get_86_DataGrid_DragIndicatorStyle(object instance)
+        private object get_84_DataGrid_DragIndicatorStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.DragIndicatorStyle;
         }
-        private void set_86_DataGrid_DragIndicatorStyle(object instance, object Value)
+        private void set_84_DataGrid_DragIndicatorStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.DragIndicatorStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_87_DataGrid_DropLocationIndicatorStyle(object instance)
+        private object get_85_DataGrid_DropLocationIndicatorStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.DropLocationIndicatorStyle;
         }
-        private void set_87_DataGrid_DropLocationIndicatorStyle(object instance, object Value)
+        private void set_85_DataGrid_DropLocationIndicatorStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.DropLocationIndicatorStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_88_DataGrid_FrozenColumnCount(object instance)
+        private object get_86_DataGrid_FrozenColumnCount(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.FrozenColumnCount;
         }
-        private void set_88_DataGrid_FrozenColumnCount(object instance, object Value)
+        private void set_86_DataGrid_FrozenColumnCount(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.FrozenColumnCount = (global::System.Int32)Value;
         }
-        private object get_89_DataGrid_HeadersVisibility(object instance)
+        private object get_87_DataGrid_HeadersVisibility(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.HeadersVisibility;
         }
-        private void set_89_DataGrid_HeadersVisibility(object instance, object Value)
+        private void set_87_DataGrid_HeadersVisibility(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.HeadersVisibility = (global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility)Value;
         }
-        private object get_90_DataGrid_HorizontalGridLinesBrush(object instance)
+        private object get_88_DataGrid_HorizontalGridLinesBrush(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.HorizontalGridLinesBrush;
         }
-        private void set_90_DataGrid_HorizontalGridLinesBrush(object instance, object Value)
+        private void set_88_DataGrid_HorizontalGridLinesBrush(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.HorizontalGridLinesBrush = (global::Microsoft.UI.Xaml.Media.Brush)Value;
         }
-        private object get_91_DataGrid_HorizontalScrollBarVisibility(object instance)
+        private object get_89_DataGrid_HorizontalScrollBarVisibility(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.HorizontalScrollBarVisibility;
         }
-        private void set_91_DataGrid_HorizontalScrollBarVisibility(object instance, object Value)
+        private void set_89_DataGrid_HorizontalScrollBarVisibility(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.HorizontalScrollBarVisibility = (global::Microsoft.UI.Xaml.Controls.ScrollBarVisibility)Value;
         }
-        private object get_92_DataGrid_IsValid(object instance)
+        private object get_90_DataGrid_IsReadOnly(object instance)
+        {
+            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
+            return that.IsReadOnly;
+        }
+        private void set_90_DataGrid_IsReadOnly(object instance, object Value)
+        {
+            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
+            that.IsReadOnly = (global::System.Boolean)Value;
+        }
+        private object get_91_DataGrid_IsValid(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.IsValid;
         }
-        private object get_93_DataGrid_IncrementalLoadingThreshold(object instance)
+        private object get_92_DataGrid_IncrementalLoadingThreshold(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.IncrementalLoadingThreshold;
         }
-        private void set_93_DataGrid_IncrementalLoadingThreshold(object instance, object Value)
+        private void set_92_DataGrid_IncrementalLoadingThreshold(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.IncrementalLoadingThreshold = (global::System.Double)Value;
         }
-        private object get_94_DataGrid_IncrementalLoadingTrigger(object instance)
+        private object get_93_DataGrid_IncrementalLoadingTrigger(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.IncrementalLoadingTrigger;
         }
-        private void set_94_DataGrid_IncrementalLoadingTrigger(object instance, object Value)
+        private void set_93_DataGrid_IncrementalLoadingTrigger(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.IncrementalLoadingTrigger = (global::Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger)Value;
         }
-        private object get_95_DataGrid_MaxColumnWidth(object instance)
+        private object get_94_DataGrid_MaxColumnWidth(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.MaxColumnWidth;
         }
-        private void set_95_DataGrid_MaxColumnWidth(object instance, object Value)
+        private void set_94_DataGrid_MaxColumnWidth(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.MaxColumnWidth = (global::System.Double)Value;
         }
-        private object get_96_DataGrid_MinColumnWidth(object instance)
+        private object get_95_DataGrid_MinColumnWidth(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.MinColumnWidth;
         }
-        private void set_96_DataGrid_MinColumnWidth(object instance, object Value)
+        private void set_95_DataGrid_MinColumnWidth(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.MinColumnWidth = (global::System.Double)Value;
         }
-        private object get_97_DataGrid_RowBackground(object instance)
+        private object get_96_DataGrid_RowBackground(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.RowBackground;
         }
-        private void set_97_DataGrid_RowBackground(object instance, object Value)
+        private void set_96_DataGrid_RowBackground(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.RowBackground = (global::Microsoft.UI.Xaml.Media.Brush)Value;
         }
-        private object get_98_DataGrid_RowDetailsTemplate(object instance)
+        private object get_97_DataGrid_RowDetailsTemplate(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.RowDetailsTemplate;
         }
-        private void set_98_DataGrid_RowDetailsTemplate(object instance, object Value)
+        private void set_97_DataGrid_RowDetailsTemplate(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.RowDetailsTemplate = (global::Microsoft.UI.Xaml.DataTemplate)Value;
         }
-        private object get_99_DataGrid_RowDetailsVisibilityMode(object instance)
+        private object get_98_DataGrid_RowDetailsVisibilityMode(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.RowDetailsVisibilityMode;
         }
-        private void set_99_DataGrid_RowDetailsVisibilityMode(object instance, object Value)
+        private void set_98_DataGrid_RowDetailsVisibilityMode(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.RowDetailsVisibilityMode = (global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode)Value;
         }
-        private object get_100_DataGrid_RowForeground(object instance)
+        private object get_99_DataGrid_RowForeground(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.RowForeground;
         }
-        private void set_100_DataGrid_RowForeground(object instance, object Value)
+        private void set_99_DataGrid_RowForeground(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.RowForeground = (global::Microsoft.UI.Xaml.Media.Brush)Value;
         }
-        private object get_101_DataGrid_RowHeight(object instance)
+        private object get_100_DataGrid_RowHeight(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.RowHeight;
         }
-        private void set_101_DataGrid_RowHeight(object instance, object Value)
+        private void set_100_DataGrid_RowHeight(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.RowHeight = (global::System.Double)Value;
         }
-        private object get_102_DataGrid_RowHeaderWidth(object instance)
+        private object get_101_DataGrid_RowHeaderWidth(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.RowHeaderWidth;
         }
-        private void set_102_DataGrid_RowHeaderWidth(object instance, object Value)
+        private void set_101_DataGrid_RowHeaderWidth(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.RowHeaderWidth = (global::System.Double)Value;
         }
-        private object get_103_DataGrid_RowHeaderStyle(object instance)
+        private object get_102_DataGrid_RowHeaderStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.RowHeaderStyle;
         }
-        private void set_103_DataGrid_RowHeaderStyle(object instance, object Value)
+        private void set_102_DataGrid_RowHeaderStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.RowHeaderStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_104_DataGrid_RowStyle(object instance)
+        private object get_103_DataGrid_RowStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.RowStyle;
         }
-        private void set_104_DataGrid_RowStyle(object instance, object Value)
+        private void set_103_DataGrid_RowStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.RowStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_105_DataGrid_SelectionMode(object instance)
+        private object get_104_DataGrid_SelectionMode(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.SelectionMode;
         }
-        private void set_105_DataGrid_SelectionMode(object instance, object Value)
+        private void set_104_DataGrid_SelectionMode(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.SelectionMode = (global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode)Value;
         }
-        private object get_106_DataGrid_SelectedIndex(object instance)
+        private object get_105_DataGrid_SelectedIndex(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             return that.SelectedIndex;
         }
-        private void set_106_DataGrid_SelectedIndex(object instance, object Value)
+        private void set_105_DataGrid_SelectedIndex(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
             that.SelectedIndex = (global::System.Int32)Value;
+        }
+        private object get_106_DataGrid_SelectedItem(object instance)
+        {
+            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
+            return that.SelectedItem;
+        }
+        private void set_106_DataGrid_SelectedItem(object instance, object Value)
+        {
+            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGrid)instance;
+            that.SelectedItem = (global::System.Object)Value;
         }
         private object get_107_DataGrid_VerticalGridLinesBrush(object instance)
         {
@@ -2313,57 +2362,62 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn)instance;
             that.ElementStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_122_InventoryPage_ViewModel(object instance)
+        private object get_122_EmployeePage_ViewModel(object instance)
+        {
+            var that = (global::ConvenienceStore.Views.EmployeePage)instance;
+            return that.ViewModel;
+        }
+        private object get_123_InventoryPage_ViewModel(object instance)
         {
             var that = (global::ConvenienceStore.Views.InventoryPage)instance;
             return that.ViewModel;
         }
-        private object get_123_TreeViewNode_Children(object instance)
+        private object get_124_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_124_TreeViewNode_Content(object instance)
+        private object get_125_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_124_TreeViewNode_Content(object instance, object Value)
+        private void set_125_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_125_TreeViewNode_Depth(object instance)
+        private object get_126_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_126_TreeViewNode_HasChildren(object instance)
+        private object get_127_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_127_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_128_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_127_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_128_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_128_TreeViewNode_IsExpanded(object instance)
+        private object get_129_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_128_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_129_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_129_TreeViewNode_Parent(object instance)
+        private object get_130_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -2719,391 +2773,391 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlMember.Getter = get_48_DataGrid_ItemsSource;
                 xamlMember.Setter = set_48_DataGrid_ItemsSource;
                 break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGrid.SelectedItem":
-                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
-                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "SelectedItem", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_49_DataGrid_SelectedItem;
-                xamlMember.Setter = set_49_DataGrid_SelectedItem;
-                break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.AutoGenerateColumns":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "AutoGenerateColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_50_DataGrid_AutoGenerateColumns;
-                xamlMember.Setter = set_50_DataGrid_AutoGenerateColumns;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGrid.IsReadOnly":
-                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
-                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_51_DataGrid_IsReadOnly;
-                xamlMember.Setter = set_51_DataGrid_IsReadOnly;
+                xamlMember.Getter = get_49_DataGrid_AutoGenerateColumns;
+                xamlMember.Setter = set_49_DataGrid_AutoGenerateColumns;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.GridLinesVisibility":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "GridLinesVisibility", "CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_52_DataGrid_GridLinesVisibility;
-                xamlMember.Setter = set_52_DataGrid_GridLinesVisibility;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGrid.AlternatingRowBackground":
-                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
-                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "AlternatingRowBackground", "Microsoft.UI.Xaml.Media.Brush");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_53_DataGrid_AlternatingRowBackground;
-                xamlMember.Setter = set_53_DataGrid_AlternatingRowBackground;
+                xamlMember.Getter = get_50_DataGrid_GridLinesVisibility;
+                xamlMember.Setter = set_50_DataGrid_GridLinesVisibility;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.Columns":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Columns", "System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>");
-                xamlMember.Getter = get_54_DataGrid_Columns;
+                xamlMember.Getter = get_51_DataGrid_Columns;
                 xamlMember.SetIsReadOnly();
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.ActualWidth":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ActualWidth", "Double");
-                xamlMember.Getter = get_55_DataGridColumn_ActualWidth;
+                xamlMember.Getter = get_52_DataGridColumn_ActualWidth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.CanUserReorder":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CanUserReorder", "Boolean");
-                xamlMember.Getter = get_56_DataGridColumn_CanUserReorder;
-                xamlMember.Setter = set_56_DataGridColumn_CanUserReorder;
+                xamlMember.Getter = get_53_DataGridColumn_CanUserReorder;
+                xamlMember.Setter = set_53_DataGridColumn_CanUserReorder;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.CanUserResize":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CanUserResize", "Boolean");
-                xamlMember.Getter = get_57_DataGridColumn_CanUserResize;
-                xamlMember.Setter = set_57_DataGridColumn_CanUserResize;
+                xamlMember.Getter = get_54_DataGridColumn_CanUserResize;
+                xamlMember.Setter = set_54_DataGridColumn_CanUserResize;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.CanUserSort":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CanUserSort", "Boolean");
-                xamlMember.Getter = get_58_DataGridColumn_CanUserSort;
-                xamlMember.Setter = set_58_DataGridColumn_CanUserSort;
+                xamlMember.Getter = get_55_DataGridColumn_CanUserSort;
+                xamlMember.Setter = set_55_DataGridColumn_CanUserSort;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.CellStyle":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CellStyle", "Microsoft.UI.Xaml.Style");
-                xamlMember.Getter = get_59_DataGridColumn_CellStyle;
-                xamlMember.Setter = set_59_DataGridColumn_CellStyle;
+                xamlMember.Getter = get_56_DataGridColumn_CellStyle;
+                xamlMember.Setter = set_56_DataGridColumn_CellStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.ClipboardContentBinding":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ClipboardContentBinding", "Microsoft.UI.Xaml.Data.Binding");
-                xamlMember.Getter = get_60_DataGridColumn_ClipboardContentBinding;
-                xamlMember.Setter = set_60_DataGridColumn_ClipboardContentBinding;
+                xamlMember.Getter = get_57_DataGridColumn_ClipboardContentBinding;
+                xamlMember.Setter = set_57_DataGridColumn_ClipboardContentBinding;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.DisplayIndex":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "DisplayIndex", "Int32");
-                xamlMember.Getter = get_61_DataGridColumn_DisplayIndex;
-                xamlMember.Setter = set_61_DataGridColumn_DisplayIndex;
+                xamlMember.Getter = get_58_DataGridColumn_DisplayIndex;
+                xamlMember.Setter = set_58_DataGridColumn_DisplayIndex;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.DragIndicatorStyle":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "DragIndicatorStyle", "Microsoft.UI.Xaml.Style");
-                xamlMember.Getter = get_62_DataGridColumn_DragIndicatorStyle;
-                xamlMember.Setter = set_62_DataGridColumn_DragIndicatorStyle;
+                xamlMember.Getter = get_59_DataGridColumn_DragIndicatorStyle;
+                xamlMember.Setter = set_59_DataGridColumn_DragIndicatorStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.HeaderStyle":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "HeaderStyle", "Microsoft.UI.Xaml.Style");
-                xamlMember.Getter = get_63_DataGridColumn_HeaderStyle;
-                xamlMember.Setter = set_63_DataGridColumn_HeaderStyle;
+                xamlMember.Getter = get_60_DataGridColumn_HeaderStyle;
+                xamlMember.Setter = set_60_DataGridColumn_HeaderStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.Header":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Header", "Object");
-                xamlMember.Getter = get_64_DataGridColumn_Header;
-                xamlMember.Setter = set_64_DataGridColumn_Header;
+                xamlMember.Getter = get_61_DataGridColumn_Header;
+                xamlMember.Setter = set_61_DataGridColumn_Header;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.IsAutoGenerated":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsAutoGenerated", "Boolean");
-                xamlMember.Getter = get_65_DataGridColumn_IsAutoGenerated;
+                xamlMember.Getter = get_62_DataGridColumn_IsAutoGenerated;
                 xamlMember.SetIsReadOnly();
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.IsFrozen":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsFrozen", "Boolean");
-                xamlMember.Getter = get_66_DataGridColumn_IsFrozen;
+                xamlMember.Getter = get_63_DataGridColumn_IsFrozen;
                 xamlMember.SetIsReadOnly();
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.IsReadOnly":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
-                xamlMember.Getter = get_67_DataGridColumn_IsReadOnly;
-                xamlMember.Setter = set_67_DataGridColumn_IsReadOnly;
+                xamlMember.Getter = get_64_DataGridColumn_IsReadOnly;
+                xamlMember.Setter = set_64_DataGridColumn_IsReadOnly;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.MaxWidth":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "MaxWidth", "Double");
-                xamlMember.Getter = get_68_DataGridColumn_MaxWidth;
-                xamlMember.Setter = set_68_DataGridColumn_MaxWidth;
+                xamlMember.Getter = get_65_DataGridColumn_MaxWidth;
+                xamlMember.Setter = set_65_DataGridColumn_MaxWidth;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.MinWidth":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "MinWidth", "Double");
-                xamlMember.Getter = get_69_DataGridColumn_MinWidth;
-                xamlMember.Setter = set_69_DataGridColumn_MinWidth;
+                xamlMember.Getter = get_66_DataGridColumn_MinWidth;
+                xamlMember.Setter = set_66_DataGridColumn_MinWidth;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.SortDirection":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "SortDirection", "System.Nullable`1<CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>");
-                xamlMember.Getter = get_70_DataGridColumn_SortDirection;
-                xamlMember.Setter = set_70_DataGridColumn_SortDirection;
+                xamlMember.Getter = get_67_DataGridColumn_SortDirection;
+                xamlMember.Setter = set_67_DataGridColumn_SortDirection;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.Tag":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Tag", "Object");
-                xamlMember.Getter = get_71_DataGridColumn_Tag;
-                xamlMember.Setter = set_71_DataGridColumn_Tag;
+                xamlMember.Getter = get_68_DataGridColumn_Tag;
+                xamlMember.Setter = set_68_DataGridColumn_Tag;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.Visibility":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Visibility", "Microsoft.UI.Xaml.Visibility");
-                xamlMember.Getter = get_72_DataGridColumn_Visibility;
-                xamlMember.Setter = set_72_DataGridColumn_Visibility;
+                xamlMember.Getter = get_69_DataGridColumn_Visibility;
+                xamlMember.Setter = set_69_DataGridColumn_Visibility;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridColumn.Width":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Width", "CommunityToolkit.WinUI.UI.Controls.DataGridLength");
-                xamlMember.Getter = get_73_DataGridColumn_Width;
-                xamlMember.Setter = set_73_DataGridColumn_Width;
+                xamlMember.Getter = get_70_DataGridColumn_Width;
+                xamlMember.Setter = set_70_DataGridColumn_Width;
+                break;
+            case "CommunityToolkit.WinUI.UI.Controls.DataGrid.AlternatingRowBackground":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "AlternatingRowBackground", "Microsoft.UI.Xaml.Media.Brush");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_71_DataGrid_AlternatingRowBackground;
+                xamlMember.Setter = set_71_DataGrid_AlternatingRowBackground;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.AlternatingRowForeground":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "AlternatingRowForeground", "Microsoft.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_74_DataGrid_AlternatingRowForeground;
-                xamlMember.Setter = set_74_DataGrid_AlternatingRowForeground;
+                xamlMember.Getter = get_72_DataGrid_AlternatingRowForeground;
+                xamlMember.Setter = set_72_DataGrid_AlternatingRowForeground;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.AreRowDetailsFrozen":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "AreRowDetailsFrozen", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_75_DataGrid_AreRowDetailsFrozen;
-                xamlMember.Setter = set_75_DataGrid_AreRowDetailsFrozen;
+                xamlMember.Getter = get_73_DataGrid_AreRowDetailsFrozen;
+                xamlMember.Setter = set_73_DataGrid_AreRowDetailsFrozen;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.AreRowGroupHeadersFrozen":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "AreRowGroupHeadersFrozen", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_76_DataGrid_AreRowGroupHeadersFrozen;
-                xamlMember.Setter = set_76_DataGrid_AreRowGroupHeadersFrozen;
+                xamlMember.Getter = get_74_DataGrid_AreRowGroupHeadersFrozen;
+                xamlMember.Setter = set_74_DataGrid_AreRowGroupHeadersFrozen;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.CanUserReorderColumns":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CanUserReorderColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_77_DataGrid_CanUserReorderColumns;
-                xamlMember.Setter = set_77_DataGrid_CanUserReorderColumns;
+                xamlMember.Getter = get_75_DataGrid_CanUserReorderColumns;
+                xamlMember.Setter = set_75_DataGrid_CanUserReorderColumns;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.CanUserResizeColumns":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CanUserResizeColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_78_DataGrid_CanUserResizeColumns;
-                xamlMember.Setter = set_78_DataGrid_CanUserResizeColumns;
+                xamlMember.Getter = get_76_DataGrid_CanUserResizeColumns;
+                xamlMember.Setter = set_76_DataGrid_CanUserResizeColumns;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.CanUserSortColumns":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CanUserSortColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_79_DataGrid_CanUserSortColumns;
-                xamlMember.Setter = set_79_DataGrid_CanUserSortColumns;
+                xamlMember.Getter = get_77_DataGrid_CanUserSortColumns;
+                xamlMember.Setter = set_77_DataGrid_CanUserSortColumns;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.CellStyle":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CellStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_80_DataGrid_CellStyle;
-                xamlMember.Setter = set_80_DataGrid_CellStyle;
+                xamlMember.Getter = get_78_DataGrid_CellStyle;
+                xamlMember.Setter = set_78_DataGrid_CellStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.ClipboardCopyMode":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ClipboardCopyMode", "CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_81_DataGrid_ClipboardCopyMode;
-                xamlMember.Setter = set_81_DataGrid_ClipboardCopyMode;
+                xamlMember.Getter = get_79_DataGrid_ClipboardCopyMode;
+                xamlMember.Setter = set_79_DataGrid_ClipboardCopyMode;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.ColumnHeaderHeight":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ColumnHeaderHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_82_DataGrid_ColumnHeaderHeight;
-                xamlMember.Setter = set_82_DataGrid_ColumnHeaderHeight;
+                xamlMember.Getter = get_80_DataGrid_ColumnHeaderHeight;
+                xamlMember.Setter = set_80_DataGrid_ColumnHeaderHeight;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.ColumnHeaderStyle":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ColumnHeaderStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_83_DataGrid_ColumnHeaderStyle;
-                xamlMember.Setter = set_83_DataGrid_ColumnHeaderStyle;
+                xamlMember.Getter = get_81_DataGrid_ColumnHeaderStyle;
+                xamlMember.Setter = set_81_DataGrid_ColumnHeaderStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.ColumnWidth":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ColumnWidth", "CommunityToolkit.WinUI.UI.Controls.DataGridLength");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_84_DataGrid_ColumnWidth;
-                xamlMember.Setter = set_84_DataGrid_ColumnWidth;
+                xamlMember.Getter = get_82_DataGrid_ColumnWidth;
+                xamlMember.Setter = set_82_DataGrid_ColumnWidth;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.DataFetchSize":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "DataFetchSize", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_85_DataGrid_DataFetchSize;
-                xamlMember.Setter = set_85_DataGrid_DataFetchSize;
+                xamlMember.Getter = get_83_DataGrid_DataFetchSize;
+                xamlMember.Setter = set_83_DataGrid_DataFetchSize;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.DragIndicatorStyle":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "DragIndicatorStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_86_DataGrid_DragIndicatorStyle;
-                xamlMember.Setter = set_86_DataGrid_DragIndicatorStyle;
+                xamlMember.Getter = get_84_DataGrid_DragIndicatorStyle;
+                xamlMember.Setter = set_84_DataGrid_DragIndicatorStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.DropLocationIndicatorStyle":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "DropLocationIndicatorStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_87_DataGrid_DropLocationIndicatorStyle;
-                xamlMember.Setter = set_87_DataGrid_DropLocationIndicatorStyle;
+                xamlMember.Getter = get_85_DataGrid_DropLocationIndicatorStyle;
+                xamlMember.Setter = set_85_DataGrid_DropLocationIndicatorStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.FrozenColumnCount":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "FrozenColumnCount", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_88_DataGrid_FrozenColumnCount;
-                xamlMember.Setter = set_88_DataGrid_FrozenColumnCount;
+                xamlMember.Getter = get_86_DataGrid_FrozenColumnCount;
+                xamlMember.Setter = set_86_DataGrid_FrozenColumnCount;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.HeadersVisibility":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "HeadersVisibility", "CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_89_DataGrid_HeadersVisibility;
-                xamlMember.Setter = set_89_DataGrid_HeadersVisibility;
+                xamlMember.Getter = get_87_DataGrid_HeadersVisibility;
+                xamlMember.Setter = set_87_DataGrid_HeadersVisibility;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.HorizontalGridLinesBrush":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "HorizontalGridLinesBrush", "Microsoft.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_90_DataGrid_HorizontalGridLinesBrush;
-                xamlMember.Setter = set_90_DataGrid_HorizontalGridLinesBrush;
+                xamlMember.Getter = get_88_DataGrid_HorizontalGridLinesBrush;
+                xamlMember.Setter = set_88_DataGrid_HorizontalGridLinesBrush;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.HorizontalScrollBarVisibility":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "HorizontalScrollBarVisibility", "Microsoft.UI.Xaml.Controls.ScrollBarVisibility");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_91_DataGrid_HorizontalScrollBarVisibility;
-                xamlMember.Setter = set_91_DataGrid_HorizontalScrollBarVisibility;
+                xamlMember.Getter = get_89_DataGrid_HorizontalScrollBarVisibility;
+                xamlMember.Setter = set_89_DataGrid_HorizontalScrollBarVisibility;
+                break;
+            case "CommunityToolkit.WinUI.UI.Controls.DataGrid.IsReadOnly":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_90_DataGrid_IsReadOnly;
+                xamlMember.Setter = set_90_DataGrid_IsReadOnly;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.IsValid":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsValid", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_92_DataGrid_IsValid;
+                xamlMember.Getter = get_91_DataGrid_IsValid;
                 xamlMember.SetIsReadOnly();
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.IncrementalLoadingThreshold":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IncrementalLoadingThreshold", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_93_DataGrid_IncrementalLoadingThreshold;
-                xamlMember.Setter = set_93_DataGrid_IncrementalLoadingThreshold;
+                xamlMember.Getter = get_92_DataGrid_IncrementalLoadingThreshold;
+                xamlMember.Setter = set_92_DataGrid_IncrementalLoadingThreshold;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.IncrementalLoadingTrigger":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IncrementalLoadingTrigger", "Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_94_DataGrid_IncrementalLoadingTrigger;
-                xamlMember.Setter = set_94_DataGrid_IncrementalLoadingTrigger;
+                xamlMember.Getter = get_93_DataGrid_IncrementalLoadingTrigger;
+                xamlMember.Setter = set_93_DataGrid_IncrementalLoadingTrigger;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.MaxColumnWidth":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "MaxColumnWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_95_DataGrid_MaxColumnWidth;
-                xamlMember.Setter = set_95_DataGrid_MaxColumnWidth;
+                xamlMember.Getter = get_94_DataGrid_MaxColumnWidth;
+                xamlMember.Setter = set_94_DataGrid_MaxColumnWidth;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.MinColumnWidth":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "MinColumnWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_96_DataGrid_MinColumnWidth;
-                xamlMember.Setter = set_96_DataGrid_MinColumnWidth;
+                xamlMember.Getter = get_95_DataGrid_MinColumnWidth;
+                xamlMember.Setter = set_95_DataGrid_MinColumnWidth;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.RowBackground":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "RowBackground", "Microsoft.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_97_DataGrid_RowBackground;
-                xamlMember.Setter = set_97_DataGrid_RowBackground;
+                xamlMember.Getter = get_96_DataGrid_RowBackground;
+                xamlMember.Setter = set_96_DataGrid_RowBackground;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.RowDetailsTemplate":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "RowDetailsTemplate", "Microsoft.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_98_DataGrid_RowDetailsTemplate;
-                xamlMember.Setter = set_98_DataGrid_RowDetailsTemplate;
+                xamlMember.Getter = get_97_DataGrid_RowDetailsTemplate;
+                xamlMember.Setter = set_97_DataGrid_RowDetailsTemplate;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.RowDetailsVisibilityMode":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "RowDetailsVisibilityMode", "CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_99_DataGrid_RowDetailsVisibilityMode;
-                xamlMember.Setter = set_99_DataGrid_RowDetailsVisibilityMode;
+                xamlMember.Getter = get_98_DataGrid_RowDetailsVisibilityMode;
+                xamlMember.Setter = set_98_DataGrid_RowDetailsVisibilityMode;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.RowForeground":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "RowForeground", "Microsoft.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_100_DataGrid_RowForeground;
-                xamlMember.Setter = set_100_DataGrid_RowForeground;
+                xamlMember.Getter = get_99_DataGrid_RowForeground;
+                xamlMember.Setter = set_99_DataGrid_RowForeground;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.RowHeight":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "RowHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_101_DataGrid_RowHeight;
-                xamlMember.Setter = set_101_DataGrid_RowHeight;
+                xamlMember.Getter = get_100_DataGrid_RowHeight;
+                xamlMember.Setter = set_100_DataGrid_RowHeight;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.RowHeaderWidth":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "RowHeaderWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_102_DataGrid_RowHeaderWidth;
-                xamlMember.Setter = set_102_DataGrid_RowHeaderWidth;
+                xamlMember.Getter = get_101_DataGrid_RowHeaderWidth;
+                xamlMember.Setter = set_101_DataGrid_RowHeaderWidth;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.RowHeaderStyle":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "RowHeaderStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_103_DataGrid_RowHeaderStyle;
-                xamlMember.Setter = set_103_DataGrid_RowHeaderStyle;
+                xamlMember.Getter = get_102_DataGrid_RowHeaderStyle;
+                xamlMember.Setter = set_102_DataGrid_RowHeaderStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.RowStyle":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "RowStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_104_DataGrid_RowStyle;
-                xamlMember.Setter = set_104_DataGrid_RowStyle;
+                xamlMember.Getter = get_103_DataGrid_RowStyle;
+                xamlMember.Setter = set_103_DataGrid_RowStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.SelectionMode":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "SelectionMode", "CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_105_DataGrid_SelectionMode;
-                xamlMember.Setter = set_105_DataGrid_SelectionMode;
+                xamlMember.Getter = get_104_DataGrid_SelectionMode;
+                xamlMember.Setter = set_104_DataGrid_SelectionMode;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.SelectedIndex":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "SelectedIndex", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_106_DataGrid_SelectedIndex;
-                xamlMember.Setter = set_106_DataGrid_SelectedIndex;
+                xamlMember.Getter = get_105_DataGrid_SelectedIndex;
+                xamlMember.Setter = set_105_DataGrid_SelectedIndex;
+                break;
+            case "CommunityToolkit.WinUI.UI.Controls.DataGrid.SelectedItem":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "SelectedItem", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_106_DataGrid_SelectedItem;
+                xamlMember.Setter = set_106_DataGrid_SelectedItem;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGrid.VerticalGridLinesBrush":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGrid");
@@ -3198,56 +3252,62 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlMember.Getter = get_121_DataGridBoundColumn_ElementStyle;
                 xamlMember.Setter = set_121_DataGridBoundColumn_ElementStyle;
                 break;
+            case "ConvenienceStore.Views.EmployeePage.ViewModel":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ConvenienceStore.Views.EmployeePage");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ViewModel", "ConvenienceStore.ViewModels.EmployeeViewModel");
+                xamlMember.Getter = get_122_EmployeePage_ViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
             case "ConvenienceStore.Views.InventoryPage.ViewModel":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ConvenienceStore.Views.InventoryPage");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ViewModel", "ConvenienceStore.ViewModels.InventoryViewModel");
-                xamlMember.Getter = get_122_InventoryPage_ViewModel;
+                xamlMember.Getter = get_123_InventoryPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_123_TreeViewNode_Children;
+                xamlMember.Getter = get_124_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_124_TreeViewNode_Content;
-                xamlMember.Setter = set_124_TreeViewNode_Content;
+                xamlMember.Getter = get_125_TreeViewNode_Content;
+                xamlMember.Setter = set_125_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_125_TreeViewNode_Depth;
+                xamlMember.Getter = get_126_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_126_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_127_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_127_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_127_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_128_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_128_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_128_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_128_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_129_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_129_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_129_TreeViewNode_Parent;
+                xamlMember.Getter = get_130_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

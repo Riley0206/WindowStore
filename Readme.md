@@ -1,4 +1,8 @@
 # Báo cáo nghiệm thu cho milestone 1
+## Danh sách thành viên và phân công:
++ 21120252 Võ Hoàng Nam Hưng: code chức năng quản lí kho hàng 
++ 21120251 Trần Quang Hưng: code chức năng quản lí đơn hàng
+
 ## UI/UX
 Link folder ảnh: https://drive.google.com/drive/folders/1DWDeQyvLGkfn9YpukHUtpBUVcAazgufe?usp=sharing
 ## Design patterns / architecture

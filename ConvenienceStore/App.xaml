@@ -15,7 +15,8 @@
             <local:NullToBoolConverter x:Key="NullToBoolConverter"/>
             <local:GreaterThanOneConverter x:Key="GreaterThanOneConverter"/>
             <local:LessThanTotalPagesConverter x:Key="LessThanTotalPagesConverter"/>
-
+            <local:NullToGreyConverter x:Key="NullToGreyConverter" />
+            <local:DateConverter x:Key="DateConverter"/>
             <!-- Other app resources here -->
         </ResourceDictionary>
     </Application.Resources>

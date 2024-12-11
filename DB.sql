@@ -85,6 +85,7 @@ CREATE TABLE OrderDetail (
 );
 GO
 
+
 -- Bảng Shift
 CREATE TABLE Shift (
     ShiftID INT PRIMARY KEY IDENTITY,

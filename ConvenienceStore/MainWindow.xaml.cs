@@ -10,16 +10,24 @@ namespace ConvenienceStore
         {
             this.InitializeComponent();
         }
+
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             if (args.SelectedItem is NavigationViewItem selectedItem)
             {
                 string selectedTag = selectedItem.Tag?.ToString();
-                if (selectedTag == "InventoryPage")
+
+                switch (selectedTag)
                 {
-                    MainFrame.Navigate(typeof(InventoryPage));
-                    sender.IsPaneOpen = false; // Tự động đóng NavigationView để tăng không gian hiển thị
+                    case "InventoryPage":
+                        MainFrame.Navigate(typeof(InventoryPage));
+                        break;
+                    case "EmployeePage":
+                        MainFrame.Navigate(typeof(EmployeePage));
+                        break;
                 }
+
+                sender.IsPaneOpen = false;
             }
         }
     }
