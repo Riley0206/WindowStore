@@ -17,6 +17,7 @@
             <local:LessThanTotalPagesConverter x:Key="LessThanTotalPagesConverter"/>
             <local:NullToGreyConverter x:Key="NullToGreyConverter" />
             <local:DateConverter x:Key="DateConverter"/>
+            <local:CurrencyConverter x:Key="CurrencyConverter"/>
             <!-- Other app resources here -->
         </ResourceDictionary>
     </Application.Resources>

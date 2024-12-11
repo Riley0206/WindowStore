@@ -12,6 +12,8 @@
         <NavigationView x:ConnectionId='2' PaneDisplayMode="Left"                                                    CompactPaneLength="48">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Quản lý kho hàng" Tag="InventoryPage" Icon="Shop"/>
+                <NavigationViewItem Content="Quản lý đơn hàng bán ra" Tag="OrderPage" Icon="Page"/>
+                <NavigationViewItem Content="Quản lý đơn hàng nhập vào" Tag="PurchaseOrderPage" Icon="Page"/>
                 <NavigationViewItem Content="Quản lý nhân viên" Tag="EmployeePage" Icon="People"/>
             </NavigationView.MenuItems>
             <Frame x:ConnectionId='3' x:Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>

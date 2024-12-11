@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ConvenienceStore.Views.PurchaseOrderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConvenienceStore.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:ConvenienceStore.Models"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock 
+            Grid.Row="0" 
+            Text="Quản lý đơn hàng nhập" 
+            Style="{StaticResource HeaderTextBlockStyle}"
+            Margin="0,0,0,20"/>
+
+        <!-- Action Buttons -->
+        <StackPanel 
+            Grid.Row="1" 
+            Orientation="Horizontal" 
+            HorizontalAlignment="Left" 
+            Margin="0,0,0,10">
+            <Button 
+                Content="Thêm đơn hàng" 
+                Click="AddPurchaseOrder_Click" 
+                Margin="0,0,10,0"/>
+            <Button 
+                Content="Cập nhật đơn hàng" 
+                Click="UpdatePurchaseOrder_Click" 
+                Margin="0,0,10,0"/>
+            <Button 
+                Content="Xóa đơn hàng" 
+                Click="DeletePurchaseOrder_Click" />
+        </StackPanel>
+
+        <!-- DataGrid -->
+        <controls:DataGrid
+            x:Name="PurchaseOrderDataGrid"
+            Grid.Row="2"
+            ItemsSource="{x:Bind ViewModel.DisplayedPurchaseOrders, Mode=OneWay}"
+            AutoGenerateColumns="False"
+            SelectionMode="Single"
+            BorderThickness="1"
+            BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
+            AlternatingRowBackground="{ThemeResource SystemControlBackgroundListLowBrush}"
+            Margin="0,0,0,10"
+            SelectedItem="{x:Bind ViewModel.SelectedPurchaseOrder, Mode=TwoWay}">
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn 
+                    Header="Mã đơn hàng" 
+                    Binding="{Binding PurchaseOrderID}" 
+                    Width="Auto"/>
+                <controls:DataGridTextColumn 
+                    Header="Nhà cung cấp" 
+                    Binding="{Binding SupplierID}" 
+                    Width="*"/>
+                <controls:DataGridTextColumn 
+                    Header="Ngày lập" 
+                    Binding="{Binding OrderDate, Converter={StaticResource DateConverter}}" 
+                    Width="Auto"/>
+                <controls:DataGridTextColumn 
+                    Header="Tổng tiền" 
+                    Binding="{Binding TotalAmount, Converter={StaticResource CurrencyConverter}}" 
+                    Width="Auto"/>
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
+
+        <!-- Pagination -->
+        <StackPanel 
+            Grid.Row="3" 
+            Orientation="Horizontal" 
+            HorizontalAlignment="Center" 
+            Spacing="10">
+            <Button 
+                Content="Trang trước" 
+                Click="PreviousPage_Click" 
+                IsEnabled="{x:Bind ViewModel.HasPreviousPage, Mode=OneWay}"/>
+
+            <TextBlock VerticalAlignment="Center">
+                <Run Text="Trang "/>
+                <Run Text="{x:Bind ViewModel.CurrentPage, Mode=OneWay}"/>
+                <Run Text=" / "/>
+                <Run Text="{x:Bind ViewModel.TotalPages, Mode=OneWay}"/>
+            </TextBlock>
+
+            <Button 
+                Content="Trang sau" 
+                Click="NextPage_Click" 
+                IsEnabled="{x:Bind ViewModel.HasNextPage, Mode=OneWay}"/>
+        </StackPanel>
+    </Grid>
+</Page>
