@@ -1,16 +1,16 @@
 <Page
-    x:Class="ConvenienceStore.Views.InventoryPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ConvenienceStore.Views"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:models="using:ConvenienceStore.Models"
-    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
-    xmlns:converters="using:ConvenienceStore.Converters"
-    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    mc:Ignorable="d"
-    Background="#F9F9F9">
+x:Class="ConvenienceStore.Views.InventoryPage"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:local="using:ConvenienceStore.Views"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:models="using:ConvenienceStore.Models"
+xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+xmlns:converters="using:ConvenienceStore.Converters"
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+mc:Ignorable="d"
+Background="#F9F9F9">
 
     <!-- Định nghĩa converter -->
     <Page.Resources>
@@ -40,6 +40,50 @@
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
                                             <ColorAnimation Duration="0" To="#2e776c" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" Storyboard.TargetName="buttonBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="buttonBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="0.5"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="buttonBackground" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" Foreground="{TemplateBinding Foreground}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="CloseButtonStyle">
+            <Setter Property="Background" Value="#F9F9F9"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#E0E0E0" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" Storyboard.TargetName="buttonBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#BDBDBD" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" Storyboard.TargetName="buttonBackground"/>
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Disabled">
@@ -250,12 +294,12 @@
 
         <!-- Header -->
         <TextBlock Grid.Row="0"
-                       Text="Quản lý kho hàng"
-                       Style="{StaticResource HeaderTextBlockStyle}"
-                       Margin="0,0,0,20"
-                       Foreground="#28344E"
-                       FontWeight="Bold"
-                       />
+                   Text="Quản lý kho hàng"
+                   Style="{StaticResource HeaderTextBlockStyle}"
+                   Margin="0,0,0,20"
+                   Foreground="#28344E"
+                   FontWeight="Bold"
+                   />
 
         <!-- Main Content -->
         <Grid Grid.Row="1">
@@ -266,19 +310,19 @@
 
             <!-- Categories List -->
             <ListView x:Name="CategoryList"
-                    ItemsSource="{x:Bind ViewModel.Categories, Mode=OneWay}"
-                    SelectionChanged="CategoryList_SelectionChanged"
-                     BorderThickness="1"
-                    BorderBrush="#D4D4D4"
-                    Margin="0,0,20,0"
-                     Background="White">
+                ItemsSource="{x:Bind ViewModel.Categories, Mode=OneWay}"
+                SelectionChanged="CategoryList_SelectionChanged"
+                 BorderThickness="1"
+                BorderBrush="#D4D4D4"
+                Margin="0,0,20,0"
+                 Background="White">
                 <ListView.Header>
                     <TextBlock Text="Danh mục sản phẩm"
-                                 Style="{StaticResource SubtitleTextBlockStyle}"
-                                 Margin="10"
-                                 PointerPressed="LoadAllProducts_TextBlockPressed"
-                                 Foreground="#28344E"
-                                 />
+                             Style="{StaticResource SubtitleTextBlockStyle}"
+                             Margin="10"
+                             PointerPressed="LoadAllProducts_TextBlockPressed"
+                             Foreground="#28344E"
+                             />
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="models:Category">
@@ -299,13 +343,13 @@
 
                 <!-- Products DataGrid -->
                 <controls:DataGrid
-                    x:Name="ProductsDataGrid"
-                    ItemsSource="{x:Bind ViewModel.DisplayedProducts, Mode=OneWay}"
-                    AutoGenerateColumns="False"
-                    IsReadOnly="True"
-                    GridLinesVisibility="Horizontal"
-                    Style="{StaticResource DataGridStyle}"
-                    RowStyle="{StaticResource DataGridRowStyle}">
+                x:Name="ProductsDataGrid"
+                ItemsSource="{x:Bind ViewModel.DisplayedProducts, Mode=OneWay}"
+                AutoGenerateColumns="False"
+                IsReadOnly="True"
+                GridLinesVisibility="Horizontal"
+                Style="{StaticResource DataGridStyle}"
+                RowStyle="{StaticResource DataGridRowStyle}">
 
                     <!-- Định nghĩa ColumnHeaderStyle -->
                     <controls:DataGrid.ColumnHeaderStyle>
@@ -350,15 +394,15 @@
                                 <DataTemplate x:DataType="models:Product">
                                     <StackPanel Orientation="Horizontal">
                                         <Button Content="Cập nhật"
-                                                Margin="0,0,5,0"
-                                                Click="UpdateProduct_Click"
-                                                Tag="{x:Bind}"
-                                                Style="{StaticResource ButtonStyle}"/>
+                                            Margin="0,0,5,0"
+                                            Click="UpdateProduct_Click"
+                                            Tag="{x:Bind}"
+                                            Style="{StaticResource ButtonStyle}"/>
                                         <Button Content="Xóa"
-                                                Margin="5,0,0,0"
-                                                Click="DeleteProduct_Click"
-                                                Tag="{x:Bind}"
-                                                Style="{StaticResource ButtonStyle}"/>
+                                            Margin="5,0,0,0"
+                                            Click="DeleteProduct_Click"
+                                            Tag="{x:Bind}"
+                                            Style="{StaticResource ButtonStyle}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </controls:DataGridTemplateColumn.CellTemplate>
@@ -370,19 +414,19 @@
                 <!-- Pagination Controls -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" Spacing="10">
                     <Button Content="Trang trước"
-                            Click="PreviousPage_Click"
-                            IsEnabled="{Binding HasPreviousPage}" Style="{StaticResource ButtonStyle}"  />
+                        Click="PreviousPage_Click"
+                        IsEnabled="{Binding HasPreviousPage}" Style="{StaticResource ButtonStyle}"  />
 
                     <TextBlock VerticalAlignment="Center" Foreground="#28344E">
-                            <Run Text="Trang "/>
-                            <Run Text="{x:Bind ViewModel.CurrentPage, Mode=OneWay}"/>
-                            <Run Text=" / "/>
-                            <Run Text="{x:Bind ViewModel.TotalPages, Mode=OneWay}"/>
+                        <Run Text="Trang "/>
+                        <Run Text="{x:Bind ViewModel.CurrentPage, Mode=OneWay}"/>
+                        <Run Text=" / "/>
+                        <Run Text="{x:Bind ViewModel.TotalPages, Mode=OneWay}"/>
                     </TextBlock>
 
                     <Button Content="Trang sau"
-                            Click="NextPage_Click"
-                            IsEnabled="{Binding HasNextPage}" Style="{StaticResource ButtonStyle}"/>
+                        Click="NextPage_Click"
+                        IsEnabled="{Binding HasNextPage}" Style="{StaticResource ButtonStyle}"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

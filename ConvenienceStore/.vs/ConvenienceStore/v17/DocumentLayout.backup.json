@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\Windows\\Project\\ConvenienceStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\views\\employeepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:views\\employeepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\views\\inventorypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:views\\inventorypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\viewmodels\\employeeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:viewmodels\\employeeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\conveniencestore.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:conveniencestore.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\services\\employeedatabaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:services\\employeedatabaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\models\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:models\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\views\\employeepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:views\\employeepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Windows\\Project\\ConvenienceStore\\obj\\x86\\Debug\\net8.0-windows10.0.19041.0\\win-x86\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\x86\\Debug\\net8.0-windows10.0.19041.0\\win-x86\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|d:\\windows\\project\\conveniencestore\\views\\inventorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5A317E55-1730-41C1-9BE6-39F2389F59FB}|ConvenienceStore.csproj|solutionrelative:views\\inventorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmployeePage.xaml",
-              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\Views\\EmployeePage.xaml",
-              "RelativeDocumentMoniker": "Views\\EmployeePage.xaml",
-              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\Views\\EmployeePage.xaml",
-              "RelativeToolTip": "Views\\EmployeePage.xaml",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAuwKoAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-05T09:49:51.172Z",
+              "DocumentIndex": 3,
+              "Title": "EmployeePage.xaml.cs",
+              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\Views\\EmployeePage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\EmployeePage.xaml.cs",
+              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\Views\\EmployeePage.xaml.cs",
+              "RelativeToolTip": "Views\\EmployeePage.xaml.cs",
+              "ViewState": "AgIAAL4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T16:07:11.269Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EmployeeViewModel.cs",
-              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\ViewModels\\EmployeeViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\EmployeeViewModel.cs",
-              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\ViewModels\\EmployeeViewModel.cs",
-              "RelativeToolTip": "ViewModels\\EmployeeViewModel.cs",
-              "ViewState": "AgIAAAgBAAAAAAAAAAAswB4BAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T09:49:28.201Z",
+              "Title": "ConvenienceStore",
+              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\ConvenienceStore.csproj",
+              "RelativeDocumentMoniker": "ConvenienceStore.csproj",
+              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\ConvenienceStore.csproj*",
+              "RelativeToolTip": "ConvenienceStore.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-05T16:05:19.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EmployeeModel.cs",
-              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\Models\\EmployeeModel.cs",
-              "RelativeDocumentMoniker": "Models\\EmployeeModel.cs",
-              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\Models\\EmployeeModel.cs",
-              "RelativeToolTip": "Models\\EmployeeModel.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAUwBoAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "InventoryPage.xaml.cs",
+              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\Views\\InventoryPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\InventoryPage.xaml.cs",
+              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\Views\\InventoryPage.xaml.cs*",
+              "RelativeToolTip": "Views\\InventoryPage.xaml.cs*",
+              "ViewState": "AgIAAJ4BAAAAAAAAAAAUwKgBAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T09:48:56.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.g.i.cs",
-              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\obj\\x86\\Debug\\net8.0-windows10.0.19041.0\\win-x86\\App.g.i.cs",
-              "RelativeDocumentMoniker": "obj\\x86\\Debug\\net8.0-windows10.0.19041.0\\win-x86\\App.g.i.cs",
-              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\obj\\x86\\Debug\\net8.0-windows10.0.19041.0\\win-x86\\App.g.i.cs",
-              "RelativeToolTip": "obj\\x86\\Debug\\net8.0-windows10.0.19041.0\\win-x86\\App.g.i.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwEQAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T09:46:08.16Z",
+              "WhenOpened": "2025-01-05T15:50:26.883Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EmployeeDatabaseService.cs",
-              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\Services\\EmployeeDatabaseService.cs",
-              "RelativeDocumentMoniker": "Services\\EmployeeDatabaseService.cs",
-              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\Services\\EmployeeDatabaseService.cs",
-              "RelativeToolTip": "Services\\EmployeeDatabaseService.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAuwLkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T09:45:33.784Z",
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwAoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-05T15:49:05.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InventoryPage.xaml",
+              "DocumentMoniker": "D:\\Windows\\Project\\ConvenienceStore\\Views\\InventoryPage.xaml",
+              "RelativeDocumentMoniker": "Views\\InventoryPage.xaml",
+              "ToolTip": "D:\\Windows\\Project\\ConvenienceStore\\Views\\InventoryPage.xaml",
+              "RelativeToolTip": "Views\\InventoryPage.xaml",
+              "ViewState": "AgIAAFIBAAAAAAAAAAAuwLEBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-05T15:48:40.43Z",
               "EditorCaption": ""
             }
           ]

@@ -685,6 +685,9 @@
     <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\StoreLogo.jpg">
+      <PackagePath>Assets\StoreLogo.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
     </AppxPackagedFile>

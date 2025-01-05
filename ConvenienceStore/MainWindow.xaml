@@ -8,14 +8,63 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
-        <NavigationView PaneDisplayMode="Left" SelectionChanged="NavigationView_SelectionChanged" CompactPaneLength="48">
+    <Grid Background="#F9F9F9">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <!-- Style cho NavigationView -->
+                <Style TargetType="NavigationView">
+                    <Setter Property="Background" Value="#F9F9F9"/>
+                    <Setter Property="IsBackButtonVisible" Value="Collapsed"/>
+                    <Setter Property="IsPaneToggleButtonVisible" Value="True"/>
+                    <Setter Property="IsSettingsVisible" Value="False"/>
+                </Style>
+
+                <!-- Style cho NavigationViewItem -->
+                <Style TargetType="NavigationViewItem">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <NavigationView PaneDisplayMode="Left" 
+                       SelectionChanged="NavigationView_SelectionChanged" 
+                       CompactPaneLength="48">
+            <NavigationView.Resources>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="NavigationViewContentBackground" Color="#F9F9F9"/>
+                    <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="#28344E"/>
+                    <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="#28344E"/>
+                    <SolidColorBrush x:Key="NavigationViewItemForeground" Color="White"/>
+                    <SolidColorBrush x:Key="NavigationViewItemBackground" Color="Transparent"/>
+                    <SolidColorBrush x:Key="NavigationViewItemBackgroundSelected" Color="#41B4A3"/>
+                    <SolidColorBrush x:Key="NavigationViewItemBackgroundPointerOver" Color="#41B4A3"/>
+                    <SolidColorBrush x:Key="NavigationViewItemForegroundSelected" Color="White"/>
+                </ResourceDictionary>
+            </NavigationView.Resources>
+
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Quản lý kho hàng" Tag="InventoryPage" Icon="Shop"/>
-                <NavigationViewItem Content="Quản lý nhân viên" Tag="EmployeePage" Icon="People"/>
-                <NavigationViewItem Content="Báo cáo doanh thu" Tag="RevenueReportPage" Icon="People"/>
+                <NavigationViewItem Content="Quản lý kho hàng" Tag="InventoryPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE719;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Quản lý nhân viên" Tag="EmployeePage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE716;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Báo cáo doanh thu" Tag="RevenueReportPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE9D9;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
-            <Frame x:Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+            <Frame x:Name="MainFrame" 
+                   HorizontalAlignment="Stretch" 
+                   VerticalAlignment="Stretch"
+                   Background="#F9F9F9"/>
         </NavigationView>
     </Grid>
 </Window>

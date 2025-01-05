@@ -7,9 +7,260 @@
     xmlns:models="using:ConvenienceStore.Models"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     xmlns:ui="using:Microsoft.UI.Xaml.Controls"
-    x:Name="EmployeePageControl">
+    xmlns:converters="using:ConvenienceStore.Converters"
+    x:Name="EmployeePageControl"
+    Background="#F9F9F9">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+        <converters:NullToGreyConverter x:Key="NullToGreyConverter"/>
+        <converters:DateConverter x:Key="DateConverter"/>
+        <Style TargetType="Button" x:Key="ButtonStyle">
+            <Setter Property="Background" Value="#41B4A3"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#379486" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" Storyboard.TargetName="buttonBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#2e776c" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" Storyboard.TargetName="buttonBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="buttonBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="0.5"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="buttonBackground" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" Foreground="{TemplateBinding Foreground}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#E0E0E0" Storyboard.TargetProperty="(TextBox.Background).(SolidColorBrush.Color)" Storyboard.TargetName="textBoxBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#41B4A3" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="textBoxBackground" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"  >
+                                <ScrollViewer x:Name="ContentElement" Margin="{TemplateBinding Padding}"  IsTabStop="False"  VerticalScrollBarVisibility="Auto">
+                                    <TextBlock Foreground="{TemplateBinding Foreground}" TextWrapping="NoWrap" Text="{TemplateBinding Text}"  />
+                                </ScrollViewer>
+                            </Border>
+                            <Border  x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" IsHitTestVisible="False" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="NumberBox" x:Key="NumberBoxStyle">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+        <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#E0E0E0" Storyboard.TargetProperty="(ComboBox.Background).(SolidColorBrush.Color)" Storyboard.TargetName="comboBoxBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#41B4A3" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="comboBoxBackground" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" >
+                                <Grid>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding SelectedItem}" Margin="{TemplateBinding Padding}" Foreground="{TemplateBinding Foreground}" />
+                                    <Border  x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" IsHitTestVisible="False" />
+                                    <ui:DropDownButton x:Name="DropDownToggle"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Style="{StaticResource DefaultDropDownButtonStyle}" >
+                                        <ui:DropDownButton.Flyout>
+                                            <Flyout  Placement="Bottom">
+                                                <ScrollViewer  MaxHeight="250">
+                                                    <ItemsControl ItemsSource="{TemplateBinding ItemsSource}"   >
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate  >
+                                                                <TextBlock  Text="{Binding}"  Padding="5" Foreground="#333333"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </ScrollViewer>
+                                            </Flyout>
+                                        </ui:DropDownButton.Flyout>
+                                    </ui:DropDownButton>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="controls:DataGrid" x:Key="DataGridStyle">
+            <Setter Property="Background" Value="#F9F9F9"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowBackground" Value="#F9F9F9"/>
+            <Setter Property="AlternatingRowBackground" Value="#F0F0F0"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#28344E"/>
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="ContentControl">
+                        <Setter Property="Background" Value="#28344E"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="BorderBrush" Value="#D4D4D4"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ContentControl">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                        <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="controls:DataGridRow" x:Key="DataGridRowStyle">
+            <Setter Property="Background" Value="#F9F9F9"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style TargetType="ContentDialog" x:Key="DefaultContentDialogStyle">
+            <Setter Property="Background" Value="#F9F9F9" />
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="PrimaryButtonStyle">
+                <Setter.Value>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#41B4A3"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Padding" Value="10,8"/>
+                        <Setter Property="CornerRadius" Value="6"/>
+                        <Setter Property="Margin" Value="4"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CloseButtonStyle">
+                <Setter.Value>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#F9F9F9"/>
+                        <Setter Property="Foreground" Value="#333333"/>
+                        <Setter Property="BorderBrush" Value="#D4D4D4"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,8"/>
+                        <Setter Property="CornerRadius" Value="6"/>
+                        <Setter Property="Margin" Value="4"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="ui:Pivot">
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="#28344E" FontWeight="SemiBold" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style cho DatePicker -->
+        <Style TargetType="DatePicker" x:Key="CustomDatePickerStyle">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -19,7 +270,9 @@
         <TextBlock Grid.Row="0"
                    Text="Quản lý nhân viên"
                    Style="{StaticResource HeaderTextBlockStyle}"
-                   Margin="20,20,20,20"/>
+                   Margin="20,20,20,20"
+                   Foreground="#28344E"
+                   FontWeight="Bold"/>
 
         <!-- Main Content -->
         <Grid Grid.Row="1" Margin="20">
@@ -31,43 +284,46 @@
             <!-- Employee List -->
             <StackPanel Grid.Column="0">
                 <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" MaxHeight="200" Height="200">
-                    <ListView x:ConnectionId='28' x:Name="EmployeeListView"
+                    <ListView x:ConnectionId='58' x:Name="EmployeeListView"
                                                                            
                                                                                    
                     IsItemClickEnabled="True"
                     SelectionMode="Single"
-                    BorderThickness="1"
-                    BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
-                    Margin="0,0,20,10">
+                     BorderThickness="1"
+                    BorderBrush="#D4D4D4"
+                    Margin="0,0,20,10"
+                    Background="White">
                         <ListView.Header>
                             <TextBlock Text="Danh sách nhân viên"
                                      Style="{StaticResource SubtitleTextBlockStyle}"
-                                     Margin="10"/>
+                                     Margin="10"
+                                      Foreground="#28344E"/>
                         </ListView.Header>
                         <ListView.ItemTemplate>
                             <DataTemplate                             >
-                                <StackPanel x:ConnectionId='30' Orientation="Vertical" Padding="5">
-                                    <TextBlock x:ConnectionId='31'                                                   FontWeight="Bold"/>
-                                    <TextBlock x:ConnectionId='32'                                               Opacity="0.7"/>
+                                <StackPanel x:ConnectionId='60' Orientation="Vertical" Padding="5">
+                                    <TextBlock x:ConnectionId='61'                                                   FontWeight="Bold" Foreground="#333333"/>
+                                    <TextBlock x:ConnectionId='62'                                               Opacity="0.7" Foreground="#333333"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </ScrollViewer>
                 <!-- Add Employee Button -->
-                <Button x:ConnectionId='27' Content="Thêm nhân viên"
+                <Button x:ConnectionId='57' Content="Thêm nhân viên"
                                                      
                         HorizontalAlignment="Stretch"
-                        Margin="0,0,20,0"/>
+                        Margin="0,0,20,0"
+                        Style="{StaticResource ButtonStyle}"/>
             </StackPanel>
 
             <!-- Employee Details and Management -->
-            <Pivot x:ConnectionId='2' x:Name="EmployeePivot" Grid.Column="1"                                             >
+            <ui:Pivot x:ConnectionId='32' x:Name="EmployeePivot" Grid.Column="1"                                             >
                 <!-- Tab: Thông Tin -->
-                <PivotItem Header="Thông Tin">
+                <ui:PivotItem Header="Thông Tin">
                     <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
                         <StackPanel>
-                            <TextBlock Text="Thông Tin Nhân Viên" Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            <TextBlock Text="Thông Tin Nhân Viên" Style="{StaticResource SubtitleTextBlockStyle}" Foreground="#28344E"/>
                             <Grid Margin="0,10">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -85,87 +341,88 @@
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Tên:" Margin="0,0,10,5"/>
-                                <TextBlock x:ConnectionId='18' Grid.Row="0" Grid.Column="1"
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Tên:" Margin="0,0,10,5" Foreground="#333333"/>
+                                <TextBlock x:ConnectionId='48' Grid.Row="0" Grid.Column="1"
                                                                                                                                                  
                                         Style="{StaticResource BodyTextBlockStyle}"
                                                                                                                                        />
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Chức Vụ:" Margin="0,5,10,5"/>
-                                <TextBlock x:ConnectionId='19' Grid.Row="1" Grid.Column="1"
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Chức Vụ:" Margin="0,5,10,5" Foreground="#333333"/>
+                                <TextBlock x:ConnectionId='49' Grid.Row="1" Grid.Column="1"
                                                                                                                              
                                      Style="{StaticResource BodyTextBlockStyle}"
-                                         Margin="0,5,0,5"/>
+                                         Margin="0,5,0,5" Foreground="#333333"/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ngày Vào Làm:" Margin="0,5,10,5"/>
-                                <TextBlock x:ConnectionId='20' Grid.Row="2" Grid.Column="1"
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ngày Vào Làm:" Margin="0,5,10,5" Foreground="#333333"/>
+                                <TextBlock x:ConnectionId='50' Grid.Row="2" Grid.Column="1"
                                                                                                                                                                      
                                        Style="{StaticResource BodyTextBlockStyle}"
-                                       Margin="0,5,0,5"/>
+                                       Margin="0,5,0,5" Foreground="#333333"/>
 
-                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Lương:" Margin="0,5,10,5"/>
-                                <TextBlock x:ConnectionId='21' Grid.Row="3" Grid.Column="1"
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Lương:" Margin="0,5,10,5" Foreground="#333333"/>
+                                <TextBlock x:ConnectionId='51' Grid.Row="3" Grid.Column="1"
                                                                                                                          
                                       Style="{StaticResource BodyTextBlockStyle}"
-                                        Margin="0,5,0,5"/>
+                                        Margin="0,5,0,5" Foreground="#333333"/>
 
-                                <TextBlock Grid.Row="4" Grid.Column="0" Text="Số Điện Thoại:" Margin="0,5,10,5"/>
-                                <TextBlock x:ConnectionId='22' Grid.Row="4" Grid.Column="1"
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="Số Điện Thoại:" Margin="0,5,10,5" Foreground="#333333"/>
+                                <TextBlock x:ConnectionId='52' Grid.Row="4" Grid.Column="1"
                                                                                                                                
                                        Style="{StaticResource BodyTextBlockStyle}"
-                                     Margin="0,5,0,5"/>
+                                     Margin="0,5,0,5" Foreground="#333333"/>
 
-                                <TextBlock Grid.Row="5" Grid.Column="0" Text="Email:" Margin="0,5,10,5"/>
-                                <TextBlock x:ConnectionId='23' Grid.Row="5" Grid.Column="1"
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="Email:" Margin="0,5,10,5" Foreground="#333333"/>
+                                <TextBlock x:ConnectionId='53' Grid.Row="5" Grid.Column="1"
                                                                                                                         
                                       Style="{StaticResource BodyTextBlockStyle}"
-                                        Margin="0,5,0,5"/>
+                                        Margin="0,5,0,5" Foreground="#333333"/>
 
-                                <TextBlock Grid.Row="6" Grid.Column="0" Text="Địa Chỉ:" Margin="0,5,10,5"/>
-                                <TextBlock x:ConnectionId='24' Grid.Row="6" Grid.Column="1"
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="Địa Chỉ:" Margin="0,5,10,5" Foreground="#333333"/>
+                                <TextBlock x:ConnectionId='54' Grid.Row="6" Grid.Column="1"
                                                                                                                          
                                         Style="{StaticResource BodyTextBlockStyle}"
                                       Margin="0,5,0,5"
-                                        TextWrapping="Wrap"/>
+                                        TextWrapping="Wrap" Foreground="#333333"/>
 
-                                <TextBlock Grid.Row="7" Grid.Column="0" Text="Ngày Sinh:" Margin="0,5,10,5"/>
-                                <TextBlock x:ConnectionId='25' Grid.Row="7" Grid.Column="1"
+                                <TextBlock Grid.Row="7" Grid.Column="0" Text="Ngày Sinh:" Margin="0,5,10,5" Foreground="#333333"/>
+                                <TextBlock x:ConnectionId='55' Grid.Row="7" Grid.Column="1"
                                                                                                                                                                     
                                         Style="{StaticResource BodyTextBlockStyle}"
-                                      Margin="0,5,0,5"/>
+                                      Margin="0,5,0,5" Foreground="#333333"/>
 
-                                <TextBlock Grid.Row="8" Grid.Column="0" Text="CMND/CCCD:" Margin="0,5,10,5"/>
-                                <TextBlock x:ConnectionId='26' Grid.Row="8" Grid.Column="1"
+                                <TextBlock Grid.Row="8" Grid.Column="0" Text="CMND/CCCD:" Margin="0,5,10,5" Foreground="#333333"/>
+                                <TextBlock x:ConnectionId='56' Grid.Row="8" Grid.Column="1"
                                                                                                                            
                                        Style="{StaticResource BodyTextBlockStyle}"
-                                     Margin="0,5,0,5"/>
+                                     Margin="0,5,0,5" Foreground="#333333"/>
                             </Grid>
                             <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Right">
-                                <Button x:ConnectionId='16' x:Name="DeleteEmployeeButton" Content="Xóa"                                    Margin="0,0,10,0"                                                                                                             />
-                                <Button x:ConnectionId='17' x:Name="UpdateEmployeeButton" Content="Cập nhật"                                                                                                                                                />
+                                <Button x:ConnectionId='46' x:Name="DeleteEmployeeButton" Content="Xóa"                                    Margin="0,0,10,0"                                                                                                              Style="{StaticResource ButtonStyle}"/>
+                                <Button x:ConnectionId='47' x:Name="UpdateEmployeeButton" Content="Cập nhật"                                                                                                                                                 Style="{StaticResource ButtonStyle}"/>
                             </StackPanel>
                         </StackPanel>
                     </ScrollViewer>
-                </PivotItem>
+                </ui:PivotItem>
                 <!-- Tab: Ca Làm Việc -->
-                <PivotItem Header="Ca làm việc">
+                <ui:PivotItem Header="Ca làm việc">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
-                            <TextBlock Text="Chọn ngày: " VerticalAlignment="Center"/>
-                            <DatePicker x:ConnectionId='14' x:Name="ShiftDatePicker"                                                     Margin="10,0,10,0"/>
-                            <Button x:ConnectionId='15' Content="Thêm Ca Làm"                             Margin="10,0,0,0"/>
+                            <TextBlock Text="Chọn ngày: " VerticalAlignment="Center" Foreground="#333333"/>
+                            <DatePicker x:ConnectionId='44' x:Name="ShiftDatePicker"                                                     Margin="10,0,10,0" Style="{StaticResource CustomDatePickerStyle}"/>
+                            <Button x:ConnectionId='45' Content="Thêm Ca Làm"                             Margin="10,0,0,0" Style="{StaticResource ButtonStyle}"/>
                         </StackPanel>
-                        <ListView x:ConnectionId='3' x:Name="ShiftListView"
+                        <ListView x:ConnectionId='33' x:Name="ShiftListView"
                              Grid.Row="1"
                                                                                  
                                                                                          
                               SelectionMode="Single"
                              IsItemClickEnabled="True"
-                             Margin="0,0,0,10">
+                             Margin="0,0,0,10"
+                            Background="White">
                             <ListView.Header>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -176,17 +433,17 @@
                                         <ColumnDefinition Width="1*"/>
                                         <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="Nhân viên" Margin="5"/>
-                                    <TextBlock Grid.Column="1" Text="Ngày" Margin="5"/>
-                                    <TextBlock Grid.Column="2" Text="Bắt đầu" Margin="5"/>
-                                    <TextBlock Grid.Column="3" Text="Kết thúc" Margin="5"/>
-                                    <TextBlock Grid.Column="4" Text="Trạng thái" Margin="5"/>
-                                    <TextBlock Grid.Column="5" Text="Ghi chú" Margin="5"/>
+                                    <TextBlock Grid.Column="0" Text="Nhân viên" Margin="5" Foreground="#28344E" FontWeight="Bold"/>
+                                    <TextBlock Grid.Column="1" Text="Ngày" Margin="5" Foreground="#28344E" FontWeight="Bold"/>
+                                    <TextBlock Grid.Column="2" Text="Bắt đầu" Margin="5" Foreground="#28344E" FontWeight="Bold"/>
+                                    <TextBlock Grid.Column="3" Text="Kết thúc" Margin="5" Foreground="#28344E" FontWeight="Bold"/>
+                                    <TextBlock Grid.Column="4" Text="Trạng thái" Margin="5" Foreground="#28344E" FontWeight="Bold"/>
+                                    <TextBlock Grid.Column="5" Text="Ghi chú" Margin="5" Foreground="#28344E" FontWeight="Bold"/>
                                 </Grid>
                             </ListView.Header>
                             <ListView.ItemTemplate>
                                 <DataTemplate                          >
-                                    <Grid x:ConnectionId='7'>
+                                    <Grid x:ConnectionId='37'>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1*"/>
                                             <ColumnDefinition Width="2*"/>
@@ -195,23 +452,23 @@
                                             <ColumnDefinition Width="1*"/>
                                             <ColumnDefinition Width="1*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock x:ConnectionId='8' Grid.Column="0"                              Margin="5"/>
-                                        <TextBlock x:ConnectionId='9' Grid.Column="1"                                                                     Margin="5"/>
-                                        <TextBlock x:ConnectionId='10' Grid.Column="2"                           Margin="5"/>
-                                        <TextBlock x:ConnectionId='11' Grid.Column="3"                         Margin="5"/>
-                                        <TextBlock x:ConnectionId='12' Grid.Column="4"                        Margin="5"/>
-                                        <TextBlock x:ConnectionId='13' Grid.Column="5"                      Margin="5"/>
+                                        <TextBlock x:ConnectionId='38' Grid.Column="0"                              Margin="5" Foreground="#333333"/>
+                                        <TextBlock x:ConnectionId='39' Grid.Column="1"                                                                     Margin="5" Foreground="#333333"/>
+                                        <TextBlock x:ConnectionId='40' Grid.Column="2"                           Margin="5" Foreground="#333333"/>
+                                        <TextBlock x:ConnectionId='41' Grid.Column="3"                         Margin="5" Foreground="#333333"/>
+                                        <TextBlock x:ConnectionId='42' Grid.Column="4"                        Margin="5" Foreground="#333333"/>
+                                        <TextBlock x:ConnectionId='43' Grid.Column="5"                      Margin="5" Foreground="#333333"/>
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Button x:ConnectionId='4' x:Name="DeleteShiftButton" Content="Xóa ca làm"                                 Margin="0,0,10,0"                                                                                                          />
-                            <Button x:ConnectionId='5' x:Name="UpdateShiftButton" Content="Cập nhật ca làm"                                                                                                                                          />
+                            <Button x:ConnectionId='34' x:Name="DeleteShiftButton" Content="Xóa ca làm"                                 Margin="0,0,10,0"                                                                                                           Style="{StaticResource ButtonStyle}"/>
+                            <Button x:ConnectionId='35' x:Name="UpdateShiftButton" Content="Cập nhật ca làm"                                                                                                                                           Style="{StaticResource ButtonStyle}"/>
                         </StackPanel>
                     </Grid>
-                </PivotItem>
-            </Pivot>
+                </ui:PivotItem>
+            </ui:Pivot>
         </Grid>
     </Grid>
 </Page>
