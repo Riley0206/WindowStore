@@ -1,0 +1,102 @@
+<Page
+    x:Class="ConvenienceStore.Views.RevenueReportPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConvenienceStore.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:toolkit="using:CommunityToolkit.WinUI.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <TextBlock Text="Khoảng thời gian:" VerticalAlignment="Center" />
+            <ComboBox x:Name="TimeRangeComboBox" SelectedItem="{Binding SelectedTimeRange, Mode=TwoWay}" Width="150">
+                <ComboBox.Items>
+                    <x:String>Tháng</x:String>
+                    <x:String>Năm</x:String>
+                </ComboBox.Items>
+            </ComboBox>
+            <TextBlock Text="Năm:" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <ComboBox x:Name="YearComboBox" SelectedValue="{Binding SelectedYear, Mode=TwoWay}" Width="100">
+                <ComboBox.Items>
+                    <x:Int32>2020</x:Int32>
+                    <x:Int32>2021</x:Int32>
+                    <x:Int32>2022</x:Int32>
+                    <x:Int32>2023</x:Int32>
+                    <x:Int32>2024</x:Int32>
+                    <x:Int32>2025</x:Int32>
+                </ComboBox.Items>
+            </ComboBox>
+
+            <TextBlock Text="Tháng:" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <ComboBox x:Name="MonthComboBox" SelectedValue="{Binding SelectedMonth, Mode=TwoWay}" Width="100">
+                <ComboBox.Items>
+                    <x:Int32>1</x:Int32>
+                    <x:Int32>2</x:Int32>
+                    <x:Int32>3</x:Int32>
+                    <x:Int32>4</x:Int32>
+                    <x:Int32>5</x:Int32>
+                    <x:Int32>6</x:Int32>
+                    <x:Int32>7</x:Int32>
+                    <x:Int32>8</x:Int32>
+                    <x:Int32>9</x:Int32>
+                    <x:Int32>10</x:Int32>
+                    <x:Int32>11</x:Int32>
+                    <x:Int32>12</x:Int32>
+                </ComboBox.Items>
+            </ComboBox>
+            <Button Content="Lọc" Margin="10,0,0,0" Command="{Binding UpdateFilteredTransactionsCommand}"/>
+            <TextBlock Text="Đang tải..." Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="10,0,0,0"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="0,10,0,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal"  >
+                <TextBlock Text="Doanh thu hiện tại:" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="{Binding CurrentTimeRangeRevenue}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <TextBlock Text="Doanh thu trước đó:" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="{Binding PreviousTimeRangeRevenue}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="2">
+                <TextBlock Text="Chi phí hiện tại:" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="{Binding CurrentTimeRangeCost}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="3">
+                <TextBlock Text="Chi phí trước đó:" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBlock Text="{Binding PreviousTimeRangeCost}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            </StackPanel>
+        </Grid>
+        <toolkit:DataGrid Grid.Row="2" ItemsSource="{Binding DisplayedTransactions}"  AutoGenerateColumns="False" Margin="0,10,0,0">
+            <toolkit:DataGrid.Columns>
+                <toolkit:DataGridTextColumn Header="ID" Binding="{Binding TransactionID}" IsReadOnly="True"/>
+                <toolkit:DataGridTextColumn Header="Loại" Binding="{Binding TransactionType}" IsReadOnly="True"/>
+                <toolkit:DataGridTextColumn Header="Số tiền" Binding="{Binding Amount}" IsReadOnly="True"/>
+                <toolkit:DataGridTextColumn Header="Ngày" Binding="{Binding TransactionDate, Converter={StaticResource DateTimeToStringConverter}}" IsReadOnly="True"/>
+                <toolkit:DataGridTextColumn Header="Mô tả" Binding="{Binding Description}" IsReadOnly="True"/>
+                <toolkit:DataGridTextColumn Header="Phương thức thanh toán" Binding="{Binding PaymentMethod}" IsReadOnly="True"/>
+                <!-- Add other columns as needed -->
+            </toolkit:DataGrid.Columns>
+        </toolkit:DataGrid>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button Content="Previous" Command="{Binding PreviousPageCommand}" IsEnabled="{Binding HasPreviousPage}"/>
+            <TextBlock Text="{Binding CurrentPage}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            <Button Content="Next" Command="{Binding NextPageCommand}" IsEnabled="{Binding HasNextPage}"/>
+        </StackPanel>
+    </Grid>
+</Page>

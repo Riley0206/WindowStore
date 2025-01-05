@@ -37,5 +37,6 @@ namespace ConvenienceStore.Models
         public TimeSpan? TimeIn { get; set; }
         public TimeSpan? TimeOut { get; set; }
         public string Note { get; set; }
+        public bool MatchesShift { get; set; } // New Property
     }
 }

@@ -142,6 +142,57 @@ namespace ConvenienceStore.Services
 
             return shifts;
         }
+        public async Task<List<Shift>> GetShiftsByDateAsync(DateTime date)
+        {
+            var shifts = new List<Shift>();
+
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    Debug.WriteLine($"GetShiftsByDateAsync called with date: {date}"); // Add this line
+                    await connection.OpenAsync();
+                    var query = @"SELECT s.*, e.EmployeeName 
+                          FROM Shift s 
+                          JOIN Employee e ON s.EmployeeID = e.EmployeeID
+                          WHERE s.ShiftDate = @ShiftDate";
+
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ShiftDate", date.Date);
+
+
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                var shiftDateType = reader.GetFieldType(reader.GetOrdinal("ShiftDate"));
+                                Debug.WriteLine($"ShiftDate type from DB: {shiftDateType}");
+                                shifts.Add(new Shift
+                                {
+                                    ShiftID = reader.GetInt32(reader.GetOrdinal("ShiftID")),
+                                    EmployeeID = reader.GetInt32(reader.GetOrdinal("EmployeeID")),
+                                    ShiftDate = reader.GetDateTime(reader.GetOrdinal("ShiftDate")),
+                                    StartTime = reader.GetTimeSpan(reader.GetOrdinal("StartTime")),
+                                    EndTime = reader.GetTimeSpan(reader.GetOrdinal("EndTime")),
+                                    Status = reader.GetString(reader.GetOrdinal("Status")),
+                                    Note = reader.GetString(reader.GetOrdinal("Note")),
+                                    EmployeeName = reader.GetString(reader.GetOrdinal("EmployeeName")) // Thêm trường này
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in GetShiftsByDateAsync: {ex.Message}");
+                throw new Exception("Không thể tải ca làm việc. Vui lòng kiểm tra kết nối cơ sở dữ liệu.");
+            }
+
+            return shifts;
+        }
 
         public async Task MarkAttendanceAsync(Attendance attendance)
         {
@@ -161,6 +212,7 @@ namespace ConvenienceStore.Services
                         command.Parameters.AddWithValue("@TimeIn", attendance.TimeIn ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@TimeOut", attendance.TimeOut ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@Note", string.IsNullOrWhiteSpace(attendance.Note) ? (object)DBNull.Value : attendance.Note);
+
 
                         await command.ExecuteNonQueryAsync();
                     }
@@ -227,7 +279,7 @@ namespace ConvenienceStore.Services
                                     Status = reader.GetString(reader.GetOrdinal("Status")),
                                     TimeIn = reader.IsDBNull(reader.GetOrdinal("TimeIn")) ? null : reader.GetTimeSpan(reader.GetOrdinal("TimeIn")),
                                     TimeOut = reader.IsDBNull(reader.GetOrdinal("TimeOut")) ? null : reader.GetTimeSpan(reader.GetOrdinal("TimeOut")),
-                                    Note = reader.IsDBNull(reader.GetOrdinal("Note")) ? null : reader.GetString(reader.GetOrdinal("Note")) // Thay đổi này
+                                    Note = reader.IsDBNull(reader.GetOrdinal("Note")) ? null : reader.GetString(reader.GetOrdinal("Note"))
                                 });
                             }
                         }
@@ -293,6 +345,132 @@ namespace ConvenienceStore.Services
                 await command.ExecuteNonQueryAsync();
             }
         }
+        public async Task DeleteEmployeeAsync(int employeeId)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    var query = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
 
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@EmployeeID", employeeId);
+                        await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in DeleteEmployeeAsync: {ex.Message}");
+                throw;
+            }
+        }
+
+        public async Task UpdateEmployeeAsync(Employee employee)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    var query = @"
+                        UPDATE Employee 
+                        SET EmployeeName = @Name, 
+                            Position = @Position, 
+                            HireDate = @HireDate, 
+                            Salary = @Salary, 
+                            PhoneNumber = @PhoneNumber, 
+                            Address = @Address, 
+                            Email = @Email,
+                            Birthday = @Birthday,
+                            IDNumber = @IDNumber
+                        WHERE EmployeeID = @EmployeeID";
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@EmployeeID", employee.EmployeeID);
+                        command.Parameters.AddWithValue("@Name", employee.EmployeeName);
+                        command.Parameters.AddWithValue("@Position", employee.Position);
+                        command.Parameters.AddWithValue("@HireDate", employee.HireDate);
+                        command.Parameters.AddWithValue("@Salary", employee.Salary);
+                        command.Parameters.AddWithValue("@PhoneNumber", employee.PhoneNumber);
+                        command.Parameters.AddWithValue("@Address", employee.Address);
+                        command.Parameters.AddWithValue("@Email", employee.Email);
+                        command.Parameters.AddWithValue("@Birthday", employee.Birthday);
+                        command.Parameters.AddWithValue("@IDNumber", employee.IDNumber);
+
+
+                        await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in UpdateEmployeeAsync: {ex.Message}");
+                throw;
+            }
+        }
+        public async Task DeleteShiftAsync(int shiftId)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    var query = "DELETE FROM Shift WHERE ShiftID = @ShiftID";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ShiftID", shiftId);
+                        await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in DeleteShiftAsync: {ex.Message}");
+                throw;
+            }
+        }
+
+        public async Task UpdateShiftAsync(Shift shift)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    var query = @"
+                        UPDATE Shift 
+                        SET EmployeeID = @EmployeeID, 
+                            ShiftDate = @ShiftDate, 
+                            StartTime = @StartTime, 
+                            EndTime = @EndTime, 
+                            Status = @Status, 
+                            Note = @Note
+                        WHERE ShiftID = @ShiftID";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ShiftID", shift.ShiftID);
+                        command.Parameters.AddWithValue("@EmployeeID", shift.EmployeeID);
+                        command.Parameters.AddWithValue("@ShiftDate", shift.ShiftDate);
+                        command.Parameters.AddWithValue("@StartTime", shift.StartTime);
+                        command.Parameters.AddWithValue("@EndTime", shift.EndTime);
+                        command.Parameters.AddWithValue("@Status", shift.Status);
+                        command.Parameters.AddWithValue("@Note", shift.Note);
+
+
+                        await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in UpdateShiftAsync: {ex.Message}");
+                throw;
+            }
+        }
     }
 }

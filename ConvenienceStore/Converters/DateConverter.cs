@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml.Data;
 using System;
-using System.Globalization;
+using System.Diagnostics;
 
 namespace ConvenienceStore.Converters
 {
@@ -8,17 +8,29 @@ namespace ConvenienceStore.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value is DateTime date)
+            try
             {
-                return date.ToString("dd/MM/yyyy");
+                if (value is DateTime date)
+                {
+                    return date.ToString("dd/MM/yyyy");
+                }
+                return null;
             }
-            return string.Empty;
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"DateConverter Error: {ex.Message}, Value type is {value?.GetType()}");
+                return null;
+            }
+
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
         {
-            throw new NotImplementedException();
+            if (value is string dateString && DateTime.TryParse(dateString, out DateTime date))
+            {
+                return date;
+            }
+            return null;
         }
     }
-
 }

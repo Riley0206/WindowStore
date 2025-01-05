@@ -1,16 +1,29 @@
-﻿CREATE DATABASE ConvenienceStoreDB;
+﻿-- 1. Tạo cơ sở dữ liệu
+CREATE DATABASE ConvenienceStoreDB;
 GO
 USE ConvenienceStoreDB;
 GO
 
--- Bảng Category
+-- 2. Bảng liên quan đến danh mục và sản phẩm
 CREATE TABLE Category (
     CategoryID INT PRIMARY KEY IDENTITY,
     CategoryName NVARCHAR(100) NOT NULL			
 );
 GO
 
--- Bảng Supplier
+CREATE TABLE Product (
+    ProductID INT PRIMARY KEY IDENTITY,
+    ProductName NVARCHAR(100) NOT NULL,
+    CategoryID INT FOREIGN KEY REFERENCES Category(CategoryID),
+    Brand NVARCHAR(50),
+    QuantityInStock INT,
+    Price DECIMAL(18, 2),
+    CostPrice DECIMAL(18, 2),
+    Unit NVARCHAR(20)
+);
+GO
+
+-- 3. Bảng nhà cung cấp và các bảng liên quan
 CREATE TABLE Supplier (
     SupplierID INT PRIMARY KEY IDENTITY,
     SupplierName NVARCHAR(100) NOT NULL,
@@ -23,17 +36,7 @@ CREATE TABLE Supplier (
 );
 GO
 
--- Bảng Customer
-CREATE TABLE Customer (
-    CustomerID INT PRIMARY KEY IDENTITY,
-    CustomerName NVARCHAR(100) NOT NULL,
-    PhoneNumber NVARCHAR(20),
-    JoinDate DATE,
-    CustomerType NVARCHAR(50)
-);
-GO
-
--- Bảng Employee
+-- 4. Bảng nhân viên và các bảng liên quan
 CREATE TABLE Employee (
     EmployeeID INT PRIMARY KEY IDENTITY,
     EmployeeName NVARCHAR(100) NOT NULL,
@@ -48,23 +51,9 @@ CREATE TABLE Employee (
 );
 GO
 
--- Bảng Product
-CREATE TABLE Product (
-    ProductID INT PRIMARY KEY IDENTITY,
-    ProductName NVARCHAR(100) NOT NULL,
-    CategoryID INT FOREIGN KEY REFERENCES Category(CategoryID),
-    Brand NVARCHAR(50),
-    QuantityInStock INT,
-    Price DECIMAL(18, 2),
-    CostPrice DECIMAL(18, 2),
-    Unit NVARCHAR(20)
-);
-GO
-
--- Bảng Order
+-- 5. Bảng đơn hàng và chi tiết đơn hàng
 CREATE TABLE [Order] (
     OrderID INT PRIMARY KEY IDENTITY,
-    CustomerID INT FOREIGN KEY REFERENCES Customer(CustomerID),
     EmployeeID INT FOREIGN KEY REFERENCES Employee(EmployeeID),
     OrderDate DATE,
     TotalAmount DECIMAL(18, 2),
@@ -74,7 +63,6 @@ CREATE TABLE [Order] (
 );
 GO
 
--- Bảng OrderDetail
 CREATE TABLE OrderDetail (
     OrderDetailID INT PRIMARY KEY IDENTITY,
     OrderID INT FOREIGN KEY REFERENCES [Order](OrderID),
@@ -85,20 +73,38 @@ CREATE TABLE OrderDetail (
 );
 GO
 
-
--- Bảng Shift
+-- 6. Bảng ca làm việc (Shift)
 CREATE TABLE Shift (
     ShiftID INT PRIMARY KEY IDENTITY,
     EmployeeID INT FOREIGN KEY REFERENCES Employee(EmployeeID),
     ShiftDate DATE,
     StartTime TIME,
     EndTime TIME,
-    Status NVARCHAR(50),
-    Note NVARCHAR(255)
+    Status NVARCHAR(50) DEFAULT 'Scheduled',
+    Note NVARCHAR(255) DEFAULT '',
+    EmployeeName NVARCHAR(100)
 );
 GO
 
--- Bảng Transaction
+-- Ràng buộc kiểm tra StartTime < EndTime
+ALTER TABLE Shift
+ADD CONSTRAINT CK_Shift_StartTime_EndTime CHECK (StartTime < EndTime);
+
+-- Trigger cập nhật EmployeeName trong bảng Shift
+CREATE TRIGGER TR_Shift_Insert_Update_EmployeeName
+ON Shift
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    UPDATE Shift
+    SET EmployeeName = e.EmployeeName
+    FROM Shift s
+    INNER JOIN Employee e ON s.EmployeeID = e.EmployeeID
+    WHERE s.ShiftID IN (SELECT ShiftID FROM inserted);
+END;
+GO
+
+-- 7. Bảng giao dịch
 CREATE TABLE [Transaction] (
     TransactionID INT PRIMARY KEY IDENTITY,
     TransactionType NVARCHAR(50),
@@ -111,7 +117,7 @@ CREATE TABLE [Transaction] (
 );
 GO
 
--- Bảng PurchaseOrder
+-- 8. Bảng đặt hàng từ nhà cung cấp và chi tiết
 CREATE TABLE PurchaseOrder (
     PurchaseOrderID INT PRIMARY KEY IDENTITY,
     SupplierID INT FOREIGN KEY REFERENCES Supplier(SupplierID),
@@ -124,35 +130,11 @@ CREATE TABLE PurchaseOrder (
 );
 GO
 
--- Bảng PurchaseOrderDetail
 CREATE TABLE PurchaseOrderDetail (
     PurchaseOrderDetailID INT PRIMARY KEY IDENTITY,
     PurchaseOrderID INT FOREIGN KEY REFERENCES PurchaseOrder(PurchaseOrderID),
     ProductID INT FOREIGN KEY REFERENCES Product(ProductID),
     Quantity INT,
     UnitPrice DECIMAL(18, 2)
-);
-GO
-
--- Bảng Attendance
-CREATE TABLE Attendance (
-    AttendanceID INT PRIMARY KEY IDENTITY,
-    EmployeeID INT FOREIGN KEY REFERENCES Employee(EmployeeID),
-    Date DATE,
-    Status NVARCHAR(50),
-    TimeIn TIME,
-    TimeOut TIME,
-    Note NVARCHAR(255)
-);
-GO
-
--- Bảng Bonus
-CREATE TABLE Bonus (
-    BonusID INT PRIMARY KEY IDENTITY,
-    EmployeeID INT FOREIGN KEY REFERENCES Employee(EmployeeID),
-    BonusAmount DECIMAL(18, 2),
-    BonusDate DATE,
-    BonusType NVARCHAR(50),
-    Reason NVARCHAR(255)
 );
 GO

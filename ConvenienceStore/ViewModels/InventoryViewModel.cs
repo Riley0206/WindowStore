@@ -118,11 +118,35 @@ namespace ConvenienceStore.ViewModels
 
         #region Commands
         [RelayCommand]
-        private async Task AddProduct(Product newProduct)
+        public async Task AddProduct(Product newProduct)
         {
             if (newProduct == null) return;
-            await _databaseService.AddProductAsync(newProduct);
-            await LoadData();
+            try
+            {
+                await _databaseService.AddProductAsync(newProduct);
+                await LoadData();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error adding product: {ex.Message}");
+                throw;
+            }
+        }
+
+        [RelayCommand]
+        public async Task UpdateProduct(Product updatedProduct)
+        {
+            if (updatedProduct == null) return;
+            try
+            {
+                await _databaseService.UpdateProductAsync(updatedProduct);
+                await LoadData();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error updating product: {ex.Message}");
+                throw;
+            }
         }
 
         [RelayCommand]

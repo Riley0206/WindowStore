@@ -29,25 +29,25 @@
     <AppXManifest Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-12-11T13:41:15.543</Modified>
+      <Modified>2025-01-05T10:13:33.215</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-12-11T13:30:03.642</Modified>
+      <Modified>2025-01-05T09:53:34.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.runtimeconfig.json">
       <PackagePath>ConvenienceStore.runtimeconfig.json</PackagePath>
-      <Modified>2024-12-10T18:15:34.620</Modified>
+      <Modified>2024-12-22T20:25:58.074</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.dll">
       <PackagePath>ConvenienceStore.dll</PackagePath>
-      <Modified>2024-12-11T13:41:15.328</Modified>
+      <Modified>2025-01-05T10:13:32.762</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\apphost.exe">
       <PackagePath>ConvenienceStore.exe</PackagePath>
-      <Modified>2024-12-11T13:41:15.332</Modified>
+      <Modified>2025-01-05T10:13:32.793</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\vohun\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x86\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x86\native\WebView2Loader.dll</PackagePath>
@@ -887,7 +887,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ConvenienceStore.deps.json">
       <PackagePath>ConvenienceStore.deps.json</PackagePath>
-      <Modified>2024-12-10T18:15:34.464</Modified>
+      <Modified>2024-12-22T20:25:58.072</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\vohun\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.DataGrid.pri">
       <PackagePath>CommunityToolkit.WinUI.UI.Controls.DataGrid.pri</PackagePath>

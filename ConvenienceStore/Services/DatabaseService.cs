@@ -120,6 +120,27 @@ namespace ConvenienceStore.Services
                 }
             }
         }
+        public async Task UpdateProductAsync(Product product)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                using (SqlCommand command = new SqlCommand(
+                    @"UPDATE Product SET ProductName = @ProductName, CategoryID = @CategoryID, Brand = @Brand, QuantityInStock = @QuantityInStock, Price = @Price, CostPrice = @CostPrice, Unit = @Unit
+                      WHERE ProductID = @ProductID", connection))
+                {
+                    command.Parameters.AddWithValue("@ProductName", product.ProductName);
+                    command.Parameters.AddWithValue("@CategoryID", product.CategoryID);
+                    command.Parameters.AddWithValue("@Brand", product.Brand);
+                    command.Parameters.AddWithValue("@QuantityInStock", product.QuantityInStock);
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@CostPrice", product.CostPrice);
+                    command.Parameters.AddWithValue("@Unit", product.Unit);
+                    command.Parameters.AddWithValue("@ProductID", product.ProductID);
+                    await command.ExecuteNonQueryAsync();
+                }
+            }
+        }
 
         public async Task DeleteProductAsync(int productId)
         {

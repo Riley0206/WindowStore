@@ -13,6 +13,7 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Quản lý kho hàng" Tag="InventoryPage" Icon="Shop"/>
                 <NavigationViewItem Content="Quản lý nhân viên" Tag="EmployeePage" Icon="People"/>
+                <NavigationViewItem Content="Báo cáo doanh thu" Tag="RevenueReportPage" Icon="People"/>
             </NavigationView.MenuItems>
             <Frame x:Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </NavigationView>

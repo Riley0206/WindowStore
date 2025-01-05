@@ -6,7 +6,8 @@
     xmlns:viewmodels="using:ConvenienceStore.ViewModels"
     xmlns:models="using:ConvenienceStore.Models"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
-    xmlns:ui="using:Microsoft.UI.Xaml.Controls">
+    xmlns:ui="using:Microsoft.UI.Xaml.Controls"
+    x:Name="EmployeePageControl">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -15,8 +16,8 @@
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <TextBlock Grid.Row="0" 
-                   Text="Quản lý nhân viên" 
+        <TextBlock Grid.Row="0"
+                   Text="Quản lý nhân viên"
                    Style="{StaticResource HeaderTextBlockStyle}"
                    Margin="20,20,20,20"/>
 
@@ -29,7 +30,8 @@
 
             <!-- Employee List -->
             <StackPanel Grid.Column="0">
-                <ListView x:Name="EmployeeListView"
+                <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" MaxHeight="200" Height="200">
+                    <ListView x:Name="EmployeeListView"
                     ItemsSource="{x:Bind ViewModel.Employees, Mode=OneWay}"
                     SelectedItem="{x:Bind ViewModel.SelectedEmployee, Mode=TwoWay}"
                     IsItemClickEnabled="True"
@@ -37,170 +39,177 @@
                     BorderThickness="1"
                     BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
                     Margin="0,0,20,10">
-                    <ListView.Header>
-                        <TextBlock Text="Danh sách nhân viên" 
-                                 Style="{StaticResource SubtitleTextBlockStyle}"
-                                 Margin="10"/>
-                    </ListView.Header>
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="models:Employee">
-                            <StackPanel Orientation="Vertical" Padding="5">
-                                <TextBlock Text="{x:Bind EmployeeName, FallbackValue='N/A'}" FontWeight="Bold"/>
-                                <TextBlock Text="{x:Bind Position, FallbackValue='N/A'}" Opacity="0.7"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
+                        <ListView.Header>
+                            <TextBlock Text="Danh sách nhân viên"
+                                     Style="{StaticResource SubtitleTextBlockStyle}"
+                                     Margin="10"/>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Employee">
+                                <StackPanel Orientation="Vertical" Padding="5">
+                                    <TextBlock Text="{x:Bind EmployeeName, FallbackValue='N/A'}" FontWeight="Bold"/>
+                                    <TextBlock Text="{x:Bind Position, FallbackValue='N/A'}" Opacity="0.7"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
                 <!-- Add Employee Button -->
-                <Button Content="Thêm nhân viên" 
+                <Button Content="Thêm nhân viên"
                         Click="ShowAddEmployeeDialog"
                         HorizontalAlignment="Stretch"
                         Margin="0,0,20,0"/>
             </StackPanel>
 
             <!-- Employee Details and Management -->
-            <Pivot Grid.Column="1">
+            <Pivot x:Name="EmployeePivot" Grid.Column="1" SelectionChanged="OnAttendancePivotSelected">
                 <!-- Tab: Thông Tin -->
                 <PivotItem Header="Thông Tin">
-                    <StackPanel>
-                        <TextBlock Text="Thông Tin Nhân Viên" Style="{ThemeResource SubtitleTextBlockStyle}"/>
-                        <Grid Margin="0,10">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
+                    <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <TextBlock Text="Thông Tin Nhân Viên" Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            <Grid Margin="0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Tên:" Margin="0,0,10,5"/>
-                            <TextBlock Grid.Row="0" Grid.Column="1" 
-                                       Text="{x:Bind ViewModel.SelectedEmployee.EmployeeName, Mode=OneWay, FallbackValue='Chưa chọn nhân viên'}"
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Tên:" Margin="0,0,10,5"/>
+                                <TextBlock Grid.Row="0" Grid.Column="1"
+                                        Text="{x:Bind ViewModel.SelectedEmployee.EmployeeName, Mode=OneWay, FallbackValue='Chưa chọn nhân viên'}"
+                                        Style="{StaticResource BodyTextBlockStyle}"
                                        Foreground="{x:Bind ViewModel.SelectedEmployee, Converter={StaticResource NullToGreyConverter}}"/>
 
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Chức Vụ:" Margin="0,5,10,5"/>
-                            <TextBlock Grid.Row="1" Grid.Column="1" 
-                                       Text="{x:Bind ViewModel.SelectedEmployee.Position, Mode=OneWay, FallbackValue='N/A'}"
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Chức Vụ:" Margin="0,5,10,5"/>
+                                <TextBlock Grid.Row="1" Grid.Column="1"
+                                        Text="{x:Bind ViewModel.SelectedEmployee.Position, Mode=OneWay, FallbackValue='N/A'}"
+                                     Style="{StaticResource BodyTextBlockStyle}"
+                                         Margin="0,5,0,5"/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ngày Vào Làm:" Margin="0,5,10,5"/>
+                                <TextBlock Grid.Row="2" Grid.Column="1"
+                                      Text="{x:Bind ViewModel.SelectedEmployee.HireDate, Converter={StaticResource DateConverter}, Mode=OneWay, FallbackValue='N/A'}"
+                                       Style="{StaticResource BodyTextBlockStyle}"
                                        Margin="0,5,0,5"/>
 
-                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Ngày Vào Làm:" Margin="0,5,10,5"/>
-                            <TextBlock Grid.Row="2" Grid.Column="1" 
-                                       Text="{x:Bind ViewModel.SelectedEmployee.HireDate, Converter={StaticResource DateConverter}, Mode=OneWay, FallbackValue='N/A'}"
-                                       Margin="0,5,0,5"/>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Lương:" Margin="0,5,10,5"/>
+                                <TextBlock Grid.Row="3" Grid.Column="1"
+                                      Text="{x:Bind ViewModel.SelectedEmployee.Salary, Mode=OneWay, FallbackValue='N/A'}"
+                                      Style="{StaticResource BodyTextBlockStyle}"
+                                        Margin="0,5,0,5"/>
 
-                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Lương:" Margin="0,5,10,5"/>
-                            <TextBlock Grid.Row="3" Grid.Column="1" 
-                                       Text="{x:Bind ViewModel.SelectedEmployee.Salary, Mode=OneWay, FallbackValue='N/A'}"
-                                       Margin="0,5,0,5"/>
-
-                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Số Điện Thoại:" Margin="0,5,10,5"/>
-                            <TextBlock Grid.Row="4" Grid.Column="1" 
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="Số Điện Thoại:" Margin="0,5,10,5"/>
+                                <TextBlock Grid.Row="4" Grid.Column="1"
                                        Text="{x:Bind ViewModel.SelectedEmployee.PhoneNumber, Mode=OneWay, FallbackValue='N/A'}"
-                                       Margin="0,5,0,5"/>
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                     Margin="0,5,0,5"/>
 
-                            <TextBlock Grid.Row="5" Grid.Column="0" Text="Email:" Margin="0,5,10,5"/>
-                            <TextBlock Grid.Row="5" Grid.Column="1" 
-                                       Text="{x:Bind ViewModel.SelectedEmployee.Email, Mode=OneWay, FallbackValue='N/A'}"
-                                       Margin="0,5,0,5"/>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="Email:" Margin="0,5,10,5"/>
+                                <TextBlock Grid.Row="5" Grid.Column="1"
+                                      Text="{x:Bind ViewModel.SelectedEmployee.Email, Mode=OneWay, FallbackValue='N/A'}"
+                                      Style="{StaticResource BodyTextBlockStyle}"
+                                        Margin="0,5,0,5"/>
 
-                            <TextBlock Grid.Row="6" Grid.Column="0" Text="Địa Chỉ:" Margin="0,5,10,5"/>
-                            <TextBlock Grid.Row="6" Grid.Column="1" 
-                                       Text="{x:Bind ViewModel.SelectedEmployee.Address, Mode=OneWay, FallbackValue='N/A'}"
-                                       Margin="0,5,0,5"
-                                       TextWrapping="Wrap"/>
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="Địa Chỉ:" Margin="0,5,10,5"/>
+                                <TextBlock Grid.Row="6" Grid.Column="1"
+                                     Text="{x:Bind ViewModel.SelectedEmployee.Address, Mode=OneWay, FallbackValue='N/A'}"
+                                        Style="{StaticResource BodyTextBlockStyle}"
+                                      Margin="0,5,0,5"
+                                        TextWrapping="Wrap"/>
 
-                            <TextBlock Grid.Row="7" Grid.Column="0" Text="Ngày Sinh:" Margin="0,5,10,5"/>
-                            <TextBlock Grid.Row="7" Grid.Column="1" 
-                                       Text="{x:Bind ViewModel.SelectedEmployee.Birthday, Converter={StaticResource DateConverter}, Mode=OneWay, FallbackValue='N/A'}"
-                                       Margin="0,5,0,5"/>
+                                <TextBlock Grid.Row="7" Grid.Column="0" Text="Ngày Sinh:" Margin="0,5,10,5"/>
+                                <TextBlock Grid.Row="7" Grid.Column="1"
+                                     Text="{x:Bind ViewModel.SelectedEmployee.Birthday, Converter={StaticResource DateConverter}, Mode=OneWay, FallbackValue='N/A'}"
+                                        Style="{StaticResource BodyTextBlockStyle}"
+                                      Margin="0,5,0,5"/>
 
-                            <TextBlock Grid.Row="8" Grid.Column="0" Text="CMND/CCCD:" Margin="0,5,10,5"/>
-                            <TextBlock Grid.Row="8" Grid.Column="1" 
-                                       Text="{x:Bind ViewModel.SelectedEmployee.IDNumber, Mode=OneWay, FallbackValue='N/A'}"
-                                       Margin="0,5,0,5"/>
-                        </Grid>
-                    </StackPanel>
+                                <TextBlock Grid.Row="8" Grid.Column="0" Text="CMND/CCCD:" Margin="0,5,10,5"/>
+                                <TextBlock Grid.Row="8" Grid.Column="1"
+                                      Text="{x:Bind ViewModel.SelectedEmployee.IDNumber, Mode=OneWay, FallbackValue='N/A'}"
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                     Margin="0,5,0,5"/>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Right">
+                                <Button x:Name="DeleteEmployeeButton" Content="Xóa" Click="DeleteEmployeeButton_Click" Margin="0,0,10,0" IsEnabled="{x:Bind ViewModel.SelectedEmployee, Converter={StaticResource NullToBoolConverter}, Mode=OneWay}"/>
+                                <Button x:Name="UpdateEmployeeButton" Content="Cập nhật" Click="UpdateEmployeeButton_Click" IsEnabled="{x:Bind ViewModel.SelectedEmployee, Converter={StaticResource NullToBoolConverter}, Mode=OneWay}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
                 </PivotItem>
-
                 <!-- Tab: Ca Làm Việc -->
-                <PivotItem Header="Ca Làm Việc">
-                    <StackPanel>
-                        <TextBlock Text="Danh Sách Ca Làm" Style="{ThemeResource SubtitleTextBlockStyle}"/>
-                        <Grid Margin="0,10,0,0">
-                            <controls:DataGrid
-                                ItemsSource="{x:Bind ViewModel.Shifts, Mode=OneWay}"
-                                AutoGenerateColumns="False"
-                                GridLinesVisibility="All"
-                                BorderBrush="White"
-                                BorderThickness="1">
-                                <controls:DataGrid.Columns>
-                                    <controls:DataGridTextColumn Header="Ngày" 
-                                        Binding="{Binding ShiftDate, Converter={StaticResource DateConverter}}"
-                                        Width="120"/>
-                                    <controls:DataGridTextColumn Header="Giờ Bắt Đầu" 
-                                        Binding="{Binding StartTime}"
-                                        Width="100"/>
-                                    <controls:DataGridTextColumn Header="Giờ Kết Thúc" 
-                                        Binding="{Binding EndTime}"
-                                        Width="100"/>
-                                    <controls:DataGridTextColumn Header="Trạng Thái" 
-                                        Binding="{Binding Status}"
-                                        Width="*"/>
-                                    <controls:DataGridTextColumn Header="Note" 
-                                        Binding="{Binding Note}"
-                                        Width="*"/>
-                                </controls:DataGrid.Columns>
-                            </controls:DataGrid>
-                        </Grid>
-                        <Button Content="Thêm Ca Làm"
-                                Click="ShowAddShiftDialog"
-                                Margin="0,10,0,0"/>
-                    </StackPanel>
-                </PivotItem>
-
-                <!-- Tab: Điểm Danh -->
-                <PivotItem Header="Điểm Danh">
-                    <StackPanel>
-                        <TextBlock Text="Bảng Chấm Công" Style="{ThemeResource SubtitleTextBlockStyle}"/>
-                        <Grid Margin="0,10,0,0">
-                            <controls:DataGrid
-                                ItemsSource="{x:Bind ViewModel.Attendances, Mode=OneWay}"
-                                AutoGenerateColumns="False"
-                                GridLinesVisibility="All"
-                                BorderBrush="White"
-                                BorderThickness="1">
-                                <controls:DataGrid.Columns>
-                                    <controls:DataGridTextColumn Header="Ngày" 
-                                        Binding="{Binding Date, Converter={StaticResource DateConverter}}"
-                                        Width="120"/>
-                                    <controls:DataGridTextColumn Header="Giờ Vào" 
-                                        Binding="{Binding TimeIn}"
-                                        Width="100"/>
-                                    <controls:DataGridTextColumn Header="Giờ Ra" 
-                                        Binding="{Binding TimeOut}"
-                                        Width="100"/>
-                                    <controls:DataGridTextColumn Header="Trạng Thái" 
-                                        Binding="{Binding Status}"
-                                        Width="*"/>
-                                    <controls:DataGridTextColumn Header="Note" 
-                                        Binding="{Binding Note}"
-                                        Width="*"/>
-                                </controls:DataGrid.Columns>
-                            </controls:DataGrid>
-                        </Grid>
-                        <Button Content="Điểm Danh"
-                                Click="ShowAttendanceDialog"
-                                Margin="0,10,0,0"/>
-                    </StackPanel>
+                <PivotItem Header="Ca làm việc">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
+                            <TextBlock Text="Chọn ngày: " VerticalAlignment="Center"/>
+                            <DatePicker x:Name="ShiftDatePicker" Date="{x:Bind ViewModel.SelectedDate, Mode=TwoWay}" Margin="10,0,10,0"/>
+                            <Button Content="Thêm Ca Làm" Click="ShowAddShiftDialog"  Margin="10,0,0,0"/>
+                        </StackPanel>
+                        <ListView x:Name="ShiftListView"
+                             Grid.Row="1"
+                             ItemsSource="{x:Bind ViewModel.Shifts, Mode=OneWay}"
+                             SelectedItem="{x:Bind ViewModel.SelectedShift, Mode=TwoWay}"
+                              SelectionMode="Single"
+                             IsItemClickEnabled="True"
+                             Margin="0,0,0,10">
+                            <ListView.Header>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="Nhân viên" Margin="5"/>
+                                    <TextBlock Grid.Column="1" Text="Ngày" Margin="5"/>
+                                    <TextBlock Grid.Column="2" Text="Bắt đầu" Margin="5"/>
+                                    <TextBlock Grid.Column="3" Text="Kết thúc" Margin="5"/>
+                                    <TextBlock Grid.Column="4" Text="Trạng thái" Margin="5"/>
+                                    <TextBlock Grid.Column="5" Text="Ghi chú" Margin="5"/>
+                                </Grid>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="models:Shift">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{x:Bind EmployeeName}" Margin="5"/>
+                                        <TextBlock Grid.Column="1" Text="{x:Bind ShiftDate, Converter={StaticResource DateConverter}}" Margin="5"/>
+                                        <TextBlock Grid.Column="2" Text="{x:Bind StartTime}" Margin="5"/>
+                                        <TextBlock Grid.Column="3" Text="{x:Bind EndTime}" Margin="5"/>
+                                        <TextBlock Grid.Column="4" Text="{x:Bind Status}" Margin="5"/>
+                                        <TextBlock Grid.Column="5" Text="{x:Bind Note}" Margin="5"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button x:Name="DeleteShiftButton" Content="Xóa ca làm" Click="DeleteShiftButton_Click" Margin="0,0,10,0" IsEnabled="{x:Bind ViewModel.SelectedShift, Converter={StaticResource NullToBoolConverter}, Mode=OneWay}"/>
+                            <Button x:Name="UpdateShiftButton" Content="Cập nhật ca làm" Click="UpdateShiftButton_Click" IsEnabled="{x:Bind ViewModel.SelectedShift, Converter={StaticResource NullToBoolConverter}, Mode=OneWay}"/>
+                        </StackPanel>
+                    </Grid>
                 </PivotItem>
             </Pivot>
         </Grid>

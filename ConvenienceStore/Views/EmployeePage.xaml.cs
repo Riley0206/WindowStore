@@ -3,9 +3,10 @@ using ConvenienceStore.ViewModels;
 using Microsoft.UI.Xaml;
 using System;
 using ConvenienceStore.Models;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.UI.Xaml.Input;
+using System.Linq;
+using System.Diagnostics;
 
 namespace ConvenienceStore.Views
 {
@@ -18,232 +19,33 @@ namespace ConvenienceStore.Views
             this.InitializeComponent();
             ViewModel = new EmployeeViewModel();
             this.DataContext = ViewModel;
+            EmployeeListView.SelectionChanged += EmployeeListView_SelectionChanged;
+            Loaded += EmployeePage_Loaded;
+            ShiftListView.SelectionChanged += ShiftListView_SelectionChanged;
         }
-
-        private async void ShowAddShiftDialog(object sender, RoutedEventArgs e)
+        private async void EmployeePage_Loaded(object sender, RoutedEventArgs e)
         {
-            try
+
+        }
+        private async void ShiftListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ViewModel.SelectedShift != null)
             {
-                if (this.XamlRoot == null)
-                {
-                    throw new InvalidOperationException("XamlRoot chưa được khởi tạo.");
-                }
-
-                if (ViewModel.SelectedEmployee == null)
-                {
-                    await ShowErrorDialog("Lỗi", "Vui lòng chọn nhân viên trước khi thực hiện thao tác.");
-                    return;
-                }
-
-                var datePicker = new DatePicker { Date = DateTimeOffset.Now };
-                var shiftComboBox = new ComboBox
-                {
-                    ItemsSource = new List<string> { "Ca 1 (7:00 - 11:00)", "Ca 2 (11:00 - 15:00)", "Ca 3 (15:00 - 19:00)", "Ca 4 (19:00 - 23:00)" },
-                    PlaceholderText = "Chọn ca làm việc"
-                };
-
-                var statusComboBox = new ComboBox
-                {
-                    ItemsSource = new List<string> { "Đã lên lịch", "Bị Hủy" },
-                    SelectedIndex = 0
-                };
-
-                var dialog = new ContentDialog
-                {
-                    Title = "Thêm Ca Làm",
-                    PrimaryButtonText = "Lưu",
-                    CloseButtonText = "Hủy",
-                    XamlRoot = this.XamlRoot,
-                    Content = new StackPanel
-                    {
-                        Children = {
-                    new TextBlock { Text = "Ngày Làm:" },
-                    datePicker,
-                    new TextBlock { Text = "Ca Làm:" },
-                    shiftComboBox,
-                    new TextBlock { Text = "Trạng Thái:" },
-                    statusComboBox
-                }
-                    }
-                };
-
-                if (await dialog.ShowAsync() == ContentDialogResult.Primary)
-                {
-                    if (shiftComboBox.SelectedItem == null)
-                    {
-                        await ShowErrorDialog("Lỗi", "Vui lòng chọn ca làm việc.");
-                        return;
-                    }
-
-                    var newShift = new Shift
-                    {
-                        ShiftDate = datePicker.Date.DateTime,
-                        Status = statusComboBox.SelectedItem.ToString(),
-                        Note = shiftComboBox.SelectedItem.ToString().Split('(')[0].Trim()
-                    };
-
-                    try
-                    {
-                        await ViewModel.AssignShiftAsync(newShift);
-                        await ShowSuccessDialog("Thành Công", "Đã thêm ca làm mới thành công.");
-                    }
-                    catch (Exception ex)
-                    {
-                        await ShowErrorDialog("Lỗi", $"Không thể thêm ca làm: {ex.Message}");
-                    }
-                }
+                DeleteShiftButton.IsEnabled = true;
+                UpdateShiftButton.IsEnabled = true;
             }
-            catch (Exception ex)
+            else
             {
-                await ShowErrorDialog("Lỗi", $"Đã xảy ra lỗi: {ex.Message}");
+                DeleteShiftButton.IsEnabled = false;
+                UpdateShiftButton.IsEnabled = false;
             }
         }
 
-
-        private async Task ShowErrorDialog(string title, string content)
+        private async void OnAttendancePivotSelected(object sender, SelectionChangedEventArgs e)
         {
-            await new ContentDialog
-            {
-                Title = title,
-                Content = content,
-                CloseButtonText = "OK",
-                XamlRoot = this.XamlRoot
-            }.ShowAsync();
+
         }
 
-        private async Task ShowSuccessDialog(string title, string content)
-        {
-            await new ContentDialog
-            {
-                Title = title,
-                Content = content,
-                CloseButtonText = "OK",
-                XamlRoot = this.XamlRoot
-            }.ShowAsync();
-        }
-
-        private async void ShowAttendanceDialog(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                // Kiểm tra XamlRoot
-                if (this.XamlRoot == null)
-                {
-                    throw new InvalidOperationException("XamlRoot chưa được khởi tạo.");
-                }
-
-                // Kiểm tra xem có nhân viên được chọn không
-                var selectedEmployee = ViewModel.SelectedEmployee;
-                if (selectedEmployee == null)
-                {
-                    await ShowErrorDialog("Lỗi", "Hãy chọn một nhân viên trước khi điểm danh!");
-                    return;
-                }
-
-                var noteTextBox = new TextBox { PlaceholderText = "Ghi chú (nếu có)", Text = "" };
-                var datePicker = new DatePicker { Date = DateTimeOffset.Now };
-                var shiftComboBox = new ComboBox
-                {
-                    ItemsSource = new List<string> {
-                        "Ca 1 (7:00 - 11:00)",
-                        "Ca 2 (11:00 - 15:00)",
-                        "Ca 3 (15:00 - 19:00)",
-                        "Ca 4 (19:00 - 23:00)"
-            },
-                    PlaceholderText = "Chọn ca làm việc"
-                };
-                var statusComboBox = new ComboBox
-                {
-                    ItemsSource = new List<string> { "Có Mặt", "Vắng Mặt", "Đi Muộn" }
-                };
-                var dialog = new ContentDialog
-                {
-                    Title = "Điểm Danh",
-                    PrimaryButtonText = "Lưu",
-                    CloseButtonText = "Hủy",
-                    XamlRoot = this.XamlRoot,
-                    Content = new StackPanel
-                    {
-                        Children = {
-                    new TextBlock { Text = "Ngày:" },
-                    datePicker,
-                    new TextBlock { Text = "Ca Làm:" },
-                    shiftComboBox,
-                    new TextBlock { Text = "Trạng Thái:" },
-                    statusComboBox,
-                    new TextBlock { Text = "Ghi Chú:" },
-                    noteTextBox
-                }
-                    }
-                };
-
-                if (await dialog.ShowAsync() == ContentDialogResult.Primary)
-                {
-                    if (shiftComboBox.SelectedItem == null)
-                    {
-                        await ShowErrorDialog("Lỗi", "Vui lòng chọn ca làm việc.");
-                        return;
-                    }
-
-                    if (statusComboBox.SelectedItem == null)
-                    {
-                        await ShowErrorDialog("Lỗi", "Vui lòng chọn trạng thái.");
-                        return;
-                    }
-
-                    // Xác định giờ bắt đầu và kết thúc ca
-                    TimeSpan timeIn = TimeSpan.Zero;
-                    TimeSpan timeOut = TimeSpan.Zero;
-
-                    string selectedShift = shiftComboBox.SelectedItem.ToString().Split('(')[0].Trim();
-                    switch (selectedShift)
-                    {
-                        case "Ca 1":
-                            timeIn = TimeSpan.FromHours(7);
-                            timeOut = TimeSpan.FromHours(11);
-                            break;
-                        case "Ca 2":
-                            timeIn = TimeSpan.FromHours(11);
-                            timeOut = TimeSpan.FromHours(15);
-                            break;
-                        case "Ca 3":
-                            timeIn = TimeSpan.FromHours(15);
-                            timeOut = TimeSpan.FromHours(19);
-                            break;
-                        case "Ca 4":
-                            timeIn = TimeSpan.FromHours(19);
-                            timeOut = TimeSpan.FromHours(23);
-                            break;
-                        default:
-                            throw new InvalidOperationException("Chọn ca làm không hợp lệ");
-                    }
-
-                    var newAttendance = new Attendance
-                    {
-                        Date = datePicker.Date.DateTime,
-                        Status = statusComboBox.SelectedItem.ToString(),
-                        EmployeeID = selectedEmployee.EmployeeID,
-                        TimeIn = timeIn,     // Giờ vào ca theo ca làm
-                        TimeOut = timeOut,   // Giờ kết thúc ca theo ca làm
-                        Note = $"{shiftComboBox.SelectedItem} {noteTextBox.Text}"
-                    };
-
-                    try
-                    {
-                        await ViewModel.MarkAttendanceAsync(newAttendance);
-                        await ShowSuccessDialog("Thành Công", "Điểm danh thành công.");
-                    }
-                    catch (Exception ex)
-                    {
-                        await ShowErrorDialog("Lỗi", $"Không thể điểm danh: {ex.Message}");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                await ShowErrorDialog("Lỗi", $"Đã xảy ra lỗi: {ex.Message}");
-            }
-        }
 
         private async void ShowAddEmployeeDialog(object sender, RoutedEventArgs e)
         {
@@ -253,7 +55,6 @@ namespace ConvenienceStore.Views
                 {
                     throw new InvalidOperationException("XamlRoot chưa được khởi tạo.");
                 }
-
                 var nameTextBox = new TextBox { PlaceholderText = "Tên nhân viên" };
                 var positionTextBox = new TextBox { PlaceholderText = "Chức vụ" };
                 var hireDatePicker = new DatePicker { Date = DateTimeOffset.Now };
@@ -271,29 +72,28 @@ namespace ConvenienceStore.Views
                     {
                         Spacing = 10,
                         Children =
-                {
-                    new TextBlock { Text = "Tên nhân viên:" },
-                    nameTextBox,
-                    new TextBlock { Text = "Chức vụ:" },
-                    positionTextBox,
-                    new TextBlock { Text = "Ngày nhận việc:" },
-                    hireDatePicker,
-                    new TextBlock { Text = "Lương:" },
-                    salaryTextBox,
-                    new TextBlock { Text = "Số điện thoại:" },
-                    phoneTextBox,
-                    new TextBlock { Text = "Địa chỉ:" },
-                    addressTextBox,
-                    new TextBlock { Text = "Email:" },
-                    emailTextBox,
-                    new TextBlock { Text = "Ngày sinh:" },
-                    birthdayPicker,
-                    new TextBlock { Text = "Số CMND/CCCD:" },
-                    idNumberTextBox
-                }
+                       {
+                            new TextBlock { Text = "Tên nhân viên:" },
+                           nameTextBox,
+                           new TextBlock { Text = "Chức vụ:" },
+                             positionTextBox,
+                           new TextBlock { Text = "Ngày nhận việc:" },
+                           hireDatePicker,
+                            new TextBlock { Text = "Lương:" },
+                          salaryTextBox,
+                         new TextBlock { Text = "Số điện thoại:" },
+                         phoneTextBox,
+                         new TextBlock { Text = "Địa chỉ:" },
+                         addressTextBox,
+                           new TextBlock { Text = "Email:" },
+                          emailTextBox,
+                          new TextBlock { Text = "Ngày sinh:" },
+                         birthdayPicker,
+                            new TextBlock { Text = "Số CMND/CCCD:" },
+                         idNumberTextBox
+                      }
                     }
                 };
-
                 var dialog = new ContentDialog
                 {
                     Title = "Thêm nhân viên mới",
@@ -303,20 +103,18 @@ namespace ConvenienceStore.Views
                     Content = scrollViewer,
                     FullSizeDesired = false
                 };
-
                 if (await dialog.ShowAsync() == ContentDialogResult.Primary)
                 {
                     if (string.IsNullOrWhiteSpace(nameTextBox.Text) ||
-                        string.IsNullOrWhiteSpace(positionTextBox.Text) ||
-                        string.IsNullOrWhiteSpace(salaryTextBox.Text) ||
+                     string.IsNullOrWhiteSpace(positionTextBox.Text) ||
+                       string.IsNullOrWhiteSpace(salaryTextBox.Text) ||
                         string.IsNullOrWhiteSpace(phoneTextBox.Text) ||
-                        string.IsNullOrWhiteSpace(emailTextBox.Text) ||
-                        string.IsNullOrWhiteSpace(idNumberTextBox.Text))
+                      string.IsNullOrWhiteSpace(emailTextBox.Text) ||
+                    string.IsNullOrWhiteSpace(idNumberTextBox.Text))
                     {
                         await ShowErrorDialog("Lỗi", "Vui lòng nhập đầy đủ thông tin.");
                         return;
                     }
-
                     var newEmployee = new Employee
                     {
                         EmployeeName = nameTextBox.Text,
@@ -346,7 +144,380 @@ namespace ConvenienceStore.Views
                 await ShowErrorDialog("Lỗi", $"Đã xảy ra lỗi: {ex.Message}");
             }
         }
+        private async void DeleteEmployeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel.SelectedEmployee == null)
+            {
+                await ShowErrorDialog("Lỗi", "Vui lòng chọn một nhân viên để xóa.");
+                return;
+            }
+            var confirmDialog = new ContentDialog
+            {
+                Title = "Xác nhận xóa",
+                Content = $"Bạn có chắc chắn muốn xóa nhân viên {ViewModel.SelectedEmployee.EmployeeName}?",
+                PrimaryButtonText = "Xóa",
+                CloseButtonText = "Hủy",
+                XamlRoot = this.XamlRoot
+            };
+            if (await confirmDialog.ShowAsync() == ContentDialogResult.Primary)
+            {
+                try
+                {
+                    await ViewModel.DeleteEmployeeAsync();
+                    await ShowSuccessDialog("Thành công", "Nhân viên đã được xóa.");
+                }
+                catch (Exception ex)
+                {
+                    await ShowErrorDialog("Lỗi", $"Không thể xóa nhân viên: {ex.Message}");
+                }
+            }
+        }
+        private async void UpdateEmployeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel.SelectedEmployee == null)
+            {
+                await ShowErrorDialog("Lỗi", "Vui lòng chọn một nhân viên để cập nhật.");
+                return;
+            }
+            try
+            {
+                if (this.XamlRoot == null)
+                {
+                    throw new InvalidOperationException("XamlRoot chưa được khởi tạo.");
+                }
+                var nameTextBox = new TextBox { PlaceholderText = "Tên nhân viên", Text = ViewModel.SelectedEmployee.EmployeeName };
+                var positionTextBox = new TextBox { PlaceholderText = "Chức vụ", Text = ViewModel.SelectedEmployee.Position };
+                var hireDatePicker = new DatePicker { Date = ViewModel.SelectedEmployee.HireDate };
+                var salaryTextBox = new TextBox { PlaceholderText = "Lương", InputScope = new InputScope { Names = { new InputScopeName(InputScopeNameValue.Number) } }, Text = ViewModel.SelectedEmployee.Salary.ToString() };
+                var phoneTextBox = new TextBox { PlaceholderText = "Số điện thoại", Text = ViewModel.SelectedEmployee.PhoneNumber };
+                var addressTextBox = new TextBox { PlaceholderText = "Địa chỉ", Text = ViewModel.SelectedEmployee.Address };
+                var emailTextBox = new TextBox { PlaceholderText = "Email", Text = ViewModel.SelectedEmployee.Email };
+                var birthdayPicker = new DatePicker { Date = ViewModel.SelectedEmployee.Birthday };
+                var idNumberTextBox = new TextBox { PlaceholderText = "Số CMND/CCCD", Text = ViewModel.SelectedEmployee.IDNumber };
+                var scrollViewer = new ScrollViewer
+                {
+                    VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+                    Content = new StackPanel
+                    {
+                        Spacing = 10,
+                        Children =
+                        {
+                             new TextBlock { Text = "Tên nhân viên:" },
+                            nameTextBox,
+                          new TextBlock { Text = "Chức vụ:" },
+                           positionTextBox,
+                           new TextBlock { Text = "Ngày nhận việc:" },
+                             hireDatePicker,
+                             new TextBlock { Text = "Lương:" },
+                           salaryTextBox,
+                           new TextBlock { Text = "Số điện thoại:" },
+                            phoneTextBox,
+                            new TextBlock { Text = "Địa chỉ:" },
+                         addressTextBox,
+                         new TextBlock { Text = "Email:" },
+                           emailTextBox,
+                        new TextBlock { Text = "Ngày sinh:" },
+                         birthdayPicker,
+                          new TextBlock { Text = "Số CMND/CCCD:" },
+                         idNumberTextBox
+                      }
+                    }
+                };
+                var dialog = new ContentDialog
+                {
+                    Title = "Cập nhật thông tin nhân viên",
+                    PrimaryButtonText = "Lưu",
+                    CloseButtonText = "Hủy",
+                    XamlRoot = this.XamlRoot,
+                    Content = scrollViewer,
+                    FullSizeDesired = false
+                };
+                if (await dialog.ShowAsync() == ContentDialogResult.Primary)
+                {
+                    if (string.IsNullOrWhiteSpace(nameTextBox.Text) ||
+                        string.IsNullOrWhiteSpace(positionTextBox.Text) ||
+                        string.IsNullOrWhiteSpace(salaryTextBox.Text) ||
+                         string.IsNullOrWhiteSpace(phoneTextBox.Text) ||
+                         string.IsNullOrWhiteSpace(emailTextBox.Text) ||
+                      string.IsNullOrWhiteSpace(idNumberTextBox.Text))
+                    {
+                        await ShowErrorDialog("Lỗi", "Vui lòng nhập đầy đủ thông tin.");
+                        return;
+                    }
+                    var updatedEmployee = new Employee
+                    {
+                        EmployeeID = ViewModel.SelectedEmployee.EmployeeID,
+                        EmployeeName = nameTextBox.Text,
+                        Position = positionTextBox.Text,
+                        HireDate = hireDatePicker.Date.DateTime,
+                        Salary = decimal.Parse(salaryTextBox.Text),
+                        PhoneNumber = phoneTextBox.Text,
+                        Address = addressTextBox.Text,
+                        Email = emailTextBox.Text,
+                        Birthday = birthdayPicker.Date.DateTime,
+                        IDNumber = idNumberTextBox.Text
+                    };
+                    try
+                    {
+                        await ViewModel.UpdateEmployeeAsync(updatedEmployee);
+                        await ShowSuccessDialog("Thành công", "Thông tin nhân viên đã được cập nhật.");
+                    }
+                    catch (Exception ex)
+                    {
+                        await ShowErrorDialog("Lỗi", $"Không thể cập nhật nhân viên: {ex.Message}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await ShowErrorDialog("Lỗi", $"Đã xảy ra lỗi: {ex.Message}");
+            }
+        }
+        private async void EmployeeListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ViewModel.SelectedEmployee != null)
+            {
+                DeleteEmployeeButton.IsEnabled = true;
+                UpdateEmployeeButton.IsEnabled = true;
+            }
+            else
+            {
+                DeleteEmployeeButton.IsEnabled = false;
+                UpdateEmployeeButton.IsEnabled = false;
+            }
+        }
+        private async Task ShowErrorDialog(string title, string content)
+        {
+            await new ContentDialog
+            {
+                Title = title,
+                Content = content,
+                CloseButtonText = "OK",
+                XamlRoot = this.XamlRoot
+            }.ShowAsync();
+        }
 
+        private async Task ShowSuccessDialog(string title, string content)
+        {
+            await new ContentDialog
+            {
+                Title = title,
+                Content = content,
+                CloseButtonText = "OK",
+                XamlRoot = this.XamlRoot
+            }.ShowAsync();
+        }
+        private async void ShowAddShiftDialog(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (this.XamlRoot == null)
+                {
+                    throw new InvalidOperationException("XamlRoot chưa được khởi tạo.");
+                }
+                if (ViewModel.Employees == null || ViewModel.Employees.Count == 0)
+                {
+                    await ShowErrorDialog("Lỗi", "Không có nhân viên nào để thêm ca làm.");
+                    return;
+                }
+                var employeeComboBox = new ComboBox { PlaceholderText = "Chọn nhân viên", ItemsSource = ViewModel.Employees, DisplayMemberPath = "EmployeeName" };
+                var shiftDatePicker = new DatePicker { Date = DateTimeOffset.Now };
+                var startTimePicker = new TimePicker { Time = new TimeSpan(8, 0, 0) }; // Default to 8 AM
+                var endTimePicker = new TimePicker { Time = new TimeSpan(17, 0, 0) }; // Default to 5 PM
+                var statusTextBox = new TextBox { PlaceholderText = "Trạng thái", Text = "Scheduled" };
+                var noteTextBox = new TextBox { PlaceholderText = "Ghi chú" };
 
+                var scrollViewer = new ScrollViewer
+                {
+                    VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+                    Content = new StackPanel
+                    {
+                        Spacing = 10,
+                        Children =
+                       {
+                           new TextBlock { Text = "Nhân viên:" },
+                            employeeComboBox,
+                           new TextBlock { Text = "Ngày làm việc:" },
+                             shiftDatePicker,
+                            new TextBlock { Text = "Thời gian bắt đầu:" },
+                           startTimePicker,
+                            new TextBlock { Text = "Thời gian kết thúc:" },
+                            endTimePicker,
+                            new TextBlock { Text = "Trạng thái:" },
+                         statusTextBox,
+                         new TextBlock { Text = "Ghi chú:" },
+                          noteTextBox
+                      }
+                    }
+                };
+
+                var dialog = new ContentDialog
+                {
+                    Title = "Thêm Ca Làm Việc",
+                    PrimaryButtonText = "Lưu",
+                    CloseButtonText = "Hủy",
+                    XamlRoot = this.XamlRoot,
+                    Content = scrollViewer,
+                    FullSizeDesired = false
+                };
+                if (await dialog.ShowAsync() == ContentDialogResult.Primary)
+                {
+                    if (employeeComboBox.SelectedItem == null)
+                    {
+                        await ShowErrorDialog("Lỗi", "Vui lòng chọn một nhân viên.");
+                        return;
+                    }
+                    var selectedEmployee = (Employee)employeeComboBox.SelectedItem;
+                    var newShift = new Shift
+                    {
+                        EmployeeID = selectedEmployee.EmployeeID,
+                        ShiftDate = shiftDatePicker.Date.Date,
+                        StartTime = startTimePicker.Time,
+                        EndTime = endTimePicker.Time,
+                        Status = statusTextBox.Text,
+                        Note = noteTextBox.Text
+                    };
+                    //Breakpoint here
+                    Debug.WriteLine($"EmployeeID {newShift.EmployeeID}");
+                    Debug.WriteLine($"ShiftDate {newShift.ShiftDate}");
+                    Debug.WriteLine($"StartTime {newShift.StartTime}");
+                    Debug.WriteLine($"EndTime {newShift.EndTime}");
+                    Debug.WriteLine($"Status {newShift.Status}");
+                    Debug.WriteLine($"Note {newShift.Note}");
+                    try
+                    {
+                        await ViewModel.AddShiftAsync(newShift);
+                        await ShowSuccessDialog("Thành công", "Ca làm việc mới đã được thêm.");
+                    }
+                    catch (Exception ex)
+                    {
+                        await ShowErrorDialog("Lỗi", $"Không thể thêm ca làm: {ex.Message}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await ShowErrorDialog("Lỗi", $"Đã xảy ra lỗi: {ex.Message}");
+            }
+        }
+        private async void DeleteShiftButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel.SelectedShift == null)
+            {
+                await ShowErrorDialog("Lỗi", "Vui lòng chọn một ca làm để xóa.");
+                return;
+            }
+            var confirmDialog = new ContentDialog
+            {
+                Title = "Xác nhận xóa",
+                Content = $"Bạn có chắc chắn muốn xóa ca làm của nhân viên {ViewModel.SelectedShift.EmployeeName}?",
+                PrimaryButtonText = "Xóa",
+                CloseButtonText = "Hủy",
+                XamlRoot = this.XamlRoot
+            };
+            if (await confirmDialog.ShowAsync() == ContentDialogResult.Primary)
+            {
+                try
+                {
+                    await ViewModel.DeleteShiftAsync();
+                    await ShowSuccessDialog("Thành công", "Ca làm đã được xóa.");
+                }
+                catch (Exception ex)
+                {
+                    await ShowErrorDialog("Lỗi", $"Không thể xóa ca làm: {ex.Message}");
+                }
+            }
+        }
+        private async void UpdateShiftButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ViewModel.SelectedShift == null)
+            {
+                await ShowErrorDialog("Lỗi", "Vui lòng chọn một ca làm để cập nhật.");
+                return;
+            }
+            try
+            {
+                if (this.XamlRoot == null)
+                {
+                    throw new InvalidOperationException("XamlRoot chưa được khởi tạo.");
+                }
+                if (ViewModel.Employees == null || ViewModel.Employees.Count == 0)
+                {
+                    await ShowErrorDialog("Lỗi", "Không có nhân viên nào để cập nhật ca làm.");
+                    return;
+                }
+                var employeeComboBox = new ComboBox { PlaceholderText = "Chọn nhân viên", ItemsSource = ViewModel.Employees, DisplayMemberPath = "EmployeeName" };
+                employeeComboBox.SelectedItem = ViewModel.Employees.FirstOrDefault(emp => emp.EmployeeID == ViewModel.SelectedShift.EmployeeID);
+                var shiftDatePicker = new DatePicker { Date = ViewModel.SelectedShift.ShiftDate };
+                var startTimePicker = new TimePicker { Time = ViewModel.SelectedShift.StartTime };
+                var endTimePicker = new TimePicker { Time = ViewModel.SelectedShift.EndTime };
+                var statusTextBox = new TextBox { PlaceholderText = "Trạng thái", Text = ViewModel.SelectedShift.Status };
+                var noteTextBox = new TextBox { PlaceholderText = "Ghi chú", Text = ViewModel.SelectedShift.Note };
+                var scrollViewer = new ScrollViewer
+                {
+                    VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+                    Content = new StackPanel
+                    {
+                        Spacing = 10,
+                        Children =
+                       {
+                            new TextBlock { Text = "Nhân viên:" },
+                            employeeComboBox,
+                           new TextBlock { Text = "Ngày làm việc:" },
+                             shiftDatePicker,
+                            new TextBlock { Text = "Thời gian bắt đầu:" },
+                           startTimePicker,
+                            new TextBlock { Text = "Thời gian kết thúc:" },
+                            endTimePicker,
+                            new TextBlock { Text = "Trạng thái:" },
+                         statusTextBox,
+                         new TextBlock { Text = "Ghi chú:" },
+                          noteTextBox
+                      }
+                    }
+                };
+                var dialog = new ContentDialog
+                {
+                    Title = "Cập nhật Ca Làm Việc",
+                    PrimaryButtonText = "Lưu",
+                    CloseButtonText = "Hủy",
+                    XamlRoot = this.XamlRoot,
+                    Content = scrollViewer,
+                    FullSizeDesired = false
+                };
+                if (await dialog.ShowAsync() == ContentDialogResult.Primary)
+                {
+                    if (employeeComboBox.SelectedItem == null)
+                    {
+                        await ShowErrorDialog("Lỗi", "Vui lòng chọn một nhân viên.");
+                        return;
+                    }
+                    var selectedEmployee = (Employee)employeeComboBox.SelectedItem;
+                    var updatedShift = new Shift
+                    {
+                        ShiftID = ViewModel.SelectedShift.ShiftID,
+                        EmployeeID = selectedEmployee.EmployeeID,
+                        ShiftDate = shiftDatePicker.Date.Date,
+                        StartTime = startTimePicker.Time,
+                        EndTime = endTimePicker.Time,
+                        Status = statusTextBox.Text,
+                        Note = noteTextBox.Text
+                    };
+                    try
+                    {
+                        await ViewModel.UpdateShiftAsync(updatedShift);
+                        await ShowSuccessDialog("Thành công", "Ca làm việc đã được cập nhật.");
+                    }
+                    catch (Exception ex)
+                    {
+                        await ShowErrorDialog("Lỗi", $"Không thể cập nhật ca làm: {ex.Message}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await ShowErrorDialog("Lỗi", $"Đã xảy ra lỗi: {ex.Message}");
+            }
+        }
     }
 }

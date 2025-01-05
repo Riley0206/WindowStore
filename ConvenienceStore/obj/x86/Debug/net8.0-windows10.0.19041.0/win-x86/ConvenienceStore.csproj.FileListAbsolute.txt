@@ -524,3 +524,8 @@ D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win
 D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\qualifiers.txt.intermediate
 D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\MultipleQualifiersPerDimensionFound.txt
 D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\ProjectArchitectures.txt
+D:\Windows\Project\ConvenienceStore\bin\x86\Debug\net8.0-windows10.0.19041.0\win-x86\Views\RevenueReportPage.xbf
+D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\Views\RevenueReportPage.g.i.cs
+D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\Views\RevenueReportPage.g.cs
+D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\Views\RevenueReportPage.xaml
+D:\Windows\Project\ConvenienceStore\obj\x86\Debug\net8.0-windows10.0.19041.0\win-x86\Views\RevenueReportPage.xbf

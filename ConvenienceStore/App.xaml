@@ -17,6 +17,11 @@
             <local:LessThanTotalPagesConverter x:Key="LessThanTotalPagesConverter"/>
             <local:NullToGreyConverter x:Key="NullToGreyConverter" />
             <local:DateConverter x:Key="DateConverter"/>
+            <local:DateTimeConverter x:Key="DateTimeConverter"/>
+            <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <local:DateTimeToStringConverter x:Key="DateTimeToStringConverter" />
+            <local:AttendanceStatusToTextConverter x:Key="AttendanceStatusToTextConverter"/>
+            <local:AttendanceStatusToBackgroundConverter x:Key="AttendanceStatusToBackgroundConverter" />
             <!-- Other app resources here -->
         </ResourceDictionary>
     </Application.Resources>

@@ -25,6 +25,9 @@ namespace ConvenienceStore
                     case "EmployeePage":
                         MainFrame.Navigate(typeof(EmployeePage));
                         break;
+                    case "RevenueReportPage":
+                        MainFrame.Navigate(typeof(RevenueReportPage));
+                        break;            
                 }
 
                 sender.IsPaneOpen = false;

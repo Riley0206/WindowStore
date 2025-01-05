@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="ConvenienceStore.Views.InventoryPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -9,12 +8,238 @@
     xmlns:models="using:ConvenienceStore.Models"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     xmlns:converters="using:ConvenienceStore.Converters"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="#F9F9F9">
 
     <!-- Định nghĩa converter -->
     <Page.Resources>
         <converters:CurrencyConverter x:Key="CurrencyConverter"/>
+        <Style TargetType="Button" x:Key="ButtonStyle">
+            <Setter Property="Background" Value="#41B4A3"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#379486" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" Storyboard.TargetName="buttonBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#2e776c" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" Storyboard.TargetName="buttonBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="buttonBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="0.5"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="buttonBackground" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" Foreground="{TemplateBinding Foreground}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#E0E0E0" Storyboard.TargetProperty="(TextBox.Background).(SolidColorBrush.Color)" Storyboard.TargetName="textBoxBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#41B4A3" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="textBoxBackground" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"  >
+                                <ScrollViewer x:Name="ContentElement" Margin="{TemplateBinding Padding}"  IsTabStop="False"  VerticalScrollBarVisibility="Auto">
+                                    <TextBlock Foreground="{TemplateBinding Foreground}" TextWrapping="NoWrap" Text="{TemplateBinding Text}"  />
+                                </ScrollViewer>
+                            </Border>
+                            <Border  x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" IsHitTestVisible="False" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="NumberBox" x:Key="NumberBoxStyle">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+        <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#E0E0E0" Storyboard.TargetProperty="(ComboBox.Background).(SolidColorBrush.Color)" Storyboard.TargetName="comboBoxBackground"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#41B4A3" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="comboBoxBackground" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" >
+                                <Grid>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding SelectedItem}" Margin="{TemplateBinding Padding}" Foreground="{TemplateBinding Foreground}" />
+                                    <Border  x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" IsHitTestVisible="False" />
+                                    <muxc:DropDownButton x:Name="DropDownToggle"  HorizontalAlignment="Right" VerticalAlignment="Stretch" Style="{StaticResource DefaultDropDownButtonStyle}" >
+                                        <muxc:DropDownButton.Flyout>
+                                            <Flyout  Placement="Bottom">
+                                                <ScrollViewer  MaxHeight="250">
+                                                    <ItemsControl ItemsSource="{TemplateBinding ItemsSource}"   >
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate  >
+                                                                <TextBlock  Text="{Binding}"  Padding="5" Foreground="#333333"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </ScrollViewer>
+                                            </Flyout>
+                                        </muxc:DropDownButton.Flyout>
+                                    </muxc:DropDownButton>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="controls:DataGrid" x:Key="DataGridStyle">
+            <Setter Property="Background" Value="#F9F9F9"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowBackground" Value="#F9F9F9"/>
+            <Setter Property="AlternatingRowBackground" Value="#F0F0F0"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#28344E"/>
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="ContentControl">
+                        <Setter Property="Background" Value="#28344E"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="BorderBrush" Value="#D4D4D4"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ContentControl">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                        <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="controls:DataGridRow" x:Key="DataGridRowStyle">
+            <Setter Property="Background" Value="#F9F9F9"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style TargetType="ContentDialog" x:Key="DefaultContentDialogStyle">
+            <Setter Property="Background" Value="#F9F9F9" />
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="PrimaryButtonStyle">
+                <Setter.Value>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#41B4A3"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Padding" Value="10,8"/>
+                        <Setter Property="CornerRadius" Value="6"/>
+                        <Setter Property="Margin" Value="4"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CloseButtonStyle">
+                <Setter.Value>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#F9F9F9"/>
+                        <Setter Property="Foreground" Value="#333333"/>
+                        <Setter Property="BorderBrush" Value="#D4D4D4"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,8"/>
+                        <Setter Property="CornerRadius" Value="6"/>
+                        <Setter Property="Margin" Value="4"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
 
     <Grid Margin="20">
@@ -24,10 +249,13 @@
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <TextBlock Grid.Row="0" 
-                   Text="Quản lý kho hàng" 
-                   Style="{StaticResource HeaderTextBlockStyle}"
-                   Margin="0,0,0,20"/>
+        <TextBlock Grid.Row="0"
+                       Text="Quản lý kho hàng"
+                       Style="{StaticResource HeaderTextBlockStyle}"
+                       Margin="0,0,0,20"
+                       Foreground="#28344E"
+                       FontWeight="Bold"
+                       />
 
         <!-- Main Content -->
         <Grid Grid.Row="1">
@@ -38,19 +266,23 @@
 
             <!-- Categories List -->
             <ListView x:Name="CategoryList"
-                ItemsSource="{x:Bind ViewModel.Categories, Mode=OneWay}"
-                SelectionChanged="CategoryList_SelectionChanged"
-                BorderThickness="1"
-                BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
-                Margin="0,0,20,0">
+                    ItemsSource="{x:Bind ViewModel.Categories, Mode=OneWay}"
+                    SelectionChanged="CategoryList_SelectionChanged"
+                     BorderThickness="1"
+                    BorderBrush="#D4D4D4"
+                    Margin="0,0,20,0"
+                     Background="White">
                 <ListView.Header>
-                    <TextBlock Text="Danh mục sản phẩm" 
-                             Style="{StaticResource SubtitleTextBlockStyle}"
-                             Margin="10"/>
+                    <TextBlock Text="Danh mục sản phẩm"
+                                 Style="{StaticResource SubtitleTextBlockStyle}"
+                                 Margin="10"
+                                 PointerPressed="LoadAllProducts_TextBlockPressed"
+                                 Foreground="#28344E"
+                                 />
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="models:Category">
-                        <TextBlock Text="{x:Bind CategoryName}" Padding="5"/>
+                        <TextBlock Text="{x:Bind CategoryName}" Padding="10" Foreground="#333333"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
@@ -58,63 +290,99 @@
             <!-- Products DataGrid and Buttons -->
             <StackPanel Grid.Column="1">
                 <!-- Search Box -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox x:Name="SearchBox" Width="200" PlaceholderText="Tìm kiếm sản phẩm..."/>
-                    <Button Content="Tìm kiếm" Click="SearchButton_Click" Margin="5,0,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10"  Spacing="10">
+                    <TextBox x:Name="SearchBox" Width="200" PlaceholderText="Tìm kiếm sản phẩm..." Style="{StaticResource TextBoxStyle}"/>
+                    <Button Content="Tìm kiếm" Click="SearchButton_Click"  Style="{StaticResource ButtonStyle}"/>
+                    <Button Content="Thêm sản phẩm mới" Click="AddProduct_Click" Style="{StaticResource ButtonStyle}"  />
                 </StackPanel>
 
-                <!-- Add and Update Buttons -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <Button Content="Thêm sản phẩm mới" Click="AddProduct_Click" Margin="0,0,10,0"/>
-                    <Button Content="Cập nhật số lượng" Click="UpdateQuantity_Click" Margin="0,0,10,0"/>
-                    <Button Content="Xóa sản phẩm" Click="DeleteProduct_Click" Margin="0,0,10,0"/>
-                </StackPanel>
 
                 <!-- Products DataGrid -->
                 <controls:DataGrid
                     x:Name="ProductsDataGrid"
                     ItemsSource="{x:Bind ViewModel.DisplayedProducts, Mode=OneWay}"
-                    SelectedItem="{x:Bind ViewModel.SelectedProduct, Mode=TwoWay}"
                     AutoGenerateColumns="False"
                     IsReadOnly="True"
-                    GridLinesVisibility="All"
-                    AlternatingRowBackground="{ThemeResource SystemControlAltMediumLowAcrylicElementMediumBrush}">
+                    GridLinesVisibility="Horizontal"
+                    Style="{StaticResource DataGridStyle}"
+                    RowStyle="{StaticResource DataGridRowStyle}">
+
+                    <!-- Định nghĩa ColumnHeaderStyle -->
+                    <controls:DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="ContentControl">
+                            <Setter Property="Background" Value="#28344E"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Padding" Value="10,5"/>
+                            <Setter Property="BorderBrush" Value="#D4D4D4"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ContentControl">
+                                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </controls:DataGrid.ColumnHeaderStyle>
+
                     <controls:DataGrid.Columns>
-                        <controls:DataGridTextColumn Header="Mã SP" Binding="{Binding ProductID}"/>
-                        <controls:DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding ProductName}"/>
-                        <controls:DataGridTextColumn Header="Thương hiệu" Binding="{Binding Brand}"/>
-                        <controls:DataGridTextColumn Header="Danh mục" Binding="{Binding Category.CategoryName}"/>
-                        <controls:DataGridTextColumn Header="Số lượng tồn" Binding="{Binding QuantityInStock}"/>
-                        <controls:DataGridTextColumn Header="Đơn vị" Binding="{Binding Unit}"/>
-                        <controls:DataGridTextColumn Header="Giá bán">
+                        <controls:DataGridTextColumn Header="Mã SP" Binding="{Binding ProductID}" Width="auto"/>
+                        <controls:DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding ProductName}" Width="auto"/>
+                        <controls:DataGridTextColumn Header="Thương hiệu" Binding="{Binding Brand}" Width="auto"/>
+                        <controls:DataGridTextColumn Header="Danh mục" Binding="{Binding Category.CategoryName}" Width="auto"/>
+                        <controls:DataGridTextColumn Header="Số lượng tồn" Binding="{Binding QuantityInStock}" Width="auto"/>
+                        <controls:DataGridTextColumn Header="Đơn vị" Binding="{Binding Unit}" Width="auto"/>
+                        <controls:DataGridTextColumn Header="Giá bán" Width="auto">
                             <controls:DataGridTextColumn.Binding>
                                 <Binding Path="Price" Converter="{StaticResource CurrencyConverter}"/>
                             </controls:DataGridTextColumn.Binding>
                         </controls:DataGridTextColumn>
-                        <controls:DataGridTextColumn Header="Giá vốn">
+                        <controls:DataGridTextColumn Header="Giá vốn" Width="auto">
                             <controls:DataGridTextColumn.Binding>
                                 <Binding Path="CostPrice" Converter="{StaticResource CurrencyConverter}"/>
                             </controls:DataGridTextColumn.Binding>
                         </controls:DataGridTextColumn>
+                        <controls:DataGridTemplateColumn Header="Hành động" IsReadOnly="True" Width="auto">
+                            <controls:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate x:DataType="models:Product">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="Cập nhật"
+                                                Margin="0,0,5,0"
+                                                Click="UpdateProduct_Click"
+                                                Tag="{x:Bind}"
+                                                Style="{StaticResource ButtonStyle}"/>
+                                        <Button Content="Xóa"
+                                                Margin="5,0,0,0"
+                                                Click="DeleteProduct_Click"
+                                                Tag="{x:Bind}"
+                                                Style="{StaticResource ButtonStyle}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </controls:DataGridTemplateColumn.CellTemplate>
+                        </controls:DataGridTemplateColumn>
                     </controls:DataGrid.Columns>
                 </controls:DataGrid>
 
+
                 <!-- Pagination Controls -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" Spacing="10">
-                    <Button Content="Trang trước" 
-                        Click="PreviousPage_Click" 
-                        IsEnabled="{Binding HasPreviousPage}" />
+                    <Button Content="Trang trước"
+                            Click="PreviousPage_Click"
+                            IsEnabled="{Binding HasPreviousPage}" Style="{StaticResource ButtonStyle}"  />
 
-                    <TextBlock VerticalAlignment="Center">
-                        <Run Text="Trang "/>
-                        <Run Text="{x:Bind ViewModel.CurrentPage, Mode=OneWay}"/>
-                        <Run Text=" / "/>
-                        <Run Text="{x:Bind ViewModel.TotalPages, Mode=OneWay}"/>
+                    <TextBlock VerticalAlignment="Center" Foreground="#28344E">
+                            <Run Text="Trang "/>
+                            <Run Text="{x:Bind ViewModel.CurrentPage, Mode=OneWay}"/>
+                            <Run Text=" / "/>
+                            <Run Text="{x:Bind ViewModel.TotalPages, Mode=OneWay}"/>
                     </TextBlock>
 
-                    <Button Content="Trang sau" 
-                        Click="NextPage_Click" 
-                        IsEnabled="{Binding HasNextPage}" />
+                    <Button Content="Trang sau"
+                            Click="NextPage_Click"
+                            IsEnabled="{Binding HasNextPage}" Style="{StaticResource ButtonStyle}"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

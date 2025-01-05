@@ -6,7 +6,8 @@
     xmlns:viewmodels="using:ConvenienceStore.ViewModels"
     xmlns:models="using:ConvenienceStore.Models"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
-    xmlns:ui="using:Microsoft.UI.Xaml.Controls">
+    xmlns:ui="using:Microsoft.UI.Xaml.Controls"
+    x:Name="EmployeePageControl">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -15,8 +16,8 @@
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <TextBlock Grid.Row="0" 
-                   Text="Quản lý nhân viên" 
+        <TextBlock Grid.Row="0"
+                   Text="Quản lý nhân viên"
                    Style="{StaticResource HeaderTextBlockStyle}"
                    Margin="20,20,20,20"/>
 
@@ -29,7 +30,8 @@
 
             <!-- Employee List -->
             <StackPanel Grid.Column="0">
-                <ListView x:ConnectionId='15' x:Name="EmployeeListView"
+                <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto" MaxHeight="200" Height="200">
+                    <ListView x:ConnectionId='28' x:Name="EmployeeListView"
                                                                            
                                                                                    
                     IsItemClickEnabled="True"
@@ -37,170 +39,177 @@
                     BorderThickness="1"
                     BorderBrush="{ThemeResource SystemControlForegroundBaseLowBrush}"
                     Margin="0,0,20,10">
-                    <ListView.Header>
-                        <TextBlock Text="Danh sách nhân viên" 
-                                 Style="{StaticResource SubtitleTextBlockStyle}"
-                                 Margin="10"/>
-                    </ListView.Header>
-                    <ListView.ItemTemplate>
-                        <DataTemplate                             >
-                            <StackPanel x:ConnectionId='18' Orientation="Vertical" Padding="5">
-                                <TextBlock x:ConnectionId='19'                                                   FontWeight="Bold"/>
-                                <TextBlock x:ConnectionId='20'                                               Opacity="0.7"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
+                        <ListView.Header>
+                            <TextBlock Text="Danh sách nhân viên"
+                                     Style="{StaticResource SubtitleTextBlockStyle}"
+                                     Margin="10"/>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate                             >
+                                <StackPanel x:ConnectionId='30' Orientation="Vertical" Padding="5">
+                                    <TextBlock x:ConnectionId='31'                                                   FontWeight="Bold"/>
+                                    <TextBlock x:ConnectionId='32'                                               Opacity="0.7"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
                 <!-- Add Employee Button -->
-                <Button x:ConnectionId='16' Content="Thêm nhân viên" 
+                <Button x:ConnectionId='27' Content="Thêm nhân viên"
                                                      
                         HorizontalAlignment="Stretch"
                         Margin="0,0,20,0"/>
             </StackPanel>
 
             <!-- Employee Details and Management -->
-            <Pivot Grid.Column="1">
+            <Pivot x:ConnectionId='2' x:Name="EmployeePivot" Grid.Column="1"                                             >
                 <!-- Tab: Thông Tin -->
                 <PivotItem Header="Thông Tin">
-                    <StackPanel>
-                        <TextBlock Text="Thông Tin Nhân Viên" Style="{ThemeResource SubtitleTextBlockStyle}"/>
-                        <Grid Margin="0,10">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
+                    <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <TextBlock Text="Thông Tin Nhân Viên" Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            <Grid Margin="0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Tên:" Margin="0,0,10,5"/>
-                            <TextBlock x:ConnectionId='6' Grid.Row="0" Grid.Column="1" 
-                                                                                                                                                
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Tên:" Margin="0,0,10,5"/>
+                                <TextBlock x:ConnectionId='18' Grid.Row="0" Grid.Column="1"
+                                                                                                                                                 
+                                        Style="{StaticResource BodyTextBlockStyle}"
                                                                                                                                        />
 
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Chức Vụ:" Margin="0,5,10,5"/>
-                            <TextBlock x:ConnectionId='7' Grid.Row="1" Grid.Column="1" 
-                                                                                                                            
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Chức Vụ:" Margin="0,5,10,5"/>
+                                <TextBlock x:ConnectionId='19' Grid.Row="1" Grid.Column="1"
+                                                                                                                             
+                                     Style="{StaticResource BodyTextBlockStyle}"
+                                         Margin="0,5,0,5"/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ngày Vào Làm:" Margin="0,5,10,5"/>
+                                <TextBlock x:ConnectionId='20' Grid.Row="2" Grid.Column="1"
+                                                                                                                                                                     
+                                       Style="{StaticResource BodyTextBlockStyle}"
                                        Margin="0,5,0,5"/>
 
-                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Ngày Vào Làm:" Margin="0,5,10,5"/>
-                            <TextBlock x:ConnectionId='8' Grid.Row="2" Grid.Column="1" 
-                                                                                                                                                                      
-                                       Margin="0,5,0,5"/>
-
-                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Lương:" Margin="0,5,10,5"/>
-                            <TextBlock x:ConnectionId='9' Grid.Row="3" Grid.Column="1" 
-                                                                                                                          
-                                       Margin="0,5,0,5"/>
-
-                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Số Điện Thoại:" Margin="0,5,10,5"/>
-                            <TextBlock x:ConnectionId='10' Grid.Row="4" Grid.Column="1" 
-                                                                                                                               
-                                       Margin="0,5,0,5"/>
-
-                            <TextBlock Grid.Row="5" Grid.Column="0" Text="Email:" Margin="0,5,10,5"/>
-                            <TextBlock x:ConnectionId='11' Grid.Row="5" Grid.Column="1" 
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Lương:" Margin="0,5,10,5"/>
+                                <TextBlock x:ConnectionId='21' Grid.Row="3" Grid.Column="1"
                                                                                                                          
-                                       Margin="0,5,0,5"/>
+                                      Style="{StaticResource BodyTextBlockStyle}"
+                                        Margin="0,5,0,5"/>
 
-                            <TextBlock Grid.Row="6" Grid.Column="0" Text="Địa Chỉ:" Margin="0,5,10,5"/>
-                            <TextBlock x:ConnectionId='12' Grid.Row="6" Grid.Column="1" 
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="Số Điện Thoại:" Margin="0,5,10,5"/>
+                                <TextBlock x:ConnectionId='22' Grid.Row="4" Grid.Column="1"
+                                                                                                                               
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                     Margin="0,5,0,5"/>
+
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="Email:" Margin="0,5,10,5"/>
+                                <TextBlock x:ConnectionId='23' Grid.Row="5" Grid.Column="1"
+                                                                                                                        
+                                      Style="{StaticResource BodyTextBlockStyle}"
+                                        Margin="0,5,0,5"/>
+
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="Địa Chỉ:" Margin="0,5,10,5"/>
+                                <TextBlock x:ConnectionId='24' Grid.Row="6" Grid.Column="1"
+                                                                                                                         
+                                        Style="{StaticResource BodyTextBlockStyle}"
+                                      Margin="0,5,0,5"
+                                        TextWrapping="Wrap"/>
+
+                                <TextBlock Grid.Row="7" Grid.Column="0" Text="Ngày Sinh:" Margin="0,5,10,5"/>
+                                <TextBlock x:ConnectionId='25' Grid.Row="7" Grid.Column="1"
+                                                                                                                                                                    
+                                        Style="{StaticResource BodyTextBlockStyle}"
+                                      Margin="0,5,0,5"/>
+
+                                <TextBlock Grid.Row="8" Grid.Column="0" Text="CMND/CCCD:" Margin="0,5,10,5"/>
+                                <TextBlock x:ConnectionId='26' Grid.Row="8" Grid.Column="1"
                                                                                                                            
-                                       Margin="0,5,0,5"
-                                       TextWrapping="Wrap"/>
-
-                            <TextBlock Grid.Row="7" Grid.Column="0" Text="Ngày Sinh:" Margin="0,5,10,5"/>
-                            <TextBlock x:ConnectionId='13' Grid.Row="7" Grid.Column="1" 
-                                                                                                                                                                      
-                                       Margin="0,5,0,5"/>
-
-                            <TextBlock Grid.Row="8" Grid.Column="0" Text="CMND/CCCD:" Margin="0,5,10,5"/>
-                            <TextBlock x:ConnectionId='14' Grid.Row="8" Grid.Column="1" 
-                                                                                                                            
-                                       Margin="0,5,0,5"/>
-                        </Grid>
-                    </StackPanel>
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                     Margin="0,5,0,5"/>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Right">
+                                <Button x:ConnectionId='16' x:Name="DeleteEmployeeButton" Content="Xóa"                                    Margin="0,0,10,0"                                                                                                             />
+                                <Button x:ConnectionId='17' x:Name="UpdateEmployeeButton" Content="Cập nhật"                                                                                                                                                />
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
                 </PivotItem>
-
                 <!-- Tab: Ca Làm Việc -->
-                <PivotItem Header="Ca Làm Việc">
-                    <StackPanel>
-                        <TextBlock Text="Danh Sách Ca Làm" Style="{ThemeResource SubtitleTextBlockStyle}"/>
-                        <Grid Margin="0,10,0,0">
-                            <controls:DataGrid x:ConnectionId='5'
-                                                                                    
-                                AutoGenerateColumns="False"
-                                GridLinesVisibility="All"
-                                BorderBrush="White"
-                                BorderThickness="1">
-                                <controls:DataGrid.Columns>
-                                    <controls:DataGridTextColumn Header="Ngày" 
-                                        Binding="{Binding ShiftDate, Converter={StaticResource DateConverter}}"
-                                        Width="120"/>
-                                    <controls:DataGridTextColumn Header="Giờ Bắt Đầu" 
-                                        Binding="{Binding StartTime}"
-                                        Width="100"/>
-                                    <controls:DataGridTextColumn Header="Giờ Kết Thúc" 
-                                        Binding="{Binding EndTime}"
-                                        Width="100"/>
-                                    <controls:DataGridTextColumn Header="Trạng Thái" 
-                                        Binding="{Binding Status}"
-                                        Width="*"/>
-                                    <controls:DataGridTextColumn Header="Note" 
-                                        Binding="{Binding Note}"
-                                        Width="*"/>
-                                </controls:DataGrid.Columns>
-                            </controls:DataGrid>
-                        </Grid>
-                        <Button x:ConnectionId='4' Content="Thêm Ca Làm"
-                                                          
-                                Margin="0,10,0,0"/>
-                    </StackPanel>
-                </PivotItem>
-
-                <!-- Tab: Điểm Danh -->
-                <PivotItem Header="Điểm Danh">
-                    <StackPanel>
-                        <TextBlock Text="Bảng Chấm Công" Style="{ThemeResource SubtitleTextBlockStyle}"/>
-                        <Grid Margin="0,10,0,0">
-                            <controls:DataGrid x:ConnectionId='3'
+                <PivotItem Header="Ca làm việc">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
+                            <TextBlock Text="Chọn ngày: " VerticalAlignment="Center"/>
+                            <DatePicker x:ConnectionId='14' x:Name="ShiftDatePicker"                                                     Margin="10,0,10,0"/>
+                            <Button x:ConnectionId='15' Content="Thêm Ca Làm"                             Margin="10,0,0,0"/>
+                        </StackPanel>
+                        <ListView x:ConnectionId='3' x:Name="ShiftListView"
+                             Grid.Row="1"
+                                                                                 
                                                                                          
-                                AutoGenerateColumns="False"
-                                GridLinesVisibility="All"
-                                BorderBrush="White"
-                                BorderThickness="1">
-                                <controls:DataGrid.Columns>
-                                    <controls:DataGridTextColumn Header="Ngày" 
-                                        Binding="{Binding Date, Converter={StaticResource DateConverter}}"
-                                        Width="120"/>
-                                    <controls:DataGridTextColumn Header="Giờ Vào" 
-                                        Binding="{Binding TimeIn}"
-                                        Width="100"/>
-                                    <controls:DataGridTextColumn Header="Giờ Ra" 
-                                        Binding="{Binding TimeOut}"
-                                        Width="100"/>
-                                    <controls:DataGridTextColumn Header="Trạng Thái" 
-                                        Binding="{Binding Status}"
-                                        Width="*"/>
-                                    <controls:DataGridTextColumn Header="Note" 
-                                        Binding="{Binding Note}"
-                                        Width="*"/>
-                                </controls:DataGrid.Columns>
-                            </controls:DataGrid>
-                        </Grid>
-                        <Button x:ConnectionId='2' Content="Điểm Danh"
-                                                            
-                                Margin="0,10,0,0"/>
-                    </StackPanel>
+                              SelectionMode="Single"
+                             IsItemClickEnabled="True"
+                             Margin="0,0,0,10">
+                            <ListView.Header>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="Nhân viên" Margin="5"/>
+                                    <TextBlock Grid.Column="1" Text="Ngày" Margin="5"/>
+                                    <TextBlock Grid.Column="2" Text="Bắt đầu" Margin="5"/>
+                                    <TextBlock Grid.Column="3" Text="Kết thúc" Margin="5"/>
+                                    <TextBlock Grid.Column="4" Text="Trạng thái" Margin="5"/>
+                                    <TextBlock Grid.Column="5" Text="Ghi chú" Margin="5"/>
+                                </Grid>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate                          >
+                                    <Grid x:ConnectionId='7'>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock x:ConnectionId='8' Grid.Column="0"                              Margin="5"/>
+                                        <TextBlock x:ConnectionId='9' Grid.Column="1"                                                                     Margin="5"/>
+                                        <TextBlock x:ConnectionId='10' Grid.Column="2"                           Margin="5"/>
+                                        <TextBlock x:ConnectionId='11' Grid.Column="3"                         Margin="5"/>
+                                        <TextBlock x:ConnectionId='12' Grid.Column="4"                        Margin="5"/>
+                                        <TextBlock x:ConnectionId='13' Grid.Column="5"                      Margin="5"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button x:ConnectionId='4' x:Name="DeleteShiftButton" Content="Xóa ca làm"                                 Margin="0,0,10,0"                                                                                                          />
+                            <Button x:ConnectionId='5' x:Name="UpdateShiftButton" Content="Cập nhật ca làm"                                                                                                                                          />
+                        </StackPanel>
+                    </Grid>
                 </PivotItem>
             </Pivot>
         </Grid>
