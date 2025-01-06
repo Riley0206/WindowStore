@@ -10,6 +10,9 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Windows.UI;
 using System.Linq;
+using Microsoft.UI.Text;
+using Microsoft.UI;
+using Windows.UI.Text;
 
 namespace ConvenienceStore.Views
 {
@@ -19,7 +22,7 @@ namespace ConvenienceStore.Views
 
         public InventoryPage()
         {
-            string connectionString = @"Data Source=.\SQL22;Initial Catalog=ConvenienceStoreDB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            string connectionString = @"Data Source=DESKTOP-LD18TI4;Initial Catalog=ConvenienceStoreDB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
             var databaseService = new DatabaseService(connectionString);
             ViewModel = new InventoryViewModel(databaseService);
 
@@ -56,6 +59,7 @@ namespace ConvenienceStore.Views
                 DefaultButton = ContentDialogButton.Primary,
                 XamlRoot = this.XamlRoot,
             };
+            ApplyDialogStyle(dialog);
 
             // Tạo Grid và các cột
             var grid = new Grid { Margin = new Thickness(10) };
@@ -72,12 +76,15 @@ namespace ConvenienceStore.Views
             // Tạo các TextBox và ComboBox
             var productNameLabel = new TextBlock { Text = "Tên sản phẩm:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
             var productNameBox = new TextBox { Margin = new Thickness(0, 5, 0, 5) };
+            ApplyControlStyle(productNameBox);
 
             var brandLabel = new TextBlock { Text = "Thương hiệu:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
             var brandBox = new TextBox { Margin = new Thickness(0, 5, 0, 5) };
+            ApplyControlStyle(brandBox);
 
             var quantityLabel = new TextBlock { Text = "Số lượng:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
             var quantityBox = new NumberBox { Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact, Margin = new Thickness(0, 5, 0, 5) };
+            ApplyControlStyle(quantityBox);
 
             var priceLabel = new TextBlock { Text = "Giá bán:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
             var priceBox = new NumberBox { Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact, Margin = new Thickness(0, 5, 0, 5) };
@@ -216,6 +223,8 @@ namespace ConvenienceStore.Views
 
                 };
 
+                ApplyDialogStyle(dialog);
+
                 var grid = new Grid { Margin = new Thickness(10) };
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
@@ -230,18 +239,23 @@ namespace ConvenienceStore.Views
                 // Tạo các TextBox và ComboBox
                 var productNameLabel = new TextBlock { Text = "Tên sản phẩm:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
                 var productNameBox = new TextBox { Margin = new Thickness(0, 5, 0, 5), Text = product.ProductName };
+                ApplyControlStyle(productNameBox);
 
                 var brandLabel = new TextBlock { Text = "Thương hiệu:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
                 var brandBox = new TextBox { Margin = new Thickness(0, 5, 0, 5), Text = product.Brand };
+                ApplyControlStyle(brandBox);
 
                 var quantityLabel = new TextBlock { Text = "Số lượng:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
                 var quantityBox = new NumberBox { Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact, Margin = new Thickness(0, 5, 0, 5), Value = product.QuantityInStock };
+                ApplyControlStyle(quantityBox);
 
                 var priceLabel = new TextBlock { Text = "Giá bán:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
                 var priceBox = new NumberBox { Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact, Margin = new Thickness(0, 5, 0, 5), Value = (double)product.Price };
+                ApplyControlStyle(priceBox);
 
                 var costPriceLabel = new TextBlock { Text = "Giá vốn:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
                 var costPriceBox = new NumberBox { Minimum = 0, SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Compact, Margin = new Thickness(0, 5, 0, 5), Value = (double)product.CostPrice };
+                ApplyControlStyle(costPriceBox);
 
                 var unitLabel = new TextBlock { Text = "Đơn vị tính:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
                 var unitComboBox = new ComboBox
@@ -251,6 +265,7 @@ namespace ConvenienceStore.Views
                     SelectedItem = product.Unit,
 
                 };
+                ApplyControlStyle(unitComboBox);
                 var categoryLabel = new TextBlock { Text = "Danh mục:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 5, 10, 5) };
                 var categoryComboBox = new ComboBox
                 {
@@ -259,6 +274,7 @@ namespace ConvenienceStore.Views
                     Margin = new Thickness(0, 5, 0, 5),
 
                 };
+                ApplyControlStyle(categoryComboBox);
                 if (product != null)
                 {
                     categoryComboBox.SelectedItem = ViewModel.Categories.FirstOrDefault(c => c.CategoryID == product.CategoryID);
@@ -366,8 +382,61 @@ namespace ConvenienceStore.Views
         }
 
 
-        // Event handler cho việc xóa 1 dòng sản phẩm
-        private async void DeleteProduct_Click(object sender, RoutedEventArgs e)
+        private void ApplyDialogStyle(ContentDialog dialog)
+        {
+            dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+
+            // Additional styling if needed
+            dialog.Background = new SolidColorBrush(Color.FromArgb(255, 249, 249, 249));  // #F9F9F9
+            dialog.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 212, 212, 212)); // #D4D4D4
+            dialog.Foreground = new SolidColorBrush(Color.FromArgb(255, 31, 31, 31)); // #333333
+
+            var buttonStyle = new Style(typeof(Button));
+            buttonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Color.FromArgb(255, 65, 180, 163)))); // #41B4A3
+            buttonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Colors.Gray)));
+            buttonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 8, 10, 8)));
+            buttonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(6)));
+            buttonStyle.Setters.Add(new Setter(Button.FontWeightProperty, FontWeights.SemiBold));
+
+            var closeButtonStyle = new Style(typeof(Button));
+            closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Color.FromArgb(255, 249, 249, 249)))); // #F9F9F9
+            closeButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Color.FromArgb(255, 51, 51, 51)))); // #333333
+            closeButtonStyle.Setters.Add(new Setter(Button.BorderBrushProperty, new SolidColorBrush(Color.FromArgb(255, 212, 212, 212)))); // #D4D4D4
+            closeButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(2)));
+            closeButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 8, 10, 8)));
+            closeButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(6)));
+            closeButtonStyle.Setters.Add(new Setter(Button.FontWeightProperty, FontWeights.SemiBold));
+
+            dialog.PrimaryButtonStyle = buttonStyle;
+            dialog.CloseButtonStyle = closeButtonStyle;
+        }
+        private void ApplyControlStyle(Control control)
+        {
+            if (control is TextBox textBox)
+            {
+                textBox.BorderThickness = new Thickness(1);
+                textBox.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 212, 212, 212));
+                textBox.Background = new SolidColorBrush(Colors.Gray);
+            }
+            else if (control is NumberBox numberBox)
+            {
+                numberBox.BorderThickness = new Thickness(1);
+                numberBox.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 212, 212, 212));
+                numberBox.Background = new SolidColorBrush(Colors.Gray);
+
+            }
+            else if (control is ComboBox comboBox)
+            {
+                comboBox.BorderThickness = new Thickness(1);
+                comboBox.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 212, 212, 212));
+                comboBox.Background = new SolidColorBrush(Colors.Gray);
+
+            }
+        }
+
+
+            // Event handler cho việc xóa 1 dòng sản phẩm
+            private async void DeleteProduct_Click(object sender, RoutedEventArgs e)
         {
             if (sender is FrameworkElement element && element.Tag is Product product)
             {

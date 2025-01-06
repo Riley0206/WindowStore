@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using Microsoft.UI.Xaml.Input;
 using System.Linq;
 using System.Diagnostics;
+using Microsoft.UI.Text;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI;
+using Windows.UI;
 
 namespace ConvenienceStore.Views
 {
@@ -94,6 +98,15 @@ namespace ConvenienceStore.Views
                       }
                     }
                 };
+                ApplyControlStyle(nameTextBox);
+                ApplyControlStyle(positionTextBox);
+                ApplyControlStyle(hireDatePicker);
+                ApplyControlStyle(salaryTextBox);
+                ApplyControlStyle(phoneTextBox);
+                ApplyControlStyle(addressTextBox);
+                ApplyControlStyle(emailTextBox);
+                ApplyControlStyle(birthdayPicker);
+                ApplyControlStyle(idNumberTextBox);
                 var dialog = new ContentDialog
                 {
                     Title = "Thêm nhân viên mới",
@@ -103,6 +116,7 @@ namespace ConvenienceStore.Views
                     Content = scrollViewer,
                     FullSizeDesired = false
                 };
+                ApplyDialogStyle(dialog);
                 if (await dialog.ShowAsync() == ContentDialogResult.Primary)
                 {
                     if (string.IsNullOrWhiteSpace(nameTextBox.Text) ||
@@ -517,6 +531,64 @@ namespace ConvenienceStore.Views
             catch (Exception ex)
             {
                 await ShowErrorDialog("Lỗi", $"Đã xảy ra lỗi: {ex.Message}");
+            }
+        }
+
+        private void ApplyDialogStyle(ContentDialog dialog)
+        {
+            dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+
+            // Additional styling if needed
+            dialog.Background = new SolidColorBrush(Color.FromArgb(255, 249, 249, 249));  // #F9F9F9
+            dialog.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 212, 212, 212)); // #D4D4D4
+            dialog.Foreground = new SolidColorBrush(Color.FromArgb(255, 31, 31, 31)); // #333333
+
+            var buttonStyle = new Style(typeof(Button));
+            buttonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Color.FromArgb(255, 65, 180, 163)))); // #41B4A3
+            buttonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Colors.Gray)));
+            buttonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 8, 10, 8)));
+            buttonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(6)));
+            buttonStyle.Setters.Add(new Setter(Button.FontWeightProperty, FontWeights.SemiBold));
+
+            var closeButtonStyle = new Style(typeof(Button));
+            closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Color.FromArgb(255, 249, 249, 249)))); // #F9F9F9
+            closeButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Color.FromArgb(255, 51, 51, 51)))); // #333333
+            closeButtonStyle.Setters.Add(new Setter(Button.BorderBrushProperty, new SolidColorBrush(Color.FromArgb(255, 212, 212, 212)))); // #D4D4D4
+            closeButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(2)));
+            closeButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 8, 10, 8)));
+            closeButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(6)));
+            closeButtonStyle.Setters.Add(new Setter(Button.FontWeightProperty, FontWeights.SemiBold));
+
+            dialog.PrimaryButtonStyle = buttonStyle;
+            dialog.CloseButtonStyle = closeButtonStyle;
+        }
+        private void ApplyControlStyle(Control control)
+        {
+            if (control is TextBox textBox)
+            {
+                textBox.BorderThickness = new Thickness(1);
+                textBox.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 212, 212, 212));
+                textBox.Background = new SolidColorBrush(Colors.Gray);
+            }
+            else if (control is NumberBox numberBox)
+            {
+                numberBox.BorderThickness = new Thickness(1);
+                numberBox.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 212, 212, 212));
+                numberBox.Background = new SolidColorBrush(Colors.Gray);
+
+            }
+            else if (control is ComboBox comboBox)
+            {
+                comboBox.BorderThickness = new Thickness(1);
+                comboBox.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 212, 212, 212));
+                comboBox.Background = new SolidColorBrush(Colors.Gray);
+
+            }
+            else if (control is DatePicker datePicker)
+            {
+                datePicker.BorderThickness = new Thickness(1);
+                datePicker.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 212, 212, 212));
+                datePicker.Background = new SolidColorBrush(Colors.Gray);
             }
         }
     }
