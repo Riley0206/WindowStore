@@ -2,4 +2,5 @@ App.xbf
 MainWindow.xbf
 Views\EmployeePage.xbf
 Views\InventoryPage.xbf
+Views\OrderPage.xbf
 Views\RevenueReportPage.xbf

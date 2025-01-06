@@ -226,7 +226,7 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[94];
+            _typeNameTable = new string[104];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -317,12 +317,22 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             _typeNameTable[87] = "CommunityToolkit.WinUI.UI.Controls.DataGridTemplateColumn";
             _typeNameTable[88] = "ConvenienceStore.Views.InventoryPage";
             _typeNameTable[89] = "ConvenienceStore.ViewModels.InventoryViewModel";
-            _typeNameTable[90] = "ConvenienceStore.Views.RevenueReportPage";
-            _typeNameTable[91] = "ConvenienceStore.ViewModels.RevenueReportViewModel";
-            _typeNameTable[92] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[93] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[90] = "Microsoft.UI.Xaml.Controls.TabView";
+            _typeNameTable[91] = "System.Windows.Input.ICommand";
+            _typeNameTable[92] = "Microsoft.UI.Xaml.Controls.TabViewCloseButtonOverlayMode";
+            _typeNameTable[93] = "Microsoft.UI.Xaml.Controls.TabViewWidthMode";
+            _typeNameTable[94] = "Microsoft.UI.Xaml.Controls.TabViewItem";
+            _typeNameTable[95] = "Microsoft.UI.Xaml.Controls.ListViewItem";
+            _typeNameTable[96] = "Microsoft.UI.Xaml.Controls.IconSource";
+            _typeNameTable[97] = "Microsoft.UI.Xaml.Controls.TabViewItemTemplateSettings";
+            _typeNameTable[98] = "ConvenienceStore.Views.OrderPage";
+            _typeNameTable[99] = "ConvenienceStore.ViewModels.OrderViewModel";
+            _typeNameTable[100] = "ConvenienceStore.Views.RevenueReportPage";
+            _typeNameTable[101] = "ConvenienceStore.ViewModels.RevenueReportViewModel";
+            _typeNameTable[102] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[103] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[94];
+            _typeTable = new global::System.Type[104];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -413,10 +423,20 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             _typeTable[87] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTemplateColumn);
             _typeTable[88] = typeof(global::ConvenienceStore.Views.InventoryPage);
             _typeTable[89] = typeof(global::ConvenienceStore.ViewModels.InventoryViewModel);
-            _typeTable[90] = typeof(global::ConvenienceStore.Views.RevenueReportPage);
-            _typeTable[91] = typeof(global::ConvenienceStore.ViewModels.RevenueReportViewModel);
-            _typeTable[92] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[93] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[90] = typeof(global::Microsoft.UI.Xaml.Controls.TabView);
+            _typeTable[91] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[92] = typeof(global::Microsoft.UI.Xaml.Controls.TabViewCloseButtonOverlayMode);
+            _typeTable[93] = typeof(global::Microsoft.UI.Xaml.Controls.TabViewWidthMode);
+            _typeTable[94] = typeof(global::Microsoft.UI.Xaml.Controls.TabViewItem);
+            _typeTable[95] = typeof(global::Microsoft.UI.Xaml.Controls.ListViewItem);
+            _typeTable[96] = typeof(global::Microsoft.UI.Xaml.Controls.IconSource);
+            _typeTable[97] = typeof(global::Microsoft.UI.Xaml.Controls.TabViewItemTemplateSettings);
+            _typeTable[98] = typeof(global::ConvenienceStore.Views.OrderPage);
+            _typeTable[99] = typeof(global::ConvenienceStore.ViewModels.OrderViewModel);
+            _typeTable[100] = typeof(global::ConvenienceStore.Views.RevenueReportPage);
+            _typeTable[101] = typeof(global::ConvenienceStore.ViewModels.RevenueReportViewModel);
+            _typeTable[102] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[103] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -481,8 +501,12 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
         private object Activate_82_DataGridTextColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn(); }
         private object Activate_87_DataGridTemplateColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTemplateColumn(); }
         private object Activate_88_InventoryPage() { return new global::ConvenienceStore.Views.InventoryPage(); }
-        private object Activate_90_RevenueReportPage() { return new global::ConvenienceStore.Views.RevenueReportPage(); }
-        private object Activate_92_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_90_TabView() { return new global::Microsoft.UI.Xaml.Controls.TabView(); }
+        private object Activate_94_TabViewItem() { return new global::Microsoft.UI.Xaml.Controls.TabViewItem(); }
+        private object Activate_97_TabViewItemTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.TabViewItemTemplateSettings(); }
+        private object Activate_98_OrderPage() { return new global::ConvenienceStore.Views.OrderPage(); }
+        private object Activate_100_RevenueReportPage() { return new global::ConvenienceStore.Views.RevenueReportPage(); }
+        private object Activate_102_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_NullToBoolConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.NullToBoolConverter).TypeHandle);
         private void StaticInitializer_5_GreaterThanOneConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Converters.GreaterThanOneConverter).TypeHandle);
@@ -542,10 +566,18 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
         private void StaticInitializer_87_DataGridTemplateColumn() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTemplateColumn).TypeHandle);
         private void StaticInitializer_88_InventoryPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Views.InventoryPage).TypeHandle);
         private void StaticInitializer_89_InventoryViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.ViewModels.InventoryViewModel).TypeHandle);
-        private void StaticInitializer_90_RevenueReportPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Views.RevenueReportPage).TypeHandle);
-        private void StaticInitializer_91_RevenueReportViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.ViewModels.RevenueReportViewModel).TypeHandle);
-        private void StaticInitializer_92_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_93_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_90_TabView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TabView).TypeHandle);
+        private void StaticInitializer_91_ICommand() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Windows.Input.ICommand).TypeHandle);
+        private void StaticInitializer_92_TabViewCloseButtonOverlayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TabViewCloseButtonOverlayMode).TypeHandle);
+        private void StaticInitializer_93_TabViewWidthMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TabViewWidthMode).TypeHandle);
+        private void StaticInitializer_94_TabViewItem() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TabViewItem).TypeHandle);
+        private void StaticInitializer_97_TabViewItemTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TabViewItemTemplateSettings).TypeHandle);
+        private void StaticInitializer_98_OrderPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Views.OrderPage).TypeHandle);
+        private void StaticInitializer_99_OrderViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.ViewModels.OrderViewModel).TypeHandle);
+        private void StaticInitializer_100_RevenueReportPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.Views.RevenueReportPage).TypeHandle);
+        private void StaticInitializer_101_RevenueReportViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::ConvenienceStore.ViewModels.RevenueReportViewModel).TypeHandle);
+        private void StaticInitializer_102_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_103_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -583,7 +615,7 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             var newItem = (global::Microsoft.UI.Xaml.Style)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_93_IList(object instance, object item)
+        private void VectorAdd_103_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -1335,27 +1367,123 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 90:   //  ConvenienceStore.Views.RevenueReportPage
+            case 90:   //  Microsoft.UI.Xaml.Controls.TabView
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
+                userType.Activator = Activate_90_TabView;
+                userType.StaticInitializer = StaticInitializer_90_TabView;
+                userType.SetContentPropertyName("Microsoft.UI.Xaml.Controls.TabView.TabItems");
+                userType.AddMemberName("TabItems");
+                userType.AddMemberName("AddTabButtonCommand");
+                userType.AddMemberName("AddTabButtonCommandParameter");
+                userType.AddMemberName("AllowDropTabs");
+                userType.AddMemberName("CanDragTabs");
+                userType.AddMemberName("CanReorderTabs");
+                userType.AddMemberName("CanTearOutTabs");
+                userType.AddMemberName("CloseButtonOverlayMode");
+                userType.AddMemberName("IsAddTabButtonVisible");
+                userType.AddMemberName("SelectedIndex");
+                userType.AddMemberName("SelectedItem");
+                userType.AddMemberName("TabItemTemplate");
+                userType.AddMemberName("TabItemTemplateSelector");
+                userType.AddMemberName("TabItemsSource");
+                userType.AddMemberName("TabStripFooter");
+                userType.AddMemberName("TabStripFooterTemplate");
+                userType.AddMemberName("TabStripHeader");
+                userType.AddMemberName("TabStripHeaderTemplate");
+                userType.AddMemberName("TabWidthMode");
+                xamlType = userType;
+                break;
+
+            case 91:   //  System.Windows.Input.ICommand
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.StaticInitializer = StaticInitializer_91_ICommand;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 92:   //  Microsoft.UI.Xaml.Controls.TabViewCloseButtonOverlayMode
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.StaticInitializer = StaticInitializer_92_TabViewCloseButtonOverlayMode;
+                userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.TabViewCloseButtonOverlayMode.Auto);
+                userType.AddEnumValue("OnPointerOver", global::Microsoft.UI.Xaml.Controls.TabViewCloseButtonOverlayMode.OnPointerOver);
+                userType.AddEnumValue("Always", global::Microsoft.UI.Xaml.Controls.TabViewCloseButtonOverlayMode.Always);
+                xamlType = userType;
+                break;
+
+            case 93:   //  Microsoft.UI.Xaml.Controls.TabViewWidthMode
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.StaticInitializer = StaticInitializer_93_TabViewWidthMode;
+                userType.AddEnumValue("Equal", global::Microsoft.UI.Xaml.Controls.TabViewWidthMode.Equal);
+                userType.AddEnumValue("SizeToContent", global::Microsoft.UI.Xaml.Controls.TabViewWidthMode.SizeToContent);
+                userType.AddEnumValue("Compact", global::Microsoft.UI.Xaml.Controls.TabViewWidthMode.Compact);
+                xamlType = userType;
+                break;
+
+            case 94:   //  Microsoft.UI.Xaml.Controls.TabViewItem
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ListViewItem"));
+                userType.Activator = Activate_94_TabViewItem;
+                userType.StaticInitializer = StaticInitializer_94_TabViewItem;
+                userType.AddMemberName("Header");
+                userType.AddMemberName("HeaderTemplate");
+                userType.AddMemberName("IconSource");
+                userType.AddMemberName("IsClosable");
+                userType.AddMemberName("TabViewTemplateSettings");
+                xamlType = userType;
+                break;
+
+            case 95:   //  Microsoft.UI.Xaml.Controls.ListViewItem
+                xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 96:   //  Microsoft.UI.Xaml.Controls.IconSource
+                xamlType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 97:   //  Microsoft.UI.Xaml.Controls.TabViewItemTemplateSettings
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
+                userType.StaticInitializer = StaticInitializer_97_TabViewItemTemplateSettings;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 98:   //  ConvenienceStore.Views.OrderPage
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_90_RevenueReportPage;
-                userType.StaticInitializer = StaticInitializer_90_RevenueReportPage;
+                userType.Activator = Activate_98_OrderPage;
+                userType.StaticInitializer = StaticInitializer_98_OrderPage;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 91:   //  ConvenienceStore.ViewModels.RevenueReportViewModel
+            case 99:   //  ConvenienceStore.ViewModels.OrderViewModel
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.Mvvm.ComponentModel.ObservableObject"));
-                userType.StaticInitializer = StaticInitializer_91_RevenueReportViewModel;
+                userType.StaticInitializer = StaticInitializer_99_OrderViewModel;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 92:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 100:   //  ConvenienceStore.Views.RevenueReportPage
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_100_RevenueReportPage;
+                userType.StaticInitializer = StaticInitializer_100_RevenueReportPage;
+                userType.AddMemberName("ViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 101:   //  ConvenienceStore.ViewModels.RevenueReportViewModel
+                userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.Mvvm.ComponentModel.ObservableObject"));
+                userType.StaticInitializer = StaticInitializer_101_RevenueReportViewModel;
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 102:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_92_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_92_TreeViewNode;
+                userType.Activator = Activate_102_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_102_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -1367,10 +1495,10 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 93:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 103:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_93_IList;
-                userType.CollectionAdd = VectorAdd_93_IList;
+                userType.StaticInitializer = StaticInitializer_103_IList;
+                userType.CollectionAdd = VectorAdd_103_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -2850,57 +2978,292 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
             var that = (global::ConvenienceStore.Views.InventoryPage)instance;
             return that.ViewModel;
         }
-        private object get_150_RevenueReportPage_ViewModel(object instance)
+        private object get_150_TabView_TabItems(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.TabItems;
+        }
+        private object get_151_TabView_AddTabButtonCommand(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.AddTabButtonCommand;
+        }
+        private void set_151_TabView_AddTabButtonCommand(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.AddTabButtonCommand = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_152_TabView_AddTabButtonCommandParameter(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.AddTabButtonCommandParameter;
+        }
+        private void set_152_TabView_AddTabButtonCommandParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.AddTabButtonCommandParameter = (global::System.Object)Value;
+        }
+        private object get_153_TabView_AllowDropTabs(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.AllowDropTabs;
+        }
+        private void set_153_TabView_AllowDropTabs(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.AllowDropTabs = (global::System.Boolean)Value;
+        }
+        private object get_154_TabView_CanDragTabs(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.CanDragTabs;
+        }
+        private void set_154_TabView_CanDragTabs(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.CanDragTabs = (global::System.Boolean)Value;
+        }
+        private object get_155_TabView_CanReorderTabs(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.CanReorderTabs;
+        }
+        private void set_155_TabView_CanReorderTabs(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.CanReorderTabs = (global::System.Boolean)Value;
+        }
+        private object get_156_TabView_CanTearOutTabs(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.CanTearOutTabs;
+        }
+        private void set_156_TabView_CanTearOutTabs(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.CanTearOutTabs = (global::System.Boolean)Value;
+        }
+        private object get_157_TabView_CloseButtonOverlayMode(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.CloseButtonOverlayMode;
+        }
+        private void set_157_TabView_CloseButtonOverlayMode(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.CloseButtonOverlayMode = (global::Microsoft.UI.Xaml.Controls.TabViewCloseButtonOverlayMode)Value;
+        }
+        private object get_158_TabView_IsAddTabButtonVisible(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.IsAddTabButtonVisible;
+        }
+        private void set_158_TabView_IsAddTabButtonVisible(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.IsAddTabButtonVisible = (global::System.Boolean)Value;
+        }
+        private object get_159_TabView_SelectedIndex(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.SelectedIndex;
+        }
+        private void set_159_TabView_SelectedIndex(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.SelectedIndex = (global::System.Int32)Value;
+        }
+        private object get_160_TabView_SelectedItem(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.SelectedItem;
+        }
+        private void set_160_TabView_SelectedItem(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.SelectedItem = (global::System.Object)Value;
+        }
+        private object get_161_TabView_TabItemTemplate(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.TabItemTemplate;
+        }
+        private void set_161_TabView_TabItemTemplate(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.TabItemTemplate = (global::Microsoft.UI.Xaml.DataTemplate)Value;
+        }
+        private object get_162_TabView_TabItemTemplateSelector(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.TabItemTemplateSelector;
+        }
+        private void set_162_TabView_TabItemTemplateSelector(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.TabItemTemplateSelector = (global::Microsoft.UI.Xaml.Controls.DataTemplateSelector)Value;
+        }
+        private object get_163_TabView_TabItemsSource(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.TabItemsSource;
+        }
+        private void set_163_TabView_TabItemsSource(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.TabItemsSource = (global::System.Object)Value;
+        }
+        private object get_164_TabView_TabStripFooter(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.TabStripFooter;
+        }
+        private void set_164_TabView_TabStripFooter(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.TabStripFooter = (global::System.Object)Value;
+        }
+        private object get_165_TabView_TabStripFooterTemplate(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.TabStripFooterTemplate;
+        }
+        private void set_165_TabView_TabStripFooterTemplate(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.TabStripFooterTemplate = (global::Microsoft.UI.Xaml.DataTemplate)Value;
+        }
+        private object get_166_TabView_TabStripHeader(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.TabStripHeader;
+        }
+        private void set_166_TabView_TabStripHeader(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.TabStripHeader = (global::System.Object)Value;
+        }
+        private object get_167_TabView_TabStripHeaderTemplate(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.TabStripHeaderTemplate;
+        }
+        private void set_167_TabView_TabStripHeaderTemplate(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.TabStripHeaderTemplate = (global::Microsoft.UI.Xaml.DataTemplate)Value;
+        }
+        private object get_168_TabView_TabWidthMode(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            return that.TabWidthMode;
+        }
+        private void set_168_TabView_TabWidthMode(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabView)instance;
+            that.TabWidthMode = (global::Microsoft.UI.Xaml.Controls.TabViewWidthMode)Value;
+        }
+        private object get_169_TabViewItem_Header(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabViewItem)instance;
+            return that.Header;
+        }
+        private void set_169_TabViewItem_Header(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabViewItem)instance;
+            that.Header = (global::System.Object)Value;
+        }
+        private object get_170_TabViewItem_HeaderTemplate(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabViewItem)instance;
+            return that.HeaderTemplate;
+        }
+        private void set_170_TabViewItem_HeaderTemplate(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabViewItem)instance;
+            that.HeaderTemplate = (global::Microsoft.UI.Xaml.DataTemplate)Value;
+        }
+        private object get_171_TabViewItem_IconSource(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabViewItem)instance;
+            return that.IconSource;
+        }
+        private void set_171_TabViewItem_IconSource(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabViewItem)instance;
+            that.IconSource = (global::Microsoft.UI.Xaml.Controls.IconSource)Value;
+        }
+        private object get_172_TabViewItem_IsClosable(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabViewItem)instance;
+            return that.IsClosable;
+        }
+        private void set_172_TabViewItem_IsClosable(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabViewItem)instance;
+            that.IsClosable = (global::System.Boolean)Value;
+        }
+        private object get_173_TabViewItem_TabViewTemplateSettings(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.TabViewItem)instance;
+            return that.TabViewTemplateSettings;
+        }
+        private object get_174_OrderPage_ViewModel(object instance)
+        {
+            var that = (global::ConvenienceStore.Views.OrderPage)instance;
+            return that.ViewModel;
+        }
+        private object get_175_RevenueReportPage_ViewModel(object instance)
         {
             var that = (global::ConvenienceStore.Views.RevenueReportPage)instance;
             return that.ViewModel;
         }
-        private object get_151_TreeViewNode_Children(object instance)
+        private object get_176_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_152_TreeViewNode_Content(object instance)
+        private object get_177_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_152_TreeViewNode_Content(object instance, object Value)
+        private void set_177_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_153_TreeViewNode_Depth(object instance)
+        private object get_178_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_154_TreeViewNode_HasChildren(object instance)
+        private object get_179_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_155_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_180_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_155_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_180_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_156_TreeViewNode_IsExpanded(object instance)
+        private object get_181_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_156_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_181_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_157_TreeViewNode_Parent(object instance)
+        private object get_182_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -3927,56 +4290,230 @@ namespace ConvenienceStore.ConvenienceStore_XamlTypeInfo
                 xamlMember.Getter = get_149_InventoryPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "Microsoft.UI.Xaml.Controls.TabView.TabItems":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabItems", "System.Collections.Generic.IList`1<Object>");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_150_TabView_TabItems;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.AddTabButtonCommand":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "AddTabButtonCommand", "System.Windows.Input.ICommand");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_151_TabView_AddTabButtonCommand;
+                xamlMember.Setter = set_151_TabView_AddTabButtonCommand;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.AddTabButtonCommandParameter":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "AddTabButtonCommandParameter", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_152_TabView_AddTabButtonCommandParameter;
+                xamlMember.Setter = set_152_TabView_AddTabButtonCommandParameter;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.AllowDropTabs":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "AllowDropTabs", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_153_TabView_AllowDropTabs;
+                xamlMember.Setter = set_153_TabView_AllowDropTabs;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.CanDragTabs":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CanDragTabs", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_154_TabView_CanDragTabs;
+                xamlMember.Setter = set_154_TabView_CanDragTabs;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.CanReorderTabs":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CanReorderTabs", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_155_TabView_CanReorderTabs;
+                xamlMember.Setter = set_155_TabView_CanReorderTabs;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.CanTearOutTabs":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CanTearOutTabs", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_156_TabView_CanTearOutTabs;
+                xamlMember.Setter = set_156_TabView_CanTearOutTabs;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.CloseButtonOverlayMode":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "CloseButtonOverlayMode", "Microsoft.UI.Xaml.Controls.TabViewCloseButtonOverlayMode");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_157_TabView_CloseButtonOverlayMode;
+                xamlMember.Setter = set_157_TabView_CloseButtonOverlayMode;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.IsAddTabButtonVisible":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsAddTabButtonVisible", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_158_TabView_IsAddTabButtonVisible;
+                xamlMember.Setter = set_158_TabView_IsAddTabButtonVisible;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.SelectedIndex":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "SelectedIndex", "Int32");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_159_TabView_SelectedIndex;
+                xamlMember.Setter = set_159_TabView_SelectedIndex;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.SelectedItem":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "SelectedItem", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_160_TabView_SelectedItem;
+                xamlMember.Setter = set_160_TabView_SelectedItem;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.TabItemTemplate":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabItemTemplate", "Microsoft.UI.Xaml.DataTemplate");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_161_TabView_TabItemTemplate;
+                xamlMember.Setter = set_161_TabView_TabItemTemplate;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.TabItemTemplateSelector":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabItemTemplateSelector", "Microsoft.UI.Xaml.Controls.DataTemplateSelector");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_162_TabView_TabItemTemplateSelector;
+                xamlMember.Setter = set_162_TabView_TabItemTemplateSelector;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.TabItemsSource":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabItemsSource", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_163_TabView_TabItemsSource;
+                xamlMember.Setter = set_163_TabView_TabItemsSource;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.TabStripFooter":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabStripFooter", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_164_TabView_TabStripFooter;
+                xamlMember.Setter = set_164_TabView_TabStripFooter;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.TabStripFooterTemplate":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabStripFooterTemplate", "Microsoft.UI.Xaml.DataTemplate");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_165_TabView_TabStripFooterTemplate;
+                xamlMember.Setter = set_165_TabView_TabStripFooterTemplate;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.TabStripHeader":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabStripHeader", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_166_TabView_TabStripHeader;
+                xamlMember.Setter = set_166_TabView_TabStripHeader;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.TabStripHeaderTemplate":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabStripHeaderTemplate", "Microsoft.UI.Xaml.DataTemplate");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_167_TabView_TabStripHeaderTemplate;
+                xamlMember.Setter = set_167_TabView_TabStripHeaderTemplate;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabView.TabWidthMode":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabView");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabWidthMode", "Microsoft.UI.Xaml.Controls.TabViewWidthMode");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_168_TabView_TabWidthMode;
+                xamlMember.Setter = set_168_TabView_TabWidthMode;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabViewItem.Header":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabViewItem");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Header", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_169_TabViewItem_Header;
+                xamlMember.Setter = set_169_TabViewItem_Header;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabViewItem.HeaderTemplate":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabViewItem");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "HeaderTemplate", "Microsoft.UI.Xaml.DataTemplate");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_170_TabViewItem_HeaderTemplate;
+                xamlMember.Setter = set_170_TabViewItem_HeaderTemplate;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabViewItem.IconSource":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabViewItem");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IconSource", "Microsoft.UI.Xaml.Controls.IconSource");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_171_TabViewItem_IconSource;
+                xamlMember.Setter = set_171_TabViewItem_IconSource;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabViewItem.IsClosable":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabViewItem");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsClosable", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_172_TabViewItem_IsClosable;
+                xamlMember.Setter = set_172_TabViewItem_IsClosable;
+                break;
+            case "Microsoft.UI.Xaml.Controls.TabViewItem.TabViewTemplateSettings":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TabViewItem");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "TabViewTemplateSettings", "Microsoft.UI.Xaml.Controls.TabViewItemTemplateSettings");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_173_TabViewItem_TabViewTemplateSettings;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "ConvenienceStore.Views.OrderPage.ViewModel":
+                userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ConvenienceStore.Views.OrderPage");
+                xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ViewModel", "ConvenienceStore.ViewModels.OrderViewModel");
+                xamlMember.Getter = get_174_OrderPage_ViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
             case "ConvenienceStore.Views.RevenueReportPage.ViewModel":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ConvenienceStore.Views.RevenueReportPage");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "ViewModel", "ConvenienceStore.ViewModels.RevenueReportViewModel");
-                xamlMember.Getter = get_150_RevenueReportPage_ViewModel;
+                xamlMember.Getter = get_175_RevenueReportPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_151_TreeViewNode_Children;
+                xamlMember.Getter = get_176_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_152_TreeViewNode_Content;
-                xamlMember.Setter = set_152_TreeViewNode_Content;
+                xamlMember.Getter = get_177_TreeViewNode_Content;
+                xamlMember.Setter = set_177_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_153_TreeViewNode_Depth;
+                xamlMember.Getter = get_178_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_154_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_179_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_155_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_155_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_180_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_180_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_156_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_156_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_181_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_181_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::ConvenienceStore.ConvenienceStore_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_157_TreeViewNode_Parent;
+                xamlMember.Getter = get_182_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }
